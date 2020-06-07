@@ -5,10 +5,11 @@ html {
     -o-background-size: cover;
     background-size: cover;
 }
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
 
 body {
     color: #eee;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;
 }
 
 .App {

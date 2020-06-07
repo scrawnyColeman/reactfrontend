@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPage component component matches snapshot 1`] = `
+<styled.div>
+  <UserCourses
+    courses={
+      Array [
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "1",
+          "imgUrl": "https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png",
+          "title": "React",
+        },
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "2",
+          "imgUrl": "https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg",
+          "title": "Java",
+        },
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "3",
+          "imgUrl": "https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc",
+          "title": "Python",
+        },
+      ]
+    }
+  />
+  <PopularCourses
+    courses={
+      Array [
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "1",
+          "imgUrl": "https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png",
+          "title": "React",
+        },
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "2",
+          "imgUrl": "https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg",
+          "title": "Java",
+        },
+        Object {
+          "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+          "id": "3",
+          "imgUrl": "https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc",
+          "title": "Python",
+        },
+      ]
+    }
+  />
+</styled.div>
+`;

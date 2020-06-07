@@ -34,14 +34,14 @@ const Login = () => {
                 {hasAccount ? <LoginForm /> : <RegisterForm />}
                 {hasAccount && (
                     <span>
-                        Don't have an account?{' '}
-                        <Button onClick={() => setHasAccount(false)} text="Register" size="large" />
+                        Don't have an account?
+                        <Button onClick={() => setHasAccount(false)} text="Register" size="large" variant="text" />
                     </span>
                 )}
                 {!hasAccount && (
                     <span>
                         Already have an account?
-                        <Button onClick={() => setHasAccount(true)} text="Log in" size="small" />
+                        <Button onClick={() => setHasAccount(true)} text="Log in" size="small" variant="text" />
                     </span>
                 )}
             </StyledFormContainer>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    background-color: lightblue;
     text-align: left;
 `;
 const StyledWrapper = styled.div`
@@ -12,7 +11,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledText = styled.div`
-    margin: 4px;
+    padding-right: 12px;
 `;
 const StyledImg = styled.img`
     margin: auto;
@@ -29,7 +28,7 @@ const PopularCourses = ({ courses }) => (
             <StyledWrapper key={course.id}>
                 <StyledText>
                     <p>{course.title}</p>
-                    <p>{course.description.slice(0, 120)}</p>
+                    <p>{course.description.slice(0, 180)}</p>
                 </StyledText>
                 <StyledImg src={course.imgUrl} />
             </StyledWrapper>

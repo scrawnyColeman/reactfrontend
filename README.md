@@ -1,7 +1,6 @@
-
 ## Available Scripts
 
-This project is the FrontEnd for my disseration at Queen's University Belfast
+This project is the FrontEnd for my dissertation at Queen's University Belfast
 
 ### `npm start`
 
@@ -25,4 +24,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-

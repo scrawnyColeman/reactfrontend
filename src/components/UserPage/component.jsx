@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import PopularCourses from '../PopularCourses/component';
 import UserCourses from '../UserCourses/component';
-import userCourses from '../../data/userCourses.json';
-import popularCourses from '../../data/popularCourses.json';
+import data from '../../data/courses.js';
+
 
 const StyledItemWrapper = styled.div`
     display: grid;
@@ -13,8 +13,8 @@ const StyledItemWrapper = styled.div`
 
 const UserPage = () => (
     <StyledItemWrapper>
-        <UserCourses courses={userCourses.courses} />
-        <PopularCourses courses={popularCourses.courses} />
+        <UserCourses courses={data.courses} />
+        <PopularCourses courses={data.courses} />
     </StyledItemWrapper>
 );
 

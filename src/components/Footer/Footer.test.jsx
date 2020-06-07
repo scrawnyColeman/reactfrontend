@@ -7,21 +7,19 @@ import Footer from './component';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Footer component', () => {
-    const RealDate = Date;
-
     function mockDate(isoDate) {
         global.Date = class {
             constructor() {
-                return new RealDate(isoDate);
+                return new Date(isoDate);
             }
         };
     }
     afterAll(() => {
-        global.Date = RealDate;
+        global.Date = Date;
     });
 
     test('component matches snapshot', () => {
-        mockDate('2020-11-25T12:34:56z');
+        mockDate('2020-06-03T12:34:56z');
         const wrapper = shallow(<Footer />);
         expect(wrapper).toMatchSnapshot();
     });

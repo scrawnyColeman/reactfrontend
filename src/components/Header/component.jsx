@@ -30,12 +30,12 @@ const StyledLogoContainer = styled.div`
     justify-content: center;
 `;
 
-const Header = ({ userName }) =>  (
+const Header = ({ userName }) => (
     <StyledHeader>
         <StyledNavBar>
             <StyledNavLinks href='/learn'>LEARN</StyledNavLinks>
             <StyledNavLinks href='/forum'>FORUM</StyledNavLinks>
-            <StyledNavLinks href='/profile/{id}'>{userName || "PROFILE"}</StyledNavLinks>
+            {userName ? <StyledNavLinks href='/profile/{id}'>{userName}</StyledNavLinks> : <StyledNavLinks href='/login'>Log in</StyledNavLinks>}
         </StyledNavBar>
         <StyledLogoContainer>
             <Logo />

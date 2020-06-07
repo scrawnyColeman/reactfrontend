@@ -26,9 +26,10 @@ const RegisterForm = () => {
                 <Grid item xs={12}>
                     <TextField
                         id="outlined-email"
-                        label="Password"
+                        label="Email Address"
                         type="email"
                         variant="filled"
+                        autoComplete="off"
                         className={classes.textfield}
                     />
                 </Grid>
@@ -45,7 +46,6 @@ const RegisterForm = () => {
                         label="Password"
                         type="password"
                         variant="filled"
-                       
                         className={classes.textfield}
                     />
                 </Grid>
@@ -57,14 +57,13 @@ const RegisterForm = () => {
                         label="Retype Password"
                         type="password"
                         variant="filled"
-                        helperText="Password should contain an uppercase character and a number."
                         className={classes.textfield}
                     />
                 </Grid>
             </Grid>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Button text="Register" />
+                    <Button text="Register" variant="text" />
                 </Grid>
             </Grid>
         </form>

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
+import Button from '../Button/component';
 
 const Container = styled.div`
-    background-color: lightblue;
     width: 400px;
     height: 100%;
     margin: auto;
@@ -14,7 +14,6 @@ const StyledWrapper = styled.div`
     width: 200px;
     text-align: center;
 `;
-
 const StyledImg = styled.img`
     margin: auto;
     width: 200px;
@@ -22,11 +21,6 @@ const StyledImg = styled.img`
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
-const StyledGoLink = styled.a`
-    text-decoration: none;
-    font-color: white;
-`;
-
 const StyledLabel = styled.div`
     text-align: left;
     padding: 8px;
@@ -49,7 +43,7 @@ const UserCourses = ({ courses }) => (
                     <StyledImg src={course.imgUrl} />
                     <p>{course.title}</p>
                     <p>{course.description.slice(0, 80)}</p>
-                    <StyledGoLink href="/course/{id}">Go</StyledGoLink>
+                    <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
                 </StyledWrapper>
             ))}
         </Slider>

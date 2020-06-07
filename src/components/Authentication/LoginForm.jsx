@@ -36,7 +36,7 @@ const LoginForm = () => {
             </Grid>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Button text="Log in" />
+                    <Button text="Log in" variant="text" />
                 </Grid>
             </Grid>
         </form>
