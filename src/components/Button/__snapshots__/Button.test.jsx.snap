@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component large button matches snapshot 1`] = `
+<WithStyles(ForwardRef(Button))
+  color="primary"
+  size="large"
+  style={
+    Object {
+      "color": "#15e601",
+      "fontSize": "1.25rem",
+      "textTransform": "unset",
+    }
+  }
+  variant="text"
+>
+  Second button
+</WithStyles(ForwardRef(Button))>
+`;
+
+exports[`Button component primary button matches snapshot 1`] = `
+<WithStyles(ForwardRef(Button))
+  color="primary"
+  size="large"
+  style={
+    Object {
+      "color": "#15e601",
+      "fontSize": "1.25rem",
+      "textTransform": "unset",
+    }
+  }
+  variant="text"
+>
+  primary button
+</WithStyles(ForwardRef(Button))>
+`;
+
+exports[`Button component secondary button matches snapshot 1`] = `
+<WithStyles(ForwardRef(Button))
+  color="secondary"
+  size="large"
+  style={
+    Object {
+      "color": "#15e601",
+      "fontSize": "1.25rem",
+      "textTransform": "unset",
+    }
+  }
+  variant="text"
+>
+  Second button
+</WithStyles(ForwardRef(Button))>
+`;

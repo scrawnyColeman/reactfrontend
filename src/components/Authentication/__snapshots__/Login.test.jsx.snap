@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <Logo />
+    <styled.div>
+      NJOY
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <RegisterForm />
+    <span>
+      Already have an account?
+      <Button
+        onClick={[Function]}
+        size="small"
+        text="Log in"
+      />
+    </span>
+  </styled.div>
+</styled.div>
+`;

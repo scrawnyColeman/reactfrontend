@@ -1,0 +1,22 @@
+{
+    "courses": [
+        {
+            "title": "React",
+            "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+            "imgUrl": "https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png",
+            "id": "1"
+        },
+        {
+            "title": "Java",
+            "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+            "imgUrl": "https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg",
+            "id": "2"
+        },
+        {
+            "title": "Python",
+            "description": "React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application",
+            "imgUrl": "https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc",
+            "id": "3"
+        }
+    ]
+}

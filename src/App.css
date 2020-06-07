@@ -1,0 +1,16 @@
+html {
+    background: url(./images/bgimg.jpg) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    color: #eee;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.App {
+    text-align: center;
+}

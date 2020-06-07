@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCourses component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    Pick up where you left off...
+  </styled.div>
+  <Slider
+    dots={true}
+    infinite={true}
+    slidesToScroll={1}
+    slidesToShow={2}
+    speed={500}
+  >
+    <styled.div
+      key="1"
+    >
+      <styled.img
+        src="https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png"
+      />
+      <p>
+        React
+      </p>
+      <p>
+        React is an open-source JavaScript library for building user interfaces. It is m
+      </p>
+      <styled.a
+        href="/course/{id}"
+      >
+        Go
+      </styled.a>
+    </styled.div>
+    <styled.div
+      key="2"
+    >
+      <styled.img
+        src="https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg"
+      />
+      <p>
+        Java
+      </p>
+      <p>
+        React is an open-source JavaScript library for building user interfaces. It is m
+      </p>
+      <styled.a
+        href="/course/{id}"
+      >
+        Go
+      </styled.a>
+    </styled.div>
+    <styled.div
+      key="3"
+    >
+      <styled.img
+        src="https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc"
+      />
+      <p>
+        Python
+      </p>
+      <p>
+        React is an open-source JavaScript library for building user interfaces. It is m
+      </p>
+      <styled.a
+        href="/course/{id}"
+      >
+        Go
+      </styled.a>
+    </styled.div>
+  </Slider>
+</styled.div>
+`;

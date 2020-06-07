@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.a
+      href="/learn"
+    >
+      LEARN
+    </styled.a>
+    <styled.a
+      href="/forum"
+    >
+      FORUM
+    </styled.a>
+    <styled.a
+      href="/profile/{id}"
+    >
+      Thomas
+    </styled.a>
+  </styled.div>
+  <styled.div>
+    <Logo />
+  </styled.div>
+</styled.div>
+`;
