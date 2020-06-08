@@ -63,7 +63,7 @@ const RegisterForm = () => {
             </Grid>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Button text="Register" variant="text" />
+                    <Button text="Register" variant="text" onClick={() => window.location = '/home'} />
                 </Grid>
             </Grid>
         </form>

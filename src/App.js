@@ -13,16 +13,21 @@ const Page = styled.div`
     grid-template-rows: ${headerHeight} 1fr ${footerHeight};
 `;
 
-const App = () => (
-    <Page className="App">
-        {window.location.pathname === '/login' && <Login />}
-        <Page>
-            <Header userName={'Thomas'} />
-            {window.location.pathname === '/home' && <HomePage />}
-            {window.location.pathname === '/forum' && <ForumPage />}
-            <Footer />
+const App = () => {
+    if (window.location.pathname === '/') {
+        window.location.pathname = '/login';
+    }
+    return (
+        <Page className="App">
+            {window.location.pathname === '/login' && <Login />}
+            <Page>
+                {window.location.pathname !== '/login' && <Header userName={'Thomas'} />}
+                {window.location.pathname === '/home' && <HomePage />}
+                {window.location.pathname === '/forum' && <ForumPage />}
+                {window.location.pathname !== '/login' && <Footer />}
+            </Page>
         </Page>
-    </Page>
-);
+    );
+};
 
 export default App;
