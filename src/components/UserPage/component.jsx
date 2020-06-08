@@ -7,15 +7,15 @@ import data from '../../data/courses.js';
 
 const StyledItemWrapper = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 100px 20px 0 20px;
+    grid-template-columns: 3fr 2fr;
+    margin: 20vh 20px 0 20px;
 `;
 
-const UserPage = () => (
+const HomePage = () => (
     <StyledItemWrapper>
         <UserCourses courses={data.courses} />
         <PopularCourses courses={data.courses} />
     </StyledItemWrapper>
 );
 
-export default UserPage;
+export default HomePage;

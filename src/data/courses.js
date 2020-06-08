@@ -1,31 +1,86 @@
-import JavaImg from '../images/java.png';
-import JSImg from '../images/js.png';
-import PythonImg from '../images/python.png';
+import JavaIcon from '../images/java.png';
+import JavaImg from '../images/javaheader.jpg';
+import JSIcon from '../images/js.png';
+import JSImg from '../images/jsimage.jpg';
+import PythonIcon from '../images/python.png';
+import PythonImg from '../images/python image.jpg';
 
 const data = {
     courses: [
         {
-            title: 'React',
+            title: 'ReactJS',
+            language: 'JavaScript',
             description:
-                'React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile application',
-            imgUrl: JSImg,
+                'Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.',
+            icon: JSIcon,
+            header: JSImg,
             id: '1',
+            activeUsers: '3514', //how many users have taken this course to generate popularity ranking
         },
         {
-            title: 'Java',
+            title: 'Lambda Functions',
+            language: 'Java',
             description:
-                'Java is a general-purpose programming language that is class-based, object-oriented, and designed to have as few implementation dependencies as possible. It is intended to let application developers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture',
-            imgUrl: JavaImg,
+                'Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.',
+            icon: JavaIcon,
+            header: JavaImg,
             id: '2',
+            activeUsers: '38',
         },
         {
-            title: 'Python',
+            title: 'Recursion',
+            language: 'Python',
             description:
-                "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.",
-            imgUrl: PythonImg,
+                'Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.',
+            icon: PythonIcon,
+            header: PythonImg,
             id: '3',
+            activeUsers: '802',
+        },
+        {
+            title: 'Polymorphism',
+            language: 'Java',
+            description:
+                'Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.',
+            icon: JavaIcon,
+            header: JavaImg,
+            id: '4',
+            activeUsers: '604',
+        },
+        {
+            title: 'Control Flow and Conditionals',
+            language: 'Python',
+            description:
+                'Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making',
+            icon: PythonIcon,
+            header: PythonImg,
+            id: '5',
+            activeUsers: '190',
+        },
+        {
+            title: 'Classes and Objects',
+            language: 'Python',
+            description: 'Learn the fundamental elements that make up the world of Object-Oriented Programming.',
+            icon: PythonIcon,
+            header: PythonImg,
+            id: '6',
+            activeUsers: '334',
+        },
+        {
+            title: 'ES6 Arrow Functions',
+            language: 'JavaScript',
+            description:
+                'Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.',
+            icon: JSIcon,
+            header: JSImg,
+            id: '7',
+            activeUsers: '2154',
         },
     ],
 };
+
+data.courses.sort(function (a, b) {
+    return b.activeUsers - a.activeUsers;
+});
 
 export default data;

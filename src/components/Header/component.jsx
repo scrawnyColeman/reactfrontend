@@ -17,12 +17,18 @@ const StyledHeader = styled.div`
 export const StyledNavLinks = styled.a`
     color: ${colours.primary};
     padding: 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-decoration: none;
 `;
 const StyledNavBar = styled.div`
-    display:flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 3fr;
+    @media only screen and (max-width: 1380px) {
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+    }
+    @media only screen and (max-width: 1100px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 `;
 const StyledLogoContainer = styled.div`
     display: flex;
