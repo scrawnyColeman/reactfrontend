@@ -11,6 +11,7 @@
         "enzyme": "^3.8.0",
         "enzyme-adapter-react-16": "^1.9.0",
         "enzyme-to-json": "^3.4.2",
+        "hooksy": "^1.0.0",
         "jest-styled-components": "^6.3.4",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",

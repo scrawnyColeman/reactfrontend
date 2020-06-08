@@ -5,7 +5,7 @@ import Login from './components/Authentication/Login.jsx';
 import Footer from './components/Footer/component';
 import Header from './components/Header/component';
 import ForumPage from './components/ForumPage/component';
-import UserPage from './components/UserPage/component';
+import HomePage from './components/UserPage/component';
 import { footerHeight, headerHeight } from './constants/measures';
 
 const Page = styled.div`
@@ -18,7 +18,7 @@ const App = () => (
         {window.location.pathname === '/login' && <Login />}
         <Page>
             <Header userName={'Thomas'} />
-            {window.location.pathname === '/home' && <UserPage />}
+            {window.location.pathname === '/home' && <HomePage />}
             {window.location.pathname === '/forum' && <ForumPage />}
             <Footer />
         </Page>

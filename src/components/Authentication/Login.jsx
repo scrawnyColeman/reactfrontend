@@ -5,6 +5,7 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
 
+
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-rows: max-content max-content;
@@ -24,6 +25,8 @@ const StyledName = styled.div`
 
 const Login = () => {
     const [hasAccount, setHasAccount] = useState(false);
+
+
     return (
         <StyledWrapper>
             <StyledLogoContainer>
