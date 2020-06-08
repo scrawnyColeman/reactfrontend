@@ -13,7 +13,7 @@ const StyledWrapper = styled.div`
 `;
 const StyledCoursesContainer = styled.div`
     height: 500px;
-    overflow-y:scroll;
+    overflow-y: scroll;
 `;
 
 

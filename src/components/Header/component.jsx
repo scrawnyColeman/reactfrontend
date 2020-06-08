@@ -13,6 +13,9 @@ const StyledHeader = styled.div`
     grid-template-columns: 2fr 1fr;
     grid-gap: 5px;
     text-transform: uppercase;
+    @media only screen and (max-width: 800px) {
+        display: block;
+    }
 `;
 export const StyledNavLinks = styled.a`
     color: ${colours.primary};
@@ -22,11 +25,11 @@ export const StyledNavLinks = styled.a`
 `;
 const StyledNavBar = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
     @media only screen and (max-width: 1380px) {
-        grid-template-columns: 1fr 1fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
     }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 1024px) {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 `;
@@ -34,11 +37,15 @@ const StyledLogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media only screen and (max-width: 800px) {
+        display:none;
+    }
 `;
 
 const Header = ({ userName }) => (
     <StyledHeader>
         <StyledNavBar>
+            <StyledNavLinks href='/home'>HOME</StyledNavLinks>
             <StyledNavLinks href='/learn'>LEARN</StyledNavLinks>
             <StyledNavLinks href='/forum'>FORUM</StyledNavLinks>
             {userName ? <StyledNavLinks href='/profile/{id}'>{userName}</StyledNavLinks> : <StyledNavLinks href='/login'>Log in</StyledNavLinks>}
