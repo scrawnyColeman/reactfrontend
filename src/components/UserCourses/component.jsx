@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 import Button from '../Button/component';
-import { colours } from '../../constants/styles';
+import { colours, carouselSettings } from '../../constants/styles';
 
 const Container = styled.div`
     margin: 0 auto;
@@ -12,7 +12,7 @@ const Container = styled.div`
 const StyledCard = styled.div`
     display: inline-block;
     width: 95%;
-    text-align:left;
+    text-align: left;
     height: 490px;
     border: 2px ${colours.secondary};
 `;
@@ -43,36 +43,17 @@ const StyledDescription = styled.p`
 `;
 
 const StyledHeading = styled.span`
-    width:100%;
+    width: 100%;
     color: ${colours.primary};
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 0 auto;
 `;
-
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 1280,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-        }
-    ]
-};
 
 const UserCourses = ({ courses }) => (
     <Container>
         <StyledLabel>Pick up where you left off...</StyledLabel>
-        <Slider {...settings}>
+        <Slider {...carouselSettings}>
             {courses.map((course) => (
                 <StyledCard key={course.id}>
                     <StyledCardHeader>
@@ -83,12 +64,22 @@ const UserCourses = ({ courses }) => (
                             <p>{course.title}</p>
                             <p>[{course.language.toUpperCase()}]</p>
                         </StyledHeading>
-                        <StyledDescription>{course.description.slice(0, 150)}{course.description.length > 150 && '...'}</StyledDescription>
-                        <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
+                        <StyledDescription>
+                            {course.description.slice(0, 150)}
+                            {course.description.length > 150 && '...'}
+                        </StyledDescription>
+                        <Button
+                            onClick={() => window.location.pathname === '/'}
+                            text="Go"
+                            size="small"
+                            variant="outlined"
+                            hierarchy="primary"
+                        />
                     </StyledCardInformation>
                 </StyledCard>
             ))}
         </Slider>
     </Container>
 );
+
 export default UserCourses;

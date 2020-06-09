@@ -79,8 +79,4 @@ const data = {
     ],
 };
 
-data.courses.sort(function (a, b) {
-    return b.activeUsers - a.activeUsers;
-});
-
 export default data;

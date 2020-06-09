@@ -1,6 +1,7 @@
 {
     "name": "njoy-learning",
     "version": "0.1.0",
+    "author": "Thomas Hutchinson",
     "private": true,
     "dependencies": {
         "@material-ui/core": "^4.10.1",
@@ -11,13 +12,31 @@
         "enzyme": "^3.8.0",
         "enzyme-adapter-react-16": "^1.9.0",
         "enzyme-to-json": "^3.4.2",
+        "history": "^4.10.1",
         "hooksy": "^1.0.0",
         "jest-styled-components": "^6.3.4",
+        "prettier": "^2.0.5",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-scripts": "3.4.1",
         "react-slick": "^0.26.1",
         "styled-components": "^4.4.0"
+    },
+    "devDependencies": {
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.9",
+        "react-router-dom": "^5.2.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,json,jsx}": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "scripts": {
         "start": "react-scripts start",

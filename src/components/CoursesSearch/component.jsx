@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
@@ -18,10 +19,10 @@ const StyledText = styled.div`
     padding-right: 12px;
 `;
 const StyledHeading = styled.span`
-    width:100%;
+    width: 100%;
     color: ${colours.primary};
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 0 auto;
 `;
 const StyledSearchBar = styled.div`
@@ -35,13 +36,14 @@ const StyledHorizontalLine = styled.hr`
 `;
 const CoursesSearch = ({ courses }) => {
     const [title, setTitle] = useState('');
+
     return (
         <Container>
             <StyledSearchBar>
                 <TextField
                     id="outlined-full-width"
                     label="Label"
-                    placeholder='Search...'
+                    placeholder="Search..."
                     size="small"
                     margin="normal"
                     onChange={(event) => setTitle(event.target.value)}
@@ -50,26 +52,51 @@ const CoursesSearch = ({ courses }) => {
             <StyledCoursesContainer>
                 {courses.map((course) => {
                     const userSearchFilter = title.toLowerCase().replace(/\s+/g, '');
-                    const courseNameThenLanguage = course.title.replace(/\s+/g, '').concat(course.language).toLowerCase();
-                    const courseLanguageThenName = course.language.concat(course.title.replace(/\s+/g, '')).toLowerCase();
+                    const courseNameThenLanguage = course.title
+                        .replace(/\s+/g, '')
+                        .concat(course.language)
+                        .toLowerCase();
+                    //recursionjava
+                    const courseLanguageThenName = course.language
+                        .concat(course.title.replace(/\s+/g, ''))
+                        .toLowerCase();
+                    //javarecursion
 
-                    if (courseLanguageThenName.includes(userSearchFilter) || courseNameThenLanguage.includes(userSearchFilter) || !title) {
-                        return (<StyledWrapper key={course.id}>
-                            <StyledText>
-                                <StyledHeading>
-                                    <p>{course.title}</p>
-                                    <p>[{course.language.toUpperCase()}]</p>
-                                </StyledHeading>
-                                <p>{course.description.slice(0, 180)}{course.description.length > 150 && '...'}</p>
-                                <span>
-                                    <p><span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people have taken this course!</p>
-                                    <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
-                                </span>
-                                <StyledHorizontalLine />
-                            </StyledText>
-                        </StyledWrapper>
-                        )
-                    } return true
+                    if (
+                        courseLanguageThenName.includes(userSearchFilter) ||
+                        courseNameThenLanguage.includes(userSearchFilter) ||
+                        !title
+                    ) {
+                        return (
+                            <StyledWrapper key={course.id}>
+                                <StyledText>
+                                    <StyledHeading>
+                                        <p>{course.title}</p>
+                                        <p>[{course.language.toUpperCase()}]</p>
+                                    </StyledHeading>
+                                    <p>
+                                        {course.description.slice(0, 180)}
+                                        {course.description.length > 180 && '...'}
+                                    </p>
+                                    <span>
+                                        <p>
+                                            <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span>{' '}
+                                            people have taken this course!
+                                        </p>
+                                        <Button
+                                            onClick={() => window.location.pathname === '/'}
+                                            text="Go"
+                                            size="small"
+                                            variant="outlined"
+                                            hierarchy="primary"
+                                        />
+                                    </span>
+                                    <StyledHorizontalLine />
+                                </StyledText>
+                            </StyledWrapper>
+                        );
+                    }
+                    return true;
                 })}
             </StyledCoursesContainer>
         </Container>

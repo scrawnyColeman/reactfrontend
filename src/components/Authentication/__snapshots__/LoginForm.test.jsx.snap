@@ -17,6 +17,8 @@ exports[`LoginForm component component matches snapshot 1`] = `
       <WithStyles(ForwardRef(TextField))
         id="outlined-username"
         label="Username"
+        name="Username"
+        onChange={[Function]}
         type="text"
         variant="filled"
       />
@@ -34,6 +36,7 @@ exports[`LoginForm component component matches snapshot 1`] = `
         autoComplete="current-password"
         id="outlined-password"
         label="Password"
+        onChange={[Function]}
         type="password"
         variant="filled"
       />
@@ -48,7 +51,9 @@ exports[`LoginForm component component matches snapshot 1`] = `
       xs={12}
     >
       <Button
+        onClick={[Function]}
         text="Log in"
+        variant="text"
       />
     </WithStyles(ForwardRef(Grid))>
   </WithStyles(ForwardRef(Grid))>

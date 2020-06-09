@@ -8,6 +8,19 @@ exports[`UserCourses component component matches snapshot 1`] = `
   <Slider
     dots={true}
     infinite={true}
+    responsive={
+      Array [
+        Object {
+          "breakpoint": 1280,
+          "settings": Object {
+            "dots": true,
+            "infinite": true,
+            "slidesToScroll": 1,
+            "slidesToShow": 1,
+          },
+        },
+      ]
+    }
     slidesToScroll={1}
     slidesToShow={2}
     speed={500}
@@ -15,56 +28,220 @@ exports[`UserCourses component component matches snapshot 1`] = `
     <styled.div
       key="1"
     >
-      <styled.img
-        src="https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png"
-      />
-      <p>
-        React
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is m
-      </p>
-      <styled.a
-        href="/course/{id}"
-      >
-        Go
-      </styled.a>
+      <styled.div>
+        <styled.img
+          src="jsimage.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            ReactJS
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
     </styled.div>
     <styled.div
       key="2"
     >
-      <styled.img
-        src="https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg"
-      />
-      <p>
-        Java
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is m
-      </p>
-      <styled.a
-        href="/course/{id}"
-      >
-        Go
-      </styled.a>
+      <styled.div>
+        <styled.img
+          src="javaheader.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Lambda Functions
+          </p>
+          <p>
+            [
+            JAVA
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
     </styled.div>
     <styled.div
       key="3"
     >
-      <styled.img
-        src="https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc"
-      />
-      <p>
-        Python
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is m
-      </p>
-      <styled.a
-        href="/course/{id}"
-      >
-        Go
-      </styled.a>
+      <styled.div>
+        <styled.img
+          src="python image.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Recursion
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginnin
+          ...
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div
+      key="4"
+    >
+      <styled.div>
+        <styled.img
+          src="javaheader.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Polymorphism
+          </p>
+          <p>
+            [
+            JAVA
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div
+      key="5"
+    >
+      <styled.div>
+        <styled.img
+          src="python image.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Control Flow and Conditionals
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div
+      key="6"
+    >
+      <styled.div>
+        <styled.img
+          src="python image.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Classes and Objects
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn the fundamental elements that make up the world of Object-Oriented Programming.
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
+    </styled.div>
+    <styled.div
+      key="7"
+    >
+      <styled.div>
+        <styled.img
+          src="jsimage.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            ES6 Arrow Functions
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
     </styled.div>
   </Slider>
 </styled.div>

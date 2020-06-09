@@ -31,8 +31,9 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       xs={12}
     >
       <WithStyles(ForwardRef(TextField))
+        autoComplete="off"
         id="outlined-email"
-        label="Password"
+        label="Email Address"
         type="email"
         variant="filled"
       />
@@ -78,7 +79,6 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       xs={12}
     >
       <WithStyles(ForwardRef(TextField))
-        helperText="Password should contain an uppercase character and a number."
         id="outlined-retyped-password"
         label="Retype Password"
         type="password"
@@ -95,7 +95,9 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       xs={12}
     >
       <Button
+        onClick={[Function]}
         text="Register"
+        variant="text"
       />
     </WithStyles(ForwardRef(Grid))>
   </WithStyles(ForwardRef(Grid))>

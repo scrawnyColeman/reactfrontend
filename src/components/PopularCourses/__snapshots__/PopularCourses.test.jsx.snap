@@ -2,51 +2,235 @@
 
 exports[`PopularCourses component component matches snapshot 1`] = `
 <styled.div>
-  Popular:
-  <styled.div
-    key="1"
-  >
-    <styled.div>
-      <p>
-        React
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of
-      </p>
-    </styled.div>
-    <styled.img
-      src="https://www.cloudcms.com/images/quickstarts/react/react.df70b005.png"
-    />
+  <styled.div>
+    Top 5 courses:
   </styled.div>
-  <styled.div
-    key="2"
-  >
-    <styled.div>
-      <p>
-        Java
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of
-      </p>
+  <styled.div>
+    <styled.div
+      key="1"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+             
+            1: ReactJS
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              3514
+            </span>
+             people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
+      <styled.img
+        src="js.png"
+      />
     </styled.div>
-    <styled.img
-      src="https://cdn.vox-cdn.com/thumbor/1SrcuHFZ70PO7OPgSb2_DxM3gUk=/0x0:640x427/1820x1213/filters:focal(0x0:640x427):format(webp)/cdn.vox-cdn.com/assets/1087137/java_logo_640.jpg"
-    />
-  </styled.div>
-  <styled.div
-    key="3"
-  >
-    <styled.div>
-      <p>
-        Python
-      </p>
-      <p>
-        React is an open-source JavaScript library for building user interfaces. It is maintained by Facebook and a community of
-      </p>
+    <styled.div
+      key="7"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+             
+            2: ES6 Arrow Functions
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              2154
+            </span>
+             people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
+      <styled.img
+        src="js.png"
+      />
     </styled.div>
-    <styled.img
-      src="https://qph.fs.quoracdn.net/main-qimg-28cadbd02699c25a88e5c78d73c7babc"
-    />
+    <styled.div
+      key="3"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+             
+            3: Recursion
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              802
+            </span>
+             people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
+      <styled.img
+        src="python.png"
+      />
+    </styled.div>
+    <styled.div
+      key="4"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+             
+            4: Polymorphism
+          </p>
+          <p>
+            [
+            JAVA
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              604
+            </span>
+             people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
+      <styled.img
+        src="java.png"
+      />
+    </styled.div>
+    <styled.div
+      key="6"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+             
+            5: Classes and Objects
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn the fundamental elements that make up the world of Object-Oriented Programming.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              334
+            </span>
+             people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
+      <styled.img
+        src="python.png"
+      />
+    </styled.div>
   </styled.div>
 </styled.div>
 `;

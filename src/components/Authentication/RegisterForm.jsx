@@ -4,8 +4,10 @@ import Button from '../Button/component';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { materialStyles } from '../../constants/styles';
+import { useHistory } from 'react-router-dom';
 
 const RegisterForm = () => {
+    const history = useHistory();
     const useStyles = makeStyles(materialStyles);
     const classes = useStyles();
 
@@ -63,7 +65,7 @@ const RegisterForm = () => {
             </Grid>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <Button text="Register" variant="text" onClick={() => window.location = '/home'} />
+                    <Button text="Register" variant="text" onClick={() => history.push({ pathname: 'home' })} />
                 </Grid>
             </Grid>
         </form>

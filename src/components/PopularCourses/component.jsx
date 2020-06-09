@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
@@ -16,7 +17,6 @@ const StyledCoursesContainer = styled.div`
     overflow-y: scroll;
 `;
 
-
 const StyledText = styled.div`
     padding-right: 12px;
 `;
@@ -26,11 +26,11 @@ const StyledImg = styled.img`
     object-fit: cover;
 `;
 const StyledHeading = styled.span`
-    width:100%;
+    width: 100%;
     color: ${colours.primary};
     display: flex;
-    justify-content:space-between;
     margin: 0 auto;
+    justify-content: space-between;
 `;
 const StyledLabel = styled.div`
     text-align: left;
@@ -43,6 +43,9 @@ const StyledHorizontalLine = styled.hr`
 `;
 const PopularCourses = ({ courses }) => {
     let counter = 1;
+
+    courses.sort((a, b) => b.activeUsers - a.activeUsers);
+
     return (
         <Container>
             <StyledLabel>Top 5 courses:</StyledLabel>
@@ -54,10 +57,22 @@ const PopularCourses = ({ courses }) => {
                                 <p> {`${counter++}: ${course.title}`}</p>
                                 <p>[{course.language.toUpperCase()}]</p>
                             </StyledHeading>
-                            <p>{course.description.slice(0, 180)}{course.description.length > 150 && '...'}</p>
+                            <p>
+                                {course.description.slice(0, 180)}
+                                {course.description.length > 180 && '...'}
+                            </p>
                             <span>
-                                <p><span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people have taken this course!</p>
-                                <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
+                                <p>
+                                    <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people
+                                    have taken this course!
+                                </p>
+                                <Button
+                                    onClick={() => window.location.pathname === '/'}
+                                    text="Go"
+                                    size="small"
+                                    variant="outlined"
+                                    hierarchy="primary"
+                                />
                             </span>
                             <StyledHorizontalLine />
                         </StyledText>

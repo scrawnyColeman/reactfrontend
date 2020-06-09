@@ -3,9 +3,8 @@
 exports[`Login component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
-    <Logo />
     <styled.div>
-      NJOY
+      NJOY LEARNING
     </styled.div>
   </styled.div>
   <styled.div>
@@ -16,6 +15,7 @@ exports[`Login component component matches snapshot 1`] = `
         onClick={[Function]}
         size="small"
         text="Log in"
+        variant="text"
       />
     </span>
   </styled.div>

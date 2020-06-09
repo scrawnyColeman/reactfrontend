@@ -9,3 +9,7 @@
 6. Hook up to BE API
 7. Use axios to fetch data from API instead of using mock data in data/\*\*.json
 8. Test everything
+
+Nice to haves
+
+1. Not found page, catch all for unknown URLS

@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button/component';
@@ -36,26 +37,39 @@ const StyledBody = styled.div`
     color: ${colours.secondary}
 `;
 
-const ForumPreview = ({ posts }) => (
-    <StyledContainer>
-        <StyledTitle>Forum Posts:</StyledTitle>
-        <StyledPostsContainer>
-
-            {posts.map((post) => (
-                <StyledWrapper key={post.id}>
-                    <StyledHead>
-                        <p>{post.title}</p>
-                        <p>[{post.type.toUpperCase()}]</p>
-                    </StyledHead>
-                    <StyledBody>
-                        <Button onClick={() => window.location.pathname === '/'} text="View" size="small" variant="outlined" hierarchy="primary" />
-                        <p>{post.comments.length} comments</p>
-                    </StyledBody>
-                </StyledWrapper>
-            ))}
-        </StyledPostsContainer>
-    </StyledContainer>
-);
-
+const ForumPreview = ({ onClick, posts }) => {
+    const history = useHistory();
+    return (
+        <StyledContainer>
+            <StyledTitle>Forum Posts:</StyledTitle>
+            <StyledPostsContainer>
+                {posts.map((post) => {
+                    const { id, title, type, comments } = post;
+                    return (
+                        <StyledWrapper key={id}>
+                            <StyledHead>
+                                <p>{title}</p>
+                                <p>[{type.toUpperCase()}]</p>
+                            </StyledHead>
+                            <StyledBody>
+                                <Button
+                                    onClick={() => {
+                                        history.push({ pathname: `forum/${id}` });
+                                        onClick(id);
+                                    }}
+                                    text="View"
+                                    size="small"
+                                    variant="outlined"
+                                    hierarchy="primary"
+                                />
+                                <p>{comments.length} comments</p>
+                            </StyledBody>
+                        </StyledWrapper>
+                    );
+                })}
+            </StyledPostsContainer>
+        </StyledContainer>
+    );
+};
 
 export default ForumPreview;

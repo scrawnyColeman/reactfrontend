@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Logo from '../Logo/component';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
-
 
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-rows: max-content max-content;
     grid-gap: 30px;
+    margin: 20vh auto;
 `;
 const StyledLogoContainer = styled.div`
-    margin: 5vh auto 5vh;
+    margin: 0 auto;
 `;
 const StyledFormContainer = styled.div`
     margin: auto;
 `;
-
 const StyledName = styled.div`
     display: block;
     font-size: 3rem;
@@ -26,12 +24,10 @@ const StyledName = styled.div`
 const Login = () => {
     const [hasAccount, setHasAccount] = useState(false);
 
-
     return (
         <StyledWrapper>
             <StyledLogoContainer>
-                <Logo />
-                <StyledName>NJOY</StyledName>
+                <StyledName>NJOY LEARNING</StyledName>
             </StyledLogoContainer>
             <StyledFormContainer>
                 {hasAccount ? <LoginForm /> : <RegisterForm />}

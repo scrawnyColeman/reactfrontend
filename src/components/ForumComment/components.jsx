@@ -7,9 +7,6 @@ import Button from '../Button/component';
 const Container = styled.div`
     text-align: left;
 `;
-const StyledHeading = styled.div`
-    padding: 0 0 14px;
-`;
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-rows: max-content max-content
@@ -17,13 +14,12 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
 `;
 
-const CreateForumPost = () => {
+const ForumComment = ({ posts }) => {
     const [title, setTitle] = useState(null);
     const [question, setQuestion] = useState(null);
 
     return (
         <Container>
-            <StyledHeading>Reach out to the community...</StyledHeading>
             <StyledWrapper>
                 <TextField
                     id="outlined-full-width"
@@ -31,8 +27,9 @@ const CreateForumPost = () => {
                     text={title}
                     size="small"
                     margin="normal"
+                    disabled
                     onChange={(event) => setTitle(event.target.value)}
-                    placeholder={'Question Title:'}
+                    placeholder={`Replying to:`}
                 />
                 <TextField
                     id="filled-multiline-static"
@@ -56,4 +53,4 @@ const CreateForumPost = () => {
     );
 };
 
-export default CreateForumPost;
+export default ForumComment;

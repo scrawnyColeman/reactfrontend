@@ -31,4 +31,41 @@ const materialStyles = (theme) => ({
     },
 });
 
-export { colours, materialStyles };
+const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1280,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true,
+            },
+        },
+    ],
+};
+
+const textFieldOverrideStyles = {
+    textTransform: 'unset',
+    width: '100%',
+    margin: '0 auto',
+    color: colours.secondary,
+    backgroundColor: 'white',
+    border: `4px solid ${colours.primary}`,
+    padding: '8px 12px 16px',
+    boxSizing: 'border-box',
+};
+
+const buttonOverrideStyles = (size) => ({
+    fontSize: size === 'large' ? '1.25rem' : '1rem',
+    textTransform: 'unset',
+    color: colours.primary,
+    borderColor: colours.primary,
+});
+
+export { buttonOverrideStyles, carouselSettings, colours, materialStyles, textFieldOverrideStyles };

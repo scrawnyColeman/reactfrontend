@@ -26,24 +26,27 @@ export const StyledNavLinks = styled.a`
 const StyledNavBar = styled.div`
     display: flex;
     justify-content: space-around;
-    
 `;
 const StyledLogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     @media only screen and (max-width: 968px) {
-        display:none;
+        display: none;
     }
 `;
 
 const Header = ({ userName }) => (
     <StyledHeader>
         <StyledNavBar>
-            <StyledNavLinks href='/home'>HOME</StyledNavLinks>
-            <StyledNavLinks href='/learn'>LEARN</StyledNavLinks>
-            <StyledNavLinks href='/forum'>FORUM</StyledNavLinks>
-            {userName ? <StyledNavLinks href='/profile/{id}'>{userName}</StyledNavLinks> : <StyledNavLinks href='/login'>Log in</StyledNavLinks>}
+            <StyledNavLinks href="/home">HOME</StyledNavLinks>
+            <StyledNavLinks href="/learn">LEARN</StyledNavLinks>
+            <StyledNavLinks href="/forum">FORUM</StyledNavLinks>
+            {userName ? (
+                <StyledNavLinks href="/login">{userName}</StyledNavLinks>
+            ) : (
+                <StyledNavLinks href="/login">Log in</StyledNavLinks>
+            )}
         </StyledNavBar>
         <StyledLogoContainer>
             <Logo />

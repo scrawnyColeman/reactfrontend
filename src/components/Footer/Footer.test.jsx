@@ -7,15 +7,17 @@ import Footer from './component';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Footer component', () => {
+    const RealDate = Date;
+
     function mockDate(isoDate) {
         global.Date = class {
             constructor() {
-                return new Date(isoDate);
+                return new RealDate(isoDate);
             }
         };
     }
     afterAll(() => {
-        global.Date = Date;
+        global.Date = RealDate;
     });
 
     test('component matches snapshot', () => {
