@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LearnPage component component matches snapshot 1`] = `
+<styled.div>
+  <CoursesSearch
+    courses={
+      Array [
+        Object {
+          "activeUsers": "3514",
+          "description": "Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.",
+          "header": "jsimage.jpg",
+          "icon": "js.png",
+          "id": "1",
+          "language": "JavaScript",
+          "title": "ReactJS",
+        },
+        Object {
+          "activeUsers": "38",
+          "description": "Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.",
+          "header": "javaheader.jpg",
+          "icon": "java.png",
+          "id": "2",
+          "language": "Java",
+          "title": "Lambda Functions",
+        },
+        Object {
+          "activeUsers": "802",
+          "description": "Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "3",
+          "language": "Python",
+          "title": "Recursion",
+        },
+        Object {
+          "activeUsers": "604",
+          "description": "Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.",
+          "header": "javaheader.jpg",
+          "icon": "java.png",
+          "id": "4",
+          "language": "Java",
+          "title": "Polymorphism",
+        },
+        Object {
+          "activeUsers": "190",
+          "description": "Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "5",
+          "language": "Python",
+          "title": "Control Flow and Conditionals",
+        },
+        Object {
+          "activeUsers": "334",
+          "description": "Learn the fundamental elements that make up the world of Object-Oriented Programming.",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "6",
+          "language": "Python",
+          "title": "Classes and Objects",
+        },
+        Object {
+          "activeUsers": "2154",
+          "description": "Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.",
+          "header": "jsimage.jpg",
+          "icon": "js.png",
+          "id": "7",
+          "language": "JavaScript",
+          "title": "ES6 Arrow Functions",
+        },
+      ]
+    }
+  />
+  <PopularCourses
+    courses={
+      Array [
+        Object {
+          "activeUsers": "3514",
+          "description": "Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.",
+          "header": "jsimage.jpg",
+          "icon": "js.png",
+          "id": "1",
+          "language": "JavaScript",
+          "title": "ReactJS",
+        },
+        Object {
+          "activeUsers": "38",
+          "description": "Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.",
+          "header": "javaheader.jpg",
+          "icon": "java.png",
+          "id": "2",
+          "language": "Java",
+          "title": "Lambda Functions",
+        },
+        Object {
+          "activeUsers": "802",
+          "description": "Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "3",
+          "language": "Python",
+          "title": "Recursion",
+        },
+        Object {
+          "activeUsers": "604",
+          "description": "Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.",
+          "header": "javaheader.jpg",
+          "icon": "java.png",
+          "id": "4",
+          "language": "Java",
+          "title": "Polymorphism",
+        },
+        Object {
+          "activeUsers": "190",
+          "description": "Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "5",
+          "language": "Python",
+          "title": "Control Flow and Conditionals",
+        },
+        Object {
+          "activeUsers": "334",
+          "description": "Learn the fundamental elements that make up the world of Object-Oriented Programming.",
+          "header": "python image.jpg",
+          "icon": "python.png",
+          "id": "6",
+          "language": "Python",
+          "title": "Classes and Objects",
+        },
+        Object {
+          "activeUsers": "2154",
+          "description": "Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.",
+          "header": "jsimage.jpg",
+          "icon": "js.png",
+          "id": "7",
+          "language": "JavaScript",
+          "title": "ES6 Arrow Functions",
+        },
+      ]
+    }
+  />
+</styled.div>
+`;

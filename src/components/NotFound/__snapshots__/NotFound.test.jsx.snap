@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound component component matches snapshot 1`] = `
+<styled.div>
+  Oops... something went wrong! Path not found
+</styled.div>
+`;

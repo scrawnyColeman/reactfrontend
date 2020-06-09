@@ -1,9 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PopularCourses component component matches snapshot 1`] = `
+exports[`CoursesSearch component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
-    Top 5 courses:
+    <TextField
+      id="outlined-full-width"
+      label="Label"
+      margin="normal"
+      onChange={[Function]}
+      placeholder="Search..."
+      size="small"
+    />
   </styled.div>
   <styled.div>
     <styled.div
@@ -12,8 +19,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
       <styled.div>
         <styled.span>
           <p>
-             
-            1: ReactJS
+            ReactJS
           </p>
           <p>
             [
@@ -35,6 +41,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             >
               3514
             </span>
+             
             people have taken this course!
           </p>
           <Button
@@ -47,27 +54,23 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
         <styled.hr />
       </styled.div>
-      <styled.img
-        src="js.png"
-      />
     </styled.div>
     <styled.div
-      key="7"
+      key="2"
     >
       <styled.div>
         <styled.span>
           <p>
-             
-            2: ES6 Arrow Functions
+            Lambda Functions
           </p>
           <p>
             [
-            JAVASCRIPT
+            JAVA
             ]
           </p>
         </styled.span>
         <p>
-          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
+          Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.
         </p>
         <span>
           <p>
@@ -78,8 +81,9 @@ exports[`PopularCourses component component matches snapshot 1`] = `
                 }
               }
             >
-              2154
+              38
             </span>
+             
             people have taken this course!
           </p>
           <Button
@@ -92,9 +96,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
         <styled.hr />
       </styled.div>
-      <styled.img
-        src="js.png"
-      />
     </styled.div>
     <styled.div
       key="3"
@@ -102,8 +103,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
       <styled.div>
         <styled.span>
           <p>
-             
-            3: Recursion
+            Recursion
           </p>
           <p>
             [
@@ -125,6 +125,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             >
               802
             </span>
+             
             people have taken this course!
           </p>
           <Button
@@ -137,9 +138,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
         <styled.hr />
       </styled.div>
-      <styled.img
-        src="python.png"
-      />
     </styled.div>
     <styled.div
       key="4"
@@ -147,8 +145,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
       <styled.div>
         <styled.span>
           <p>
-             
-            4: Polymorphism
+            Polymorphism
           </p>
           <p>
             [
@@ -170,6 +167,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             >
               604
             </span>
+             
             people have taken this course!
           </p>
           <Button
@@ -182,9 +180,48 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
         <styled.hr />
       </styled.div>
-      <styled.img
-        src="java.png"
-      />
+    </styled.div>
+    <styled.div
+      key="5"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+            Control Flow and Conditionals
+          </p>
+          <p>
+            [
+            PYTHON
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              190
+            </span>
+             
+            people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
     </styled.div>
     <styled.div
       key="6"
@@ -192,8 +229,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
       <styled.div>
         <styled.span>
           <p>
-             
-            5: Classes and Objects
+            Classes and Objects
           </p>
           <p>
             [
@@ -215,6 +251,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             >
               334
             </span>
+             
             people have taken this course!
           </p>
           <Button
@@ -227,9 +264,48 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
         <styled.hr />
       </styled.div>
-      <styled.img
-        src="python.png"
-      />
+    </styled.div>
+    <styled.div
+      key="7"
+    >
+      <styled.div>
+        <styled.span>
+          <p>
+            ES6 Arrow Functions
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <p>
+          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
+        </p>
+        <span>
+          <p>
+            <span
+              style={
+                Object {
+                  "color": "#B4DF4E",
+                }
+              }
+            >
+              2154
+            </span>
+             
+            people have taken this course!
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Go"
+            variant="outlined"
+          />
+        </span>
+        <styled.hr />
+      </styled.div>
     </styled.div>
   </styled.div>
 </styled.div>

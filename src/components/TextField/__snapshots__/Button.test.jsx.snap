@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField component large TextField matches snapshot 1`] = `
+<WithStyles(ForwardRef(TextField))
+  id="standard-multiline-flexible"
+  multiline={false}
+  placeholder="Second TextField"
+  rows={1}
+  rowsMax={1}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "4px solid #B4DF4E",
+      "boxSizing": "border-box",
+      "color": "#eee",
+      "margin": "0 auto",
+      "padding": "8px 12px 16px",
+      "textTransform": "unset",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`TextField component multiline TextField matches snapshot 1`] = `
+<WithStyles(ForwardRef(TextField))
+  id="standard-multiline-flexible"
+  multiline={true}
+  placeholder="Second TextField"
+  rows={1}
+  rowsMax={1}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "4px solid #B4DF4E",
+      "boxSizing": "border-box",
+      "color": "#eee",
+      "margin": "0 auto",
+      "padding": "8px 12px 16px",
+      "textTransform": "unset",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`TextField component primary TextField matches snapshot 1`] = `
+<WithStyles(ForwardRef(TextField))
+  id="standard-multiline-flexible"
+  multiline={false}
+  placeholder="primary TextField"
+  rows={1}
+  rowsMax={1}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "4px solid #B4DF4E",
+      "boxSizing": "border-box",
+      "color": "#eee",
+      "margin": "0 auto",
+      "padding": "8px 12px 16px",
+      "textTransform": "unset",
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`TextField component secondary TextField matches snapshot 1`] = `
+<WithStyles(ForwardRef(TextField))
+  id="standard-multiline-flexible"
+  multiline={false}
+  placeholder="Second TextField"
+  rows={1}
+  rowsMax={1}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "border": "4px solid #B4DF4E",
+      "boxSizing": "border-box",
+      "color": "#eee",
+      "margin": "0 auto",
+      "padding": "8px 12px 16px",
+      "textTransform": "unset",
+      "width": "100%",
+    }
+  }
+/>
+`;

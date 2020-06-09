@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import ForumPreview from '../ForumPreview/component';
 import ForumPostPage from '../ForumPostPage/component';
@@ -12,9 +13,8 @@ const StyledItemWrapper = styled.div`
 `;
 
 const ForumPage = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchParam = urlParams.get('forumId');
-    const [param, setParam] = useState(searchParam);
+    const location = useLocation().search;
+    const [param, setParam] = useState(location);
     return (
         <StyledItemWrapper>
             {Boolean(param) ? (

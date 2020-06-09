@@ -1,5 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
@@ -63,8 +62,8 @@ const PopularCourses = ({ courses }) => {
                             </p>
                             <span>
                                 <p>
-                                    <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people
-                                    have taken this course!
+                                    <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span>
+                                    people have taken this course!
                                 </p>
                                 <Button
                                     onClick={() => window.location.pathname === '/'}

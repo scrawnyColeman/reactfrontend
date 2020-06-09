@@ -1,13 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component component matches snapshot 1`] = `
-<styled.div
-  className="App"
->
-  <Header
-    userName="Thomas"
-  />
-  <UserPage />
-  <Footer />
-</styled.div>
+<BrowserRouter>
+  <styled.div
+    className="App"
+  >
+    <Header
+      userName="ScrawnyColeman"
+    />
+    <BrowserRouter
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/login"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/home/:name"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/home"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/learn"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/forum"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/forum/:id"
+      />
+    </BrowserRouter>
+    <Footer />
+  </styled.div>
+</BrowserRouter>
 `;

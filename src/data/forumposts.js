@@ -14,6 +14,7 @@ const data = {
                     commentid: '1',
                     comment: "No it can't my guy",
                     parentid: '0',
+                    authorusername: 'anon',
                 },
                 {
                     commentid: '2',
