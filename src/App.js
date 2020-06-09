@@ -5,8 +5,9 @@ import Login from './components/Authentication/Login.jsx';
 import Footer from './components/Footer/component';
 import Header from './components/Header/component';
 import ForumPage from './components/ForumPage/component';
-import HomePage from './components/UserPage/component';
+import HomePage from './components/HomePage/component';
 import { footerHeight, headerHeight } from './constants/measures';
+import LearnPage from './components/LearnPage/component';
 
 const Page = styled.div`
     display: grid;
@@ -21,8 +22,9 @@ const App = () => {
         <Page className="App">
             {window.location.pathname === '/login' && <Login />}
             <Page>
-                {window.location.pathname !== '/login' && <Header userName={'Thomas'} />}
+                {window.location.pathname !== '/login' && <Header userName={'ScrawnyColeman'} />}
                 {window.location.pathname === '/home' && <HomePage />}
+                {window.location.pathname === '/learn' && <LearnPage />}
                 {window.location.pathname === '/forum' && <ForumPage />}
                 {window.location.pathname !== '/login' && <Footer />}
             </Page>

@@ -41,28 +41,31 @@ const StyledHorizontalLine = styled.hr`
     border-radius: 3px;
     width: 100%;
 `;
-const PopularCourses = ({ courses }) => (
-    <Container>
-        <StyledLabel>Most Popular Lessons:</StyledLabel>
-        <StyledCoursesContainer>
-            {courses.map((course) => (
-                <StyledWrapper key={course.id}>
-                    <StyledText>
-                        <StyledHeading>
-                            <p>{course.title}</p>
-                            <p>[{course.language.toUpperCase()}]</p>
-                        </StyledHeading>
-                        <p>{course.description.slice(0, 180)}{course.description.length > 150 && '...'}</p>
-                        <span>
-                            <p><span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people have taken this course!</p>
-                            <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
-                        </span>
-                        <StyledHorizontalLine />
-                    </StyledText>
-                    <StyledImg src={course.icon} />
-                </StyledWrapper>
-            ))}
-        </StyledCoursesContainer>
-    </Container>
-);
+const PopularCourses = ({ courses }) => {
+    let counter = 1;
+    return (
+        <Container>
+            <StyledLabel>Top 5 courses:</StyledLabel>
+            <StyledCoursesContainer>
+                {courses.slice(0, 5).map((course) => (
+                    <StyledWrapper key={course.id}>
+                        <StyledText>
+                            <StyledHeading>
+                                <p> {`${counter++}: ${course.title}`}</p>
+                                <p>[{course.language.toUpperCase()}]</p>
+                            </StyledHeading>
+                            <p>{course.description.slice(0, 180)}{course.description.length > 150 && '...'}</p>
+                            <span>
+                                <p><span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span> people have taken this course!</p>
+                                <Button onClick={() => window.location.pathname === '/'} text="Go" size="small" variant="outlined" hierarchy="primary" />
+                            </span>
+                            <StyledHorizontalLine />
+                        </StyledText>
+                        <StyledImg src={course.icon} />
+                    </StyledWrapper>
+                ))}
+            </StyledCoursesContainer>
+        </Container>
+    );
+};
 export default PopularCourses;

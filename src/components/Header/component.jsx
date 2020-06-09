@@ -13,7 +13,7 @@ const StyledHeader = styled.div`
     grid-template-columns: 2fr 1fr;
     grid-gap: 5px;
     text-transform: uppercase;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 968px) {
         display: block;
     }
 `;
@@ -24,20 +24,15 @@ export const StyledNavLinks = styled.a`
     text-decoration: none;
 `;
 const StyledNavBar = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 3fr;
-    @media only screen and (max-width: 1380px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
-    }
-    @media only screen and (max-width: 1024px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+    display: flex;
+    justify-content: space-around;
+    
 `;
 const StyledLogoContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 968px) {
         display:none;
     }
 `;

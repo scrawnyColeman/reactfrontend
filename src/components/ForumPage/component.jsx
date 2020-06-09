@@ -10,6 +10,7 @@ const StyledItemWrapper = styled.div`
     margin: 20vh 20px 0 20px;
 `;
 
+
 const ForumPage = () => (
     <StyledItemWrapper>
         <ForumPreview posts={data.posts} />
