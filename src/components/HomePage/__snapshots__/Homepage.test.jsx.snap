@@ -7,6 +7,9 @@ exports[`HomePage component component matches snapshot 1`] = `
       Array [
         Object {
           "activeUsers": "3514",
+          "currentUsers": Array [
+            "1",
+          ],
           "description": "Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.",
           "header": "jsimage.jpg",
           "icon": "js.png",
@@ -16,6 +19,10 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "38",
+          "currentUsers": Array [
+            "1",
+            "2",
+          ],
           "description": "Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.",
           "header": "javaheader.jpg",
           "icon": "java.png",
@@ -25,6 +32,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "802",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -34,6 +44,10 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "604",
+          "currentUsers": Array [
+            "1",
+            "2",
+          ],
           "description": "Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.",
           "header": "javaheader.jpg",
           "icon": "java.png",
@@ -43,6 +57,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "190",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -52,6 +69,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "334",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn the fundamental elements that make up the world of Object-Oriented Programming.",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -61,6 +81,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "2154",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.",
           "header": "jsimage.jpg",
           "icon": "js.png",
@@ -76,6 +99,9 @@ exports[`HomePage component component matches snapshot 1`] = `
       Array [
         Object {
           "activeUsers": "3514",
+          "currentUsers": Array [
+            "1",
+          ],
           "description": "Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.",
           "header": "jsimage.jpg",
           "icon": "js.png",
@@ -85,6 +111,10 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "38",
+          "currentUsers": Array [
+            "1",
+            "2",
+          ],
           "description": "Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.",
           "header": "javaheader.jpg",
           "icon": "java.png",
@@ -94,6 +124,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "802",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -103,6 +136,10 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "604",
+          "currentUsers": Array [
+            "1",
+            "2",
+          ],
           "description": "Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.",
           "header": "javaheader.jpg",
           "icon": "java.png",
@@ -112,6 +149,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "190",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -121,6 +161,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "334",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn the fundamental elements that make up the world of Object-Oriented Programming.",
           "header": "python image.jpg",
           "icon": "python.png",
@@ -130,6 +173,9 @@ exports[`HomePage component component matches snapshot 1`] = `
         },
         Object {
           "activeUsers": "2154",
+          "currentUsers": Array [
+            "0",
+          ],
           "description": "Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.",
           "header": "jsimage.jpg",
           "icon": "js.png",

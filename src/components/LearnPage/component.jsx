@@ -6,7 +6,7 @@ import CoursesSearch from '../CoursesSearch/component';
 
 const StyledItemWrapper = styled.div`
     display: grid;
-    grid-template-columns: 4fr 3fr;
+    grid-template-columns: 3fr 3fr;
     grid-gap: 32px;
     margin: 20vh 20px 0 20px;
 `;

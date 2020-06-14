@@ -13,7 +13,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         <styled.span>
           <p>
              
-            1: ReactJS
+            1: ReactJS 
           </p>
           <p>
             [
@@ -26,16 +26,10 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </p>
         <span>
           <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
+            <styled.span>
               3514
-            </span>
-            people have taken this course!
+            </styled.span>
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -45,7 +39,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             variant="outlined"
           />
         </span>
-        <styled.hr />
       </styled.div>
       <styled.img
         src="js.png"
@@ -58,7 +51,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         <styled.span>
           <p>
              
-            2: ES6 Arrow Functions
+            2: ES6 Arrow Functions 
           </p>
           <p>
             [
@@ -71,16 +64,10 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </p>
         <span>
           <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
+            <styled.span>
               2154
-            </span>
-            people have taken this course!
+            </styled.span>
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -90,7 +77,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             variant="outlined"
           />
         </span>
-        <styled.hr />
       </styled.div>
       <styled.img
         src="js.png"
@@ -103,7 +89,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         <styled.span>
           <p>
              
-            3: Recursion
+            3: Recursion 
           </p>
           <p>
             [
@@ -116,16 +102,10 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </p>
         <span>
           <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
+            <styled.span>
               802
-            </span>
-            people have taken this course!
+            </styled.span>
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -135,7 +115,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             variant="outlined"
           />
         </span>
-        <styled.hr />
       </styled.div>
       <styled.img
         src="python.png"
@@ -148,7 +127,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         <styled.span>
           <p>
              
-            4: Polymorphism
+            4: Polymorphism 
           </p>
           <p>
             [
@@ -161,16 +140,10 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </p>
         <span>
           <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
+            <styled.span>
               604
-            </span>
-            people have taken this course!
+            </styled.span>
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -180,7 +153,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             variant="outlined"
           />
         </span>
-        <styled.hr />
       </styled.div>
       <styled.img
         src="java.png"
@@ -193,7 +165,7 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         <styled.span>
           <p>
              
-            5: Classes and Objects
+            5: Classes and Objects 
           </p>
           <p>
             [
@@ -206,16 +178,10 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </p>
         <span>
           <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
+            <styled.span>
               334
-            </span>
-            people have taken this course!
+            </styled.span>
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -225,7 +191,6 @@ exports[`PopularCourses component component matches snapshot 1`] = `
             variant="outlined"
           />
         </span>
-        <styled.hr />
       </styled.div>
       <styled.img
         src="python.png"

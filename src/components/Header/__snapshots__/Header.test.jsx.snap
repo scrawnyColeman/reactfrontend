@@ -4,25 +4,21 @@ exports[`Header component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
     <styled.a
-      href="/home"
+      href="/login"
     >
-      HOME
+      Login
     </styled.a>
     <styled.a
       href="/learn"
     >
-      LEARN
+      Learn
     </styled.a>
     <styled.a
       href="/forum"
     >
-      FORUM
+      Forum
     </styled.a>
-    <styled.a
-      href="/login"
-    >
-      Thomas
-    </styled.a>
+    <div />
   </styled.div>
   <styled.div>
     <Logo />

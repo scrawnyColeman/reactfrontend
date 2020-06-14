@@ -7,6 +7,7 @@ exports[`ForumPage component component matches snapshot with URL param 1`] = `
     posts={
       Array [
         Object {
+          "authorusername": "ScrawnyColeman",
           "comments": Array [
             Object {
               "authorusername": "anon",
@@ -15,16 +16,25 @@ exports[`ForumPage component component matches snapshot with URL param 1`] = `
               "parentid": "0",
             },
             Object {
+              "authorusername": "SkinnyPaddy",
+              "comment": "Shut up bitch",
+              "commentid": "5",
+              "parentid": "0",
+            },
+            Object {
+              "authorusername": "ScrawnyColeman",
               "comment": "Oh okay. That sucks",
               "commentid": "2",
               "parentid": "1",
             },
             Object {
-              "comment": "Helpful post. Good Job... OP, you can do it by...",
+              "authorusername": "SkinnyPaddy",
+              "comment": "Helpful comment. Good Job... OP, you can use arraylists for...",
               "commentid": "3",
               "parentid": "1",
             },
             Object {
+              "authorusername": "ScrawnyColeman",
               "comment": "Thank you!!",
               "commentid": "4",
               "parentid": "3",
@@ -38,23 +48,45 @@ exports[`ForumPage component component matches snapshot with URL param 1`] = `
         Object {
           "comments": Array [
             Object {
-              "comment": "No it can't my guy",
-              "commentid": "5",
+              "authorusername": "user 1",
+              "comment": "comment 1",
+              "commentid": "6",
               "parentid": "0",
             },
             Object {
-              "comment": "Oh okay. That sucks",
-              "commentid": "6",
-              "parentid": "5",
-            },
-            Object {
-              "comment": "Helpful post. Good Job smh... OP, you can do it by...",
+              "authorusername": "user 2",
+              "comment": "comment 2 (reply to comment 1)",
               "commentid": "7",
-              "parentid": "5",
+              "parentid": "6",
             },
             Object {
-              "comment": "Thank you!!",
+              "authorusername": "user 3",
+              "comment": "comment 3 (reply to comment 2)",
               "commentid": "8",
+              "parentid": "7",
+            },
+            Object {
+              "authorusername": "user 4",
+              "comment": "comment 4 (reply to comment 1)",
+              "commentid": "9",
+              "parentid": "6",
+            },
+            Object {
+              "authorusername": "user 5",
+              "comment": "comment 5 (reply to comment 4)",
+              "commentid": "10",
+              "parentid": "9",
+            },
+            Object {
+              "authorusername": "user 6",
+              "comment": "comment 6",
+              "commentid": "11",
+              "parentid": "0",
+            },
+            Object {
+              "authorusername": "user 6",
+              "comment": "comment 7 (reply to comment 2)",
+              "commentid": "12",
               "parentid": "7",
             },
           ],
@@ -126,6 +158,7 @@ exports[`ForumPage component component matches snapshot with URL param 2`] = `
     posts={
       Array [
         Object {
+          "authorusername": "ScrawnyColeman",
           "comments": Array [
             Object {
               "authorusername": "anon",
@@ -134,16 +167,25 @@ exports[`ForumPage component component matches snapshot with URL param 2`] = `
               "parentid": "0",
             },
             Object {
+              "authorusername": "SkinnyPaddy",
+              "comment": "Shut up bitch",
+              "commentid": "5",
+              "parentid": "0",
+            },
+            Object {
+              "authorusername": "ScrawnyColeman",
               "comment": "Oh okay. That sucks",
               "commentid": "2",
               "parentid": "1",
             },
             Object {
-              "comment": "Helpful post. Good Job... OP, you can do it by...",
+              "authorusername": "SkinnyPaddy",
+              "comment": "Helpful comment. Good Job... OP, you can use arraylists for...",
               "commentid": "3",
               "parentid": "1",
             },
             Object {
+              "authorusername": "ScrawnyColeman",
               "comment": "Thank you!!",
               "commentid": "4",
               "parentid": "3",
@@ -157,23 +199,45 @@ exports[`ForumPage component component matches snapshot with URL param 2`] = `
         Object {
           "comments": Array [
             Object {
-              "comment": "No it can't my guy",
-              "commentid": "5",
+              "authorusername": "user 1",
+              "comment": "comment 1",
+              "commentid": "6",
               "parentid": "0",
             },
             Object {
-              "comment": "Oh okay. That sucks",
-              "commentid": "6",
-              "parentid": "5",
-            },
-            Object {
-              "comment": "Helpful post. Good Job smh... OP, you can do it by...",
+              "authorusername": "user 2",
+              "comment": "comment 2 (reply to comment 1)",
               "commentid": "7",
-              "parentid": "5",
+              "parentid": "6",
             },
             Object {
-              "comment": "Thank you!!",
+              "authorusername": "user 3",
+              "comment": "comment 3 (reply to comment 2)",
               "commentid": "8",
+              "parentid": "7",
+            },
+            Object {
+              "authorusername": "user 4",
+              "comment": "comment 4 (reply to comment 1)",
+              "commentid": "9",
+              "parentid": "6",
+            },
+            Object {
+              "authorusername": "user 5",
+              "comment": "comment 5 (reply to comment 4)",
+              "commentid": "10",
+              "parentid": "9",
+            },
+            Object {
+              "authorusername": "user 6",
+              "comment": "comment 6",
+              "commentid": "11",
+              "parentid": "0",
+            },
+            Object {
+              "authorusername": "user 6",
+              "comment": "comment 7 (reply to comment 2)",
+              "commentid": "12",
               "parentid": "7",
             },
           ],

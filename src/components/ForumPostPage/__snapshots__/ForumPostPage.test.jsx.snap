@@ -1,3 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForumPostPage component component matches snapshot 1`] = `<styled.div />`;
+exports[`ForumPostPage component component matches snapshot 1`] = `
+<styled.div>
+  <ForumPost
+    data={
+      Object {
+        "posts": Array [
+          Object {
+            "authorusername": "ScrawnyColeman",
+            "comments": Array [
+              Object {
+                "authorusername": "anon",
+                "comment": "No it can't my guy",
+                "commentid": "1",
+                "parentid": "0",
+              },
+              Object {
+                "authorusername": "SkinnyPaddy",
+                "comment": "Shut up bitch",
+                "commentid": "5",
+                "parentid": "0",
+              },
+              Object {
+                "authorusername": "ScrawnyColeman",
+                "comment": "Oh okay. That sucks",
+                "commentid": "2",
+                "parentid": "1",
+              },
+              Object {
+                "authorusername": "SkinnyPaddy",
+                "comment": "Helpful comment. Good Job... OP, you can use arraylists for...",
+                "commentid": "3",
+                "parentid": "1",
+              },
+              Object {
+                "authorusername": "ScrawnyColeman",
+                "comment": "Thank you!!",
+                "commentid": "4",
+                "parentid": "3",
+              },
+            ],
+            "id": "1",
+            "question": "So I understand that for different situations, either the ArrayList API or the LinkedList API will be more efficient. So what should I look for in terms of design that will tell me which one of those structures is recommended? Is it more related to preference rather than specific uses?",
+            "title": "ArrayLists vs Linked Lists",
+            "type": "HELP",
+          },
+          Object {
+            "comments": Array [
+              Object {
+                "authorusername": "user 1",
+                "comment": "comment 1",
+                "commentid": "6",
+                "parentid": "0",
+              },
+              Object {
+                "authorusername": "user 2",
+                "comment": "comment 2 (reply to comment 1)",
+                "commentid": "7",
+                "parentid": "6",
+              },
+              Object {
+                "authorusername": "user 3",
+                "comment": "comment 3 (reply to comment 2)",
+                "commentid": "8",
+                "parentid": "7",
+              },
+              Object {
+                "authorusername": "user 4",
+                "comment": "comment 4 (reply to comment 1)",
+                "commentid": "9",
+                "parentid": "6",
+              },
+              Object {
+                "authorusername": "user 5",
+                "comment": "comment 5 (reply to comment 4)",
+                "commentid": "10",
+                "parentid": "9",
+              },
+              Object {
+                "authorusername": "user 6",
+                "comment": "comment 6",
+                "commentid": "11",
+                "parentid": "0",
+              },
+              Object {
+                "authorusername": "user 6",
+                "comment": "comment 7 (reply to comment 2)",
+                "commentid": "12",
+                "parentid": "7",
+              },
+            ],
+            "id": "2",
+            "question": "Hey all, I'm currently working my way through the MOOC course and I've just completed an exercise where a scanner asks for a list of numbers from the user, and then it prints out what the smallest number in the index is, and prints out every index it is at. I'm wondering if this could be completed in just one loop.",
+            "title": "Can this be done in one loop?",
+            "type": "HELP",
+          },
+          Object {
+            "comments": Array [],
+            "id": "3",
+            "question": "This thread is for discussing the ReactJS lesson, taught in JavaScript",
+            "title": "ReactJS [JavaScript]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "4",
+            "question": "This thread is for discussing the Lambda Functions lesson, taught in Java",
+            "title": "Lambda Functions [Java]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "5",
+            "question": "This thread is for discussing the Recursion lesson, taught in Python",
+            "title": "Recursion [Python]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "6",
+            "question": "This thread is for discussing the Polymorphism lesson, taught in Java",
+            "title": "Polymorphism [Java]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "7",
+            "question": "This thread is for discussing the Control Flow and Conditionals lesson, taught in Python",
+            "title": "Control Flow and Conditionals [Python]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "8",
+            "question": "This thread is for discussing the Classes and Objects lesson, taught in Python",
+            "title": "Classes and Objects [Python]",
+            "type": "LESSON",
+          },
+          Object {
+            "comments": Array [],
+            "id": "9",
+            "question": "This thread is for discussing the ES6 Arrow Functions lesson, taught in JavaScript",
+            "title": "ES6 Arrow Functions [JavaScript]",
+            "type": "LESSON",
+          },
+        ],
+      }
+    }
+  />
+  <div />
+</styled.div>
+`;

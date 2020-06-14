@@ -16,6 +16,7 @@ const data = {
             header: JSImg,
             id: '1',
             activeUsers: '3514', //how many users have taken this course to generate popularity ranking
+            currentUsers: ['1'],
         },
         {
             title: 'Lambda Functions',
@@ -26,6 +27,7 @@ const data = {
             header: JavaImg,
             id: '2',
             activeUsers: '38',
+            currentUsers: ['1', '2'],
         },
         {
             title: 'Recursion',
@@ -36,6 +38,7 @@ const data = {
             header: PythonImg,
             id: '3',
             activeUsers: '802',
+            currentUsers: ['0'],
         },
         {
             title: 'Polymorphism',
@@ -46,6 +49,7 @@ const data = {
             header: JavaImg,
             id: '4',
             activeUsers: '604',
+            currentUsers: ['1', '2'],
         },
         {
             title: 'Control Flow and Conditionals',
@@ -56,6 +60,7 @@ const data = {
             header: PythonImg,
             id: '5',
             activeUsers: '190',
+            currentUsers: ['0'],
         },
         {
             title: 'Classes and Objects',
@@ -65,6 +70,7 @@ const data = {
             header: PythonImg,
             id: '6',
             activeUsers: '334',
+            currentUsers: ['0'],
         },
         {
             title: 'ES6 Arrow Functions',
@@ -75,6 +81,7 @@ const data = {
             header: JSImg,
             id: '7',
             activeUsers: '2154',
+            currentUsers: ['0'],
         },
     ],
 };

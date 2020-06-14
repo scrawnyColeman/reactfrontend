@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Login from './components/Authentication/Login.jsx';
@@ -6,7 +6,7 @@ import Footer from './components/Footer/component';
 import Header from './components/Header/component';
 import ForumPage from './components/ForumPage/component';
 import ForumPostPage from './components/ForumPostPage/component';
-import HomePage from './components/HomePage/component';
+import ProfilePage from './components/ProfilePage/component';
 import { footerHeight, headerHeight } from './constants/measures';
 import LearnPage from './components/LearnPage/component';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -19,15 +19,15 @@ const Page = styled.div`
 
 const App = () => {
     const history = createBrowserHistory();
+    const [username, setUsername] = useState(sessionStorage.getItem('activeUser') || null);
     return (
         <Router>
             <Page className="App">
-                <Header userName="ScrawnyColeman" />
+                <Header username={username} />
                 <Router history={history}>
-                    <Route exact path="/" component={Login} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/home/:name" component={HomePage} />
-                    <Route exact path="/home" component={HomePage} />
+                    <Route exact path="/" render={() => <Login />} />
+                    <Route exact path="/login" render={() => <Login />} />
+                    <Route exact path="/profile/:name" component={ProfilePage} />
                     <Route exact path="/learn" component={LearnPage} />
                     <Route exact path="/forum" component={ForumPage} />
                     <Route exact path="/forum/:id" component={ForumPostPage} />

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Logo from '../Logo/component';
+import AuthenticationService from '../AuthenticationService/AuthenticationService';
 
 const StyledHeader = styled.div`
     position: fixed;
@@ -36,16 +37,29 @@ const StyledLogoContainer = styled.div`
     }
 `;
 
-const Header = ({ userName }) => (
+const Header = ({ username }) => (
     <StyledHeader>
         <StyledNavBar>
-            <StyledNavLinks href="/home">HOME</StyledNavLinks>
-            <StyledNavLinks href="/learn">LEARN</StyledNavLinks>
-            <StyledNavLinks href="/forum">FORUM</StyledNavLinks>
-            {userName ? (
-                <StyledNavLinks href="/login">{userName}</StyledNavLinks>
+            {username ? (
+                <StyledNavLinks href={`/profile/${username}`} username>
+                    {username}
+                </StyledNavLinks>
             ) : (
-                <StyledNavLinks href="/login">Log in</StyledNavLinks>
+                <StyledNavLinks href="/login">Login</StyledNavLinks>
+            )}
+            <StyledNavLinks href="/learn">Learn</StyledNavLinks>
+            <StyledNavLinks href="/forum">Forum</StyledNavLinks>
+            {username ? (
+                <StyledNavLinks
+                    href="/login"
+                    onClick={() => {
+                        AuthenticationService.destroyLogin();
+                    }}
+                >
+                    Logout
+                </StyledNavLinks>
+            ) : (
+                <div />
             )}
         </StyledNavBar>
         <StyledLogoContainer>

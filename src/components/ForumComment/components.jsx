@@ -29,7 +29,7 @@ const ForumComment = ({ posts }) => {
                     margin="normal"
                     disabled
                     onChange={(event) => setTitle(event.target.value)}
-                    placeholder={`Replying to:`}
+                    placeholder="Replying to:"
                 />
                 <TextField
                     id="filled-multiline-static"
@@ -39,7 +39,7 @@ const ForumComment = ({ posts }) => {
                     rows={20}
                     multiline={true}
                     onChange={(event) => setQuestion(event.target.value)}
-                    placeholder={'Write your question here...'}
+                    placeholder="Write your question here..."
                 />
                 <Button
                     onClick={() => window.location.pathname === '/'}

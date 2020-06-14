@@ -17,7 +17,7 @@ describe('Header component', () => {
 
     test.each`
         linkNumber | expectedHref
-        ${0}       | ${'/home'}
+        ${0}       | ${'/login'}
         ${1}       | ${'/learn'}
         ${2}       | ${'/forum'}
     `('href is set onClick of navigation link', ({ linkNumber, expectedHref }) => {

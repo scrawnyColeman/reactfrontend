@@ -28,7 +28,7 @@ exports[`ForumPreview component component matches snapshot 1`] = `
           variant="outlined"
         />
         <p>
-          4
+          5
            comments
         </p>
       </styled.div>
@@ -55,7 +55,7 @@ exports[`ForumPreview component component matches snapshot 1`] = `
           variant="outlined"
         />
         <p>
-          4
+          7
            comments
         </p>
       </styled.div>

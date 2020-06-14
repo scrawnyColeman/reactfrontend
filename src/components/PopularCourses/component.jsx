@@ -14,6 +14,8 @@ const StyledWrapper = styled.div`
 const StyledCoursesContainer = styled.div`
     height: 500px;
     overflow-y: scroll;
+    border: 2px solid ${colours.primary}
+    border-top: none;
 `;
 
 const StyledText = styled.div`
@@ -30,19 +32,21 @@ const StyledHeading = styled.span`
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
+    font-size: 1.25rem;
 `;
 const StyledLabel = styled.div`
     text-align: left;
-    padding: 0 8px 12px;
-`;
-const StyledHorizontalLine = styled.hr`
+    padding: 10px 8px 12px;
+    font-size: 1.5rem;
     border: 2px solid ${colours.primary};
-    border-radius: 3px;
-    width: 100%;
 `;
+
+const StyledSpecialLabel = styled.span`
+    color: ${colours.primary};
+`;
+
 const PopularCourses = ({ courses }) => {
     let counter = 1;
-
     courses.sort((a, b) => b.activeUsers - a.activeUsers);
 
     return (
@@ -53,7 +57,7 @@ const PopularCourses = ({ courses }) => {
                     <StyledWrapper key={course.id}>
                         <StyledText>
                             <StyledHeading>
-                                <p> {`${counter++}: ${course.title}`}</p>
+                                <p> {`${counter++}: ${course.title} `}</p>
                                 <p>[{course.language.toUpperCase()}]</p>
                             </StyledHeading>
                             <p>
@@ -62,8 +66,8 @@ const PopularCourses = ({ courses }) => {
                             </p>
                             <span>
                                 <p>
-                                    <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span>
-                                    people have taken this course!
+                                    <StyledSpecialLabel>{course.activeUsers}</StyledSpecialLabel> people have taken this
+                                    course!
                                 </p>
                                 <Button
                                     onClick={() => window.location.pathname === '/'}
@@ -73,7 +77,6 @@ const PopularCourses = ({ courses }) => {
                                     hierarchy="primary"
                                 />
                             </span>
-                            <StyledHorizontalLine />
                         </StyledText>
                         <StyledImg src={course.icon} />
                     </StyledWrapper>

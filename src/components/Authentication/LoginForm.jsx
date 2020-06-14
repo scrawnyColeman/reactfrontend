@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { materialStyles } from '../../constants/styles';
 import { useHistory } from 'react-router-dom';
+import AuthenticationService from '../AuthenticationService/AuthenticationService.js';
 
 const LoginForm = () => {
     const useStyles = makeStyles(materialStyles);
@@ -48,7 +49,8 @@ const LoginForm = () => {
                         variant="text"
                         onClick={() => {
                             if (username === 'scrawnycoleman' && password === 'dummy') {
-                                history.push({ pathname: `home/${username}` });
+                                history.push({ pathname: `profile/${username}` });
+                                AuthenticationService.registerLogin(username);
                             }
                         }}
                     />

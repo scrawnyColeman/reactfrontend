@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
+import { useHistory } from 'react-router-dom';
 
 const StyledWrapper = styled.div`
     display: grid;
@@ -23,7 +24,10 @@ const StyledName = styled.div`
 
 const Login = () => {
     const [hasAccount, setHasAccount] = useState(false);
-
+    const history = useHistory();
+    if (sessionStorage.getItem('activeUser')) {
+        history.push({ pathname: `/profile/${sessionStorage.getItem('activeUser')}` });
+    }
     return (
         <StyledWrapper>
             <StyledLogoContainer>
@@ -34,7 +38,7 @@ const Login = () => {
                 {hasAccount && (
                     <span>
                         Don't have an account?
-                        <Button onClick={() => setHasAccount(false)} text="Register" size="large" variant="text" />
+                        <Button onClick={() => setHasAccount(false)} text="Register" size="small" variant="text" />
                     </span>
                 )}
                 {!hasAccount && (

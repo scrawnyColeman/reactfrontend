@@ -1,10 +1,10 @@
-const colours = {
+export const colours = {
     primary: '#B4DF4E',
-    secondary: '#eee',
-    background: '#fff',
+    secondary: '#EEE',
+    background: '#FFF',
 };
 
-const materialStyles = (theme) => ({
+export const materialStyles = (theme) => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
@@ -31,7 +31,7 @@ const materialStyles = (theme) => ({
     },
 });
 
-const carouselSettings = {
+export const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -50,7 +50,7 @@ const carouselSettings = {
     ],
 };
 
-const textFieldOverrideStyles = {
+export const textFieldOverrideStyles = {
     textTransform: 'unset',
     width: '100%',
     margin: '0 auto',
@@ -61,11 +61,9 @@ const textFieldOverrideStyles = {
     boxSizing: 'border-box',
 };
 
-const buttonOverrideStyles = (size) => ({
+export const buttonOverrideStyles = (size) => ({
     fontSize: size === 'large' ? '1.25rem' : '1rem',
     textTransform: 'unset',
     color: colours.primary,
     borderColor: colours.primary,
 });
-
-export { buttonOverrideStyles, carouselSettings, colours, materialStyles, textFieldOverrideStyles };
