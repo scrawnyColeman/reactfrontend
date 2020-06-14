@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalInformation component component matches snapshot with comments 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.div>
+        <styled.div>
+          <styled.img
+            src="defaultimg.jpg"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.div>
+            Account Information
+          </styled.div>
+          <p>
+            <styled.span>
+              Username:
+            </styled.span>
+             
+            ScrawnyColeman
+          </p>
+          <p>
+            <styled.span>
+              Email:
+            </styled.span>
+             
+            sample@email.com
+          </p>
+          <Button
+            hierarchy="primary"
+            onClick={[Function]}
+            size="small"
+            text="Edit Information"
+            variant="outlined"
+          />
+        </styled.div>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      Keep Going! 
+    </styled.div>
+    <styled.div>
+       
+      Lessons in progress: 
+      <styled.span>
+        2
+      </styled.span>
+    </styled.div>
+    <styled.div>
+       
+      Completed lessons: 
+      <styled.span>
+        1
+      </styled.span>
+    </styled.div>
+    <styled.div>
+       
+      Languages used: 
+      <styled.span>
+        2
+      </styled.span>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

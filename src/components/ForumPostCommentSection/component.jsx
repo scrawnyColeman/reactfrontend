@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import CommentBlock from '../CommentBlock/component';
+import { colours } from '../../constants/styles';
 
 const Container = styled.div`
     text-align: left;
+    max-height: 390px;
+    overflow-y: scroll;
 `;
 const StyledWrapper = styled.div`
     display: grid;
@@ -11,11 +14,26 @@ const StyledWrapper = styled.div`
     margin: 0 8px;
 `;
 const StyledText = styled.div`
-    padding-right: 12px;
+    font-size: 1rem;
 `;
 const StyledLabel = styled.div`
     text-align: left;
     padding: 0 8px 12px;
+    color: ${colours.primary};
+    font-size: 1.25rem;
+`;
+const StyledComment = styled.div`
+    max-width: 85%;
+`;
+const StyledCommentButtons = styled.div`
+    margin: auto 0;
+`;
+const StyledCommentUsername = styled.span`
+    color: ${colours.primary};
+`;
+const StyledCommentContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
 
 const ForumPost = ({ id, data }) => {
@@ -23,12 +41,21 @@ const ForumPost = ({ id, data }) => {
     return (
         <Container>
             <StyledLabel>Discussion:</StyledLabel>
+
             {comments.map(
                 (commentDetails) =>
                     commentDetails.parentid === '0' && (
                         <StyledWrapper key={commentDetails.commentid}>
                             <StyledText>
-                                [{commentDetails.authorusername}]: {commentDetails.comment}
+                                <StyledCommentContainer>
+                                    <StyledComment>
+                                        <StyledCommentUsername>
+                                            [{commentDetails.authorusername}]:
+                                        </StyledCommentUsername>{' '}
+                                        {commentDetails.comment}
+                                    </StyledComment>
+                                    <StyledCommentButtons>btn btn btn</StyledCommentButtons>
+                                </StyledCommentContainer>
                                 {comments.length > 0 && (
                                     <CommentBlock
                                         childComments={comments.filter(

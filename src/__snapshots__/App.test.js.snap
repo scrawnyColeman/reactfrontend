@@ -6,7 +6,7 @@ exports[`App component component matches snapshot 1`] = `
     className="App"
   >
     <Header
-      userName="ScrawnyColeman"
+      username={null}
     />
     <BrowserRouter
       history={
@@ -31,24 +31,19 @@ exports[`App component component matches snapshot 1`] = `
       }
     >
       <Route
-        component={[Function]}
         exact={true}
         path="/"
+        render={[Function]}
       />
       <Route
-        component={[Function]}
         exact={true}
         path="/login"
+        render={[Function]}
       />
       <Route
         component={[Function]}
         exact={true}
-        path="/home/:name"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/home"
+        path="/profile/:name"
       />
       <Route
         component={[Function]}

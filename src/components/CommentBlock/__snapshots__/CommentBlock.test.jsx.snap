@@ -1,5 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CommentBlock component component matches snapshot with no 1`] = `<styled.div />`;
+exports[`CommentBlock component component matches snapshot with comments 1`] = `
+<styled.div>
+  <styled.div
+    className="parentComment-3"
+    key="3"
+  >
+    [
+    Testy McTestFace
+    ]: 
+    This is the best test
+    <CommentBlock
+      allComments={
+        Array [
+          Object {
+            "authorusername": "Testy McTestFace",
+            "comment": "This is the best test",
+            "commentid": "1",
+            "parentid": "0",
+          },
+          Object {
+            "authorusername": "Tester Zero",
+            "comment": "Im just happy to be here",
+            "commentid": "2",
+            "parentid": "0",
+          },
+        ]
+      }
+      childComments={Array []}
+      className="childComment-3"
+    />
+  </styled.div>
+  <styled.div
+    className="parentComment-4"
+    key="4"
+  >
+    [
+    Tester Zero
+    ]: 
+    Im just happy to be here
+    <CommentBlock
+      allComments={
+        Array [
+          Object {
+            "authorusername": "Testy McTestFace",
+            "comment": "This is the best test",
+            "commentid": "1",
+            "parentid": "0",
+          },
+          Object {
+            "authorusername": "Tester Zero",
+            "comment": "Im just happy to be here",
+            "commentid": "2",
+            "parentid": "0",
+          },
+        ]
+      }
+      childComments={Array []}
+      className="childComment-4"
+    />
+  </styled.div>
+</styled.div>
+`;
 
 exports[`CommentBlock component component matches snapshot with no comments 1`] = `<styled.div />`;

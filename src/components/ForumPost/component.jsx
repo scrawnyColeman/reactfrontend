@@ -1,22 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
-import PostComments from '../PostComments/component';
+import PostComments from '../ForumPostCommentSection/component';
 
 const Container = styled.div`
     text-align: left;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
     grid-gap: 16px;
 `;
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr min-content;
     margin: 0 8px;
+    max-height: 220px;
+    overflow-y: scroll;
 `;
 
 const StyledText = styled.div`
     padding-right: 12px;
+`;
+const StyledContent = styled.span`    
+    max-height: 150px
+    overflow-y: scroll;
 `;
 const StyledHeading = styled.span`
     width: 100%;
@@ -24,6 +30,7 @@ const StyledHeading = styled.span`
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
+    font-size: 1.25rem;
 `;
 
 const StyledHorizontalLine = styled.hr`
@@ -39,16 +46,13 @@ const ForumPost = ({ id, data }) => {
             <StyledWrapper key={id}>
                 <StyledText>
                     <StyledHeading>
-                        <p> {`${title}`}</p>
+                        <p> {title}</p>
                         <p>[{type.toUpperCase()}]</p>
                     </StyledHeading>
-                    <p>{question}</p>
-                    <span>
-                        <p>
-                            {' '}
-                            <span style={{ color: `${colours.primary}` }}></span>
-                        </p>
-                    </span>
+                    <StyledContent>
+                        <p>{question}</p>
+                        <span></span>
+                    </StyledContent>
                     <StyledHorizontalLine />
                 </StyledText>
             </StyledWrapper>

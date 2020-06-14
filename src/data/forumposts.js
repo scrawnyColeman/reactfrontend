@@ -7,15 +7,15 @@ const data = {
             title: 'ArrayLists vs Linked Lists',
             type: 'HELP',
             question:
-                'So I understand that for different situations, either the ArrayList API or the LinkedList API will be more efficient. So what should I look for in terms of design that will tell me which one of those structures is recommended? Is it more related to preference rather than specific uses?',
+                'So I understand that for different situations, either the ArrayList API or the LinkedList API will be more efficient. So what should I look for in terms of design that will tell me which one of those structures is recommended? Is it more related to preference rather than specific uses?So I understand that for different situations, either the ArrayList API or the LinkedList API will be more efficient. So what should I look for in terms of design that will tell me which one of those structures is recommended? Is it more related to preference rather than specific uses?So I understand that for different situations, either the ArrayList API or the LinkedList API will be more efficient. So what should I look for in terms of design that will tell me which one of those structures is recommended? Is it more related to preference rather than specific uses?',
             id: `${key++}`,
             authorusername: 'ScrawnyColeman',
             comments: [
                 {
                     commentid: '1',
-                    comment: "No it can't my guy",
+                    comment: 'This message has been deleted.',
                     parentid: '0',
-                    authorusername: 'anon',
+                    authorusername: 'Anonymous',
                 },
                 {
                     commentid: '5',
@@ -31,7 +31,8 @@ const data = {
                 },
                 {
                     commentid: '3',
-                    comment: 'Helpful comment. Good Job... OP, you can use arraylists for...',
+                    comment:
+                        'Helpful comment. Good Job... OP, you can use arraylists for certain use cases but not others. arraylists tend to be more useful when quick access to elements is needed due ot their structure',
                     parentid: '1',
                     authorusername: 'SkinnyPaddy',
                 },
@@ -86,7 +87,67 @@ const data = {
                     authorusername: 'user 6',
                 },
                 {
-                    commentid: '12',
+                    commentid: '13',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '14',
+                    comment: 'comment 6',
+                    parentid: '0',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '15',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '16',
+                    comment: 'comment 6',
+                    parentid: '0',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '17',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '15',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '16',
+                    comment: 'comment 6',
+                    parentid: '0',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '17',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '15',
+                    comment: 'comment 7 (reply to comment 2)',
+                    parentid: '7',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '16',
+                    comment: 'comment 6',
+                    parentid: '0',
+                    authorusername: 'user 6',
+                },
+                {
+                    commentid: '17',
                     comment: 'comment 7 (reply to comment 2)',
                     parentid: '7',
                     authorusername: 'user 6',
