@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import CommentBlock from '../CommentBlock/component';
 import { colours } from '../../constants/styles';
+import CommentButton from '../CommentButton/component';
 
 const Container = styled.div`
     text-align: left;
@@ -41,7 +42,6 @@ const ForumPost = ({ id, data }) => {
     return (
         <Container>
             <StyledLabel>Discussion:</StyledLabel>
-
             {comments.map(
                 (commentDetails) =>
                     commentDetails.parentid === '0' && (
@@ -54,7 +54,17 @@ const ForumPost = ({ id, data }) => {
                                         </StyledCommentUsername>{' '}
                                         {commentDetails.comment}
                                     </StyledComment>
-                                    <StyledCommentButtons>btn btn btn</StyledCommentButtons>
+                                    <StyledCommentButtons>
+                                        <CommentButton text="Reply" size="tiny" />
+                                        {commentDetails.authorusername.toLowerCase() ===
+                                            sessionStorage.getItem('activeUser').toLowerCase() && (
+                                            <CommentButton text="Edit" size="tiny" />
+                                        )}
+                                        {commentDetails.authorusername.toLowerCase() ===
+                                            sessionStorage.getItem('activeUser').toLowerCase() && (
+                                            <CommentButton text="Delete" size="tiny" />
+                                        )}
+                                    </StyledCommentButtons>
                                 </StyledCommentContainer>
                                 {comments.length > 0 && (
                                     <CommentBlock

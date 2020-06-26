@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
     text-align: left;
@@ -45,7 +46,8 @@ const StyledSpecialLabel = styled.span`
     color: ${colours.primary};
 `;
 
-const PopularCourses = ({ courses }) => {
+const PopularCourses = ({ courses, onClick }) => {
+    const history = useHistory();
     let counter = 1;
     courses.sort((a, b) => b.activeUsers - a.activeUsers);
 
@@ -70,7 +72,10 @@ const PopularCourses = ({ courses }) => {
                                     course!
                                 </p>
                                 <Button
-                                    onClick={() => window.location.pathname === '/'}
+                                    onClick={() => {
+                                        history.push({ pathname: `learn/${course.id}` });
+                                        onClick(course.id);
+                                    }}
                                     text="Go"
                                     size="small"
                                     variant="outlined"

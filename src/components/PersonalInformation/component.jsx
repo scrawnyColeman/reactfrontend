@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
-import DefaultImg from '../../images/defaultimg.jpg';
+import DefaultImg from '../../images/defaultimg.png';
 import Button from '../Button/component';
 
 const StyledItemWrapper = styled.div`

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PersonalInformation from '../PersonalInformation/component';
 import UserCourses from '../UserCourses/component';
 import courseData from '../../data/courses.js';
 import userData from '../../data/user.js';
+import { useLocation } from 'react-router-dom';
 
 const StyledItemWrapper = styled.div`
     display: grid;
@@ -12,6 +13,8 @@ const StyledItemWrapper = styled.div`
 `;
 
 const ProfilePage = () => {
+    const location = useLocation().search;
+    const [param, setParam] = useState(location);
     const { courses } = courseData;
     const { user } = userData;
     const { activeCourses } = user;
@@ -19,7 +22,11 @@ const ProfilePage = () => {
     return (
         <StyledItemWrapper>
             <PersonalInformation user={user} />
-            {activeCourses.length !== 0 ? <UserCourses courses={courses} id={user.id} /> : <div>hello</div>}
+            {activeCourses.length !== 0 ? (
+                <UserCourses courses={courses} id={user.id} onClick={setParam} />
+            ) : (
+                <div>Big Button</div>
+            )}
         </StyledItemWrapper>
     );
 };

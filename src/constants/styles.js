@@ -67,3 +67,11 @@ export const buttonOverrideStyles = (size) => ({
     color: colours.primary,
     borderColor: colours.primary,
 });
+export const commentButtonOverrideStyles = (size) => ({
+    fontSize: size === 'tiny' ? '0.8rem' : '1rem',
+    textTransform: 'unset',
+    color: colours.primary,
+    borderColor: colours.primary,
+    padding: 0,
+    minWidth: '40px',
+});

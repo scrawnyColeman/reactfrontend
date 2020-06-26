@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import Button from '../Button/component';
 import { colours, carouselSettings } from '../../constants/styles';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
     margin: 0 auto;
@@ -50,38 +51,45 @@ const StyledHeading = styled.span`
     margin: 0 auto;
 `;
 
-const UserCourses = ({ courses, id }) => (
-    <Container>
-        <StyledLabel>Pick up where you left off...</StyledLabel>
-        <Slider {...carouselSettings}>
-            {courses.map((course) =>
-                course.currentUsers.includes(id) ? (
-                    <StyledCard key={course.id}>
-                        <StyledCardHeader>
-                            <StyledImg src={course.header} />
-                        </StyledCardHeader>
-                        <StyledCardInformation>
-                            <StyledHeading>
-                                <p>{course.title}</p>
-                                <p>[{course.language.toUpperCase()}]</p>
-                            </StyledHeading>
-                            <StyledDescription>
-                                {course.description.slice(0, 150)}
-                                {course.description.length > 150 && '...'}
-                            </StyledDescription>
-                            <Button
-                                onClick={() => window.location.pathname === '/'}
-                                text="Go"
-                                size="small"
-                                variant="outlined"
-                                hierarchy="primary"
-                            />
-                        </StyledCardInformation>
-                    </StyledCard>
-                ) : null,
-            )}
-        </Slider>
-    </Container>
-);
+const UserCourses = ({ courses, id, onClick }) => {
+    const history = useHistory();
+    return (
+        <Container>
+            <StyledLabel>Pick up where you left off...</StyledLabel>
+            <Slider {...carouselSettings}>
+                {courses.map((course) =>
+                    course.currentUsers.includes(id) ? (
+                        <StyledCard key={course.id}>
+                            <StyledCardHeader>
+                                <StyledImg src={course.header} />
+                            </StyledCardHeader>
+                            <StyledCardInformation>
+                                <StyledHeading>
+                                    <p>{course.title}</p>
+                                    <p>[{course.language.toUpperCase()}]</p>
+                                </StyledHeading>
+                                <StyledDescription>
+                                    {course.description.slice(0, 150)}
+                                    {course.description.length > 150 && '...'}
+                                </StyledDescription>
+                                <Button
+                                    onClick={() => {
+                                        history.replace('/learn');
+                                        history.push({ pathname: `learn/${course.id}` });
+                                        onClick(course.id);
+                                    }}
+                                    text="Go"
+                                    size="small"
+                                    variant="outlined"
+                                    hierarchy="primary"
+                                />
+                            </StyledCardInformation>
+                        </StyledCard>
+                    ) : null,
+                )}
+            </Slider>
+        </Container>
+    );
+};
 
 export default UserCourses;

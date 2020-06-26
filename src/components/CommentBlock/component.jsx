@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
+import CommentButton from '../CommentButton/component';
 
 const Container = styled.div`
     text-align: left;
@@ -30,9 +31,18 @@ const CommentBlock = ({ childComments, allComments }) => (
                     <StyledComment>
                         <StyledCommentUsername>[{comment.authorusername}]:</StyledCommentUsername> {comment.comment}
                     </StyledComment>
-                    <StyledCommentButtons>btn btn btn</StyledCommentButtons>
+                    <StyledCommentButtons>
+                        {comment.nestingvalue < '2' && <CommentButton text="Reply" size="tiny" />}
+                        {comment.authorusername.toLowerCase() ===
+                            sessionStorage.getItem('activeUser').toLowerCase() && (
+                            <CommentButton text="Edit" size="tiny" />
+                        )}
+                        {comment.authorusername.toLowerCase() ===
+                            sessionStorage.getItem('activeUser').toLowerCase() && (
+                            <CommentButton text="Delete" size="tiny" />
+                        )}
+                    </StyledCommentButtons>
                 </StyledCommentContainer>
-
                 <CommentBlock
                     childComments={allComments.filter((searchComment) => searchComment.parentid === comment.commentid)}
                     allComments={allComments}

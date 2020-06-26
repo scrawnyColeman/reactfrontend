@@ -9,8 +9,13 @@ import ForumPostPage from './components/ForumPostPage/component';
 import ProfilePage from './components/ProfilePage/component';
 import { footerHeight, headerHeight } from './constants/measures';
 import LearnPage from './components/LearnPage/component';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
+import LessonPage from './components/LessonPage/component';
+import NotFound from './components/NotFound/component';
+import TheoryPage from './components/TheoryPage/component';
+import PracticalQuizPage from './components/PracticalQuizPage/component';
+import FullLessonPage from './components/FullLessonPage/component';
 
 const Page = styled.div`
     display: grid;
@@ -21,17 +26,22 @@ const App = () => {
     const history = createBrowserHistory();
     const [username, setUsername] = useState(sessionStorage.getItem('activeUser') || null);
     return (
-        <Router>
+        <Router history={history}>
             <Page className="App">
                 <Header username={username} />
-                <Router history={history}>
+                <Switch>
                     <Route exact path="/" render={() => <Login />} />
                     <Route exact path="/login" render={() => <Login />} />
                     <Route exact path="/profile/:name" component={ProfilePage} />
                     <Route exact path="/learn" component={LearnPage} />
+                    <Route exact path="/learn/:id" component={LessonPage} />
+                    <Route exact path="/learn/theory/:id" component={TheoryPage} />
+                    <Route exact path="/learn/practical/:id" component={PracticalQuizPage} />
+                    <Route exact path="/learn/lesson/:id" component={FullLessonPage} />
                     <Route exact path="/forum" component={ForumPage} />
                     <Route exact path="/forum/:id" component={ForumPostPage} />
-                </Router>
+                    <Route component={NotFound} />
+                </Switch>
                 <Footer />
             </Page>
         </Router>

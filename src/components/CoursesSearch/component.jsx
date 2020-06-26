@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
@@ -33,7 +34,8 @@ const StyledHorizontalLine = styled.hr`
     border-radius: 3px;
     width: 100%;
 `;
-const CoursesSearch = ({ courses }) => {
+const CoursesSearch = ({ courses, onClick }) => {
+    const history = useHistory();
     const [title, setTitle] = useState('');
 
     return (
@@ -83,7 +85,10 @@ const CoursesSearch = ({ courses }) => {
                                             people have taken this course!
                                         </p>
                                         <Button
-                                            onClick={() => window.location.pathname === '/'}
+                                            onClick={() => {
+                                                history.push({ pathname: `learn/${course.id}` });
+                                                onClick(course.id);
+                                            }}
                                             text="Go"
                                             size="small"
                                             variant="outlined"
