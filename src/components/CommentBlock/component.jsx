@@ -23,33 +23,38 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const CommentBlock = ({ childComments, allComments }) => (
-    <Container>
-        {childComments.map((comment) => (
-            <StyledWrapper key={comment.commentid} className={`parentComment-${comment.commentid}`}>
-                <StyledCommentContainer>
-                    <StyledComment>
-                        <StyledCommentUsername>[{comment.authorusername}]:</StyledCommentUsername> {comment.comment}
-                    </StyledComment>
-                    <StyledCommentButtons>
-                        {comment.nestingvalue < '2' && <CommentButton text="Reply" size="tiny" />}
-                        {comment.authorusername.toLowerCase() ===
-                            sessionStorage.getItem('activeUser').toLowerCase() && (
-                            <CommentButton text="Edit" size="tiny" />
-                        )}
-                        {comment.authorusername.toLowerCase() ===
-                            sessionStorage.getItem('activeUser').toLowerCase() && (
-                            <CommentButton text="Delete" size="tiny" />
-                        )}
-                    </StyledCommentButtons>
-                </StyledCommentContainer>
-                <CommentBlock
-                    childComments={allComments.filter((searchComment) => searchComment.parentid === comment.commentid)}
-                    allComments={allComments}
-                    className={`childComment-${comment.commentid}`}
-                />
-            </StyledWrapper>
-        ))}
-    </Container>
-);
+const CommentBlock = ({ childComments, allComments }) => {
+    return (
+        <Container>
+            {childComments.map((comment) => (
+                <StyledWrapper key={comment.id} className={`parentComment-${comment.id}`}>
+                    <StyledCommentContainer>
+                        <StyledComment>
+                            <StyledCommentUsername>[{comment.author.username}]:</StyledCommentUsername>{' '}
+                            {comment.comment}
+                        </StyledComment>
+                        <StyledCommentButtons>
+                            {comment.nestingValue < '2' && <CommentButton text="Reply" size="small" />}
+                            {comment.author.username &&
+                                comment.author.username.toLowerCase() ===
+                                    sessionStorage.getItem('activeUser').toLowerCase() && (
+                                    <CommentButton text="Edit" size="small" />
+                                )}
+                            {comment.author.username &&
+                                comment.author.username.toLowerCase() ===
+                                    sessionStorage.getItem('activeUser').toLowerCase() && (
+                                    <CommentButton text="Delete" size="small" />
+                                )}
+                        </StyledCommentButtons>
+                    </StyledCommentContainer>
+                    <CommentBlock
+                        childComments={allComments.filter((searchComment) => searchComment.parentId === comment.id)}
+                        allComments={allComments}
+                        className={`childComment-${comment.id}`}
+                    />
+                </StyledWrapper>
+            ))}
+        </Container>
+    );
+};
 export default CommentBlock;

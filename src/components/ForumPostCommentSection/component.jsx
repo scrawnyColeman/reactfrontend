@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CommentBlock from '../CommentBlock/component';
 import { colours } from '../../constants/styles';
 import CommentButton from '../CommentButton/component';
-
+import { fetchForumPostComments } from '../../data/forumposts';
+import { errorLogger } from '../../data/errorLogger';
 const Container = styled.div`
     text-align: left;
     max-height: 390px;
@@ -12,6 +13,7 @@ const Container = styled.div`
 const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr min-content;
+    font-size: 1.25rem;
     margin: 0 8px;
 `;
 const StyledText = styled.div`
@@ -19,9 +21,9 @@ const StyledText = styled.div`
 `;
 const StyledLabel = styled.div`
     text-align: left;
-    padding: 0 8px 12px;
+    padding: 12px 8px 12px;
     color: ${colours.primary};
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 `;
 const StyledComment = styled.div`
     max-width: 85%;
@@ -37,39 +39,48 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const ForumPost = ({ id, data }) => {
-    const { comments } = data.posts.find((post) => post.id === id);
+const ForumPost = ({ id }) => {
+    const [comments, setComments] = useState([]);
+    useEffect(() => {
+        fetchForumPostComments(id)
+            .then((response) => {
+                setComments(response.data);
+            })
+            .catch(errorLogger);
+    }, []); //call when data changes
     return (
         <Container>
             <StyledLabel>Discussion:</StyledLabel>
             {comments.map(
                 (commentDetails) =>
-                    commentDetails.parentid === '0' && (
-                        <StyledWrapper key={commentDetails.commentid}>
+                    commentDetails.parentId === 0 && (
+                        <StyledWrapper key={commentDetails.id}>
                             <StyledText>
                                 <StyledCommentContainer>
                                     <StyledComment>
                                         <StyledCommentUsername>
-                                            [{commentDetails.authorusername}]:
+                                            [{commentDetails.author.username}]:
                                         </StyledCommentUsername>{' '}
                                         {commentDetails.comment}
                                     </StyledComment>
                                     <StyledCommentButtons>
-                                        <CommentButton text="Reply" size="tiny" />
-                                        {commentDetails.authorusername.toLowerCase() ===
-                                            sessionStorage.getItem('activeUser').toLowerCase() && (
-                                            <CommentButton text="Edit" size="tiny" />
-                                        )}
-                                        {commentDetails.authorusername.toLowerCase() ===
-                                            sessionStorage.getItem('activeUser').toLowerCase() && (
-                                            <CommentButton text="Delete" size="tiny" />
-                                        )}
+                                        <CommentButton text="Reply" size="small" />
+                                        {commentDetails.author.username &&
+                                            commentDetails.author.username.toLowerCase() ===
+                                                sessionStorage.getItem('activeUser').toLowerCase() && (
+                                                <CommentButton text="Edit" size="small" />
+                                            )}
+                                        {commentDetails.author.username &&
+                                            commentDetails.author.username.toLowerCase() ===
+                                                sessionStorage.getItem('activeUser').toLowerCase() && (
+                                                <CommentButton text="Delete" size="small" />
+                                            )}
                                     </StyledCommentButtons>
                                 </StyledCommentContainer>
                                 {comments.length > 0 && (
                                     <CommentBlock
                                         childComments={comments.filter(
-                                            (comment) => comment.parentid === commentDetails.commentid,
+                                            (comment) => comment.parentId === commentDetails.id,
                                         )}
                                         allComments={comments}
                                     />

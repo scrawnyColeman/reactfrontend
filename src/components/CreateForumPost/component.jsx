@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 const StyledHeading = styled.div`
     padding: 0 0 14px;
+    font-size: 2rem;
 `;
 const StyledWrapper = styled.div`
     display: grid;

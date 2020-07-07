@@ -38,6 +38,7 @@ const StyledImg = styled.img`
 const StyledLabel = styled.div`
     text-align: left;
     padding: 0 12px 12px;
+    font-size: 1.75rem;
 `;
 const StyledDescription = styled.p`
     padding: 4px 0;

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import ForumPost from '../ForumPost/component';
-import forumposts from '../../data/forumposts';
 import ForumPostNewCommentForm from '../ForumPostNewCommentForm/component';
+import { fetchForumPost } from '../../data/forumposts';
+import { errorLogger } from '../../data/errorLogger';
+import { useState } from 'react';
 
 const StyledItemWrapper = styled.div`
     display: grid;
@@ -15,10 +17,19 @@ const StyledItemWrapper = styled.div`
 const ForumPostPage = () => {
     const location = useLocation();
     const postId = location.pathname.split('/forum/')[1];
+    const [post, setPost] = useState([]);
 
+    useEffect(() => {
+        fetchForumPost(postId)
+            .then((response) => {
+                setPost(response.data);
+            })
+            .catch(errorLogger);
+    }, []); //call when data changes
+    console.log(post);
     return (
         <StyledItemWrapper>
-            <ForumPost id={postId} data={forumposts} />
+            <ForumPost id={postId} data={post} />
             <ForumPostNewCommentForm />
         </StyledItemWrapper>
     );

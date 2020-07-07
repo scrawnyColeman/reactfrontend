@@ -62,13 +62,13 @@ export const textFieldOverrideStyles = {
 };
 
 export const buttonOverrideStyles = (size) => ({
-    fontSize: size === 'large' ? '1.25rem' : '1rem',
+    fontSize: size === 'large' ? '1.5rem' : '1.25rem',
     textTransform: 'unset',
     color: colours.primary,
     borderColor: colours.primary,
 });
 export const commentButtonOverrideStyles = (size) => ({
-    fontSize: size === 'tiny' ? '0.8rem' : '1rem',
+    fontSize: size === 'small' ? '0.8rem' : '1rem',
     textTransform: 'unset',
     color: colours.primary,
     borderColor: colours.primary,

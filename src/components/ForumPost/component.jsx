@@ -23,6 +23,7 @@ const StyledText = styled.div`
 const StyledContent = styled.span`    
     max-height: 150px
     overflow-y: scroll;
+    font-size: 1.25rem;
 `;
 const StyledHeading = styled.span`
     width: 100%;
@@ -30,7 +31,7 @@ const StyledHeading = styled.span`
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 `;
 
 const StyledHorizontalLine = styled.hr`
@@ -40,23 +41,26 @@ const StyledHorizontalLine = styled.hr`
 `;
 
 const ForumPost = ({ id, data }) => {
-    const { question, title, type } = data.posts.find((post) => post.id === id);
+    const { question, title, lesson } = { ...data };
+    const { title: lessonTitle, language } = { ...lesson };
     return (
         <Container>
             <StyledWrapper key={id}>
                 <StyledText>
                     <StyledHeading>
-                        <p> {title}</p>
-                        <p>[{type.toUpperCase()}]</p>
+                        {title && <p> {title}</p>}
+                        {lessonTitle && language && <p>{lessonTitle}</p>}
                     </StyledHeading>
                     <StyledContent>
-                        <p>{question}</p>
-                        <span></span>
+                        {question && <p>{question}</p>}
+                        {lessonTitle && language.language && (
+                            <p>{`This thread is for the discussion of ${lessonTitle}, taught in ${language.language}`}</p>
+                        )}
                     </StyledContent>
                     <StyledHorizontalLine />
                 </StyledText>
             </StyledWrapper>
-            <PostComments id={id} data={data} />
+            <PostComments id={id} />
         </Container>
     );
 };

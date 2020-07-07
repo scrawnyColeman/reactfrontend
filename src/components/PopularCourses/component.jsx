@@ -21,6 +21,7 @@ const StyledCoursesContainer = styled.div`
 
 const StyledText = styled.div`
     padding-right: 12px;
+    font-size: 1.25rem;
 `;
 const StyledImg = styled.img`
     margin: auto;
@@ -33,12 +34,12 @@ const StyledHeading = styled.span`
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 `;
 const StyledLabel = styled.div`
     text-align: left;
     padding: 10px 8px 12px;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border: 2px solid ${colours.primary};
 `;
 

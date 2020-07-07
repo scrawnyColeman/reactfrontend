@@ -17,6 +17,7 @@ const StyledCoursesContainer = styled.div`
 `;
 const StyledText = styled.div`
     padding-right: 12px;
+    font-size: 1.25rem;
 `;
 const StyledHeading = styled.span`
     width: 100%;
@@ -24,6 +25,7 @@ const StyledHeading = styled.span`
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    font-size: 1.5rem;
 `;
 const StyledSearchBar = styled.div`
     width: 100%;

@@ -21,7 +21,7 @@ const StyledHeader = styled.div`
 export const StyledNavLinks = styled.a`
     color: ${colours.primary};
     padding: 10px 0;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-decoration: none;
 `;
 const StyledNavBar = styled.div`

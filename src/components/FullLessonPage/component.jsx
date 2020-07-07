@@ -11,6 +11,8 @@ import PracticalCodeChallenge from '../PracticalCodeChallenge/component';
 import PracticalCodeSubmission from '../PracticalCodeSubmission/component';
 import PracticalQuizPage from '../PracticalQuizPage/component';
 import practicalData from '../../data/practical';
+import forumData from '../../data/forumposts';
+import { useHistory } from 'react-router-dom';
 
 const TheoryContainer = styled.div`
     margin: 15vh auto 0 auto;
@@ -18,8 +20,6 @@ const TheoryContainer = styled.div`
     grid-template-columns: 1fr 1fr;
 `;
 const QuizContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
 `;
 const PracticalContainer = styled.div`
@@ -43,8 +43,10 @@ const StyledArrowRight = styled(FontAwesomeIcon)`
 `;
 
 const FullLessonPage = () => {
+    const history = useHistory();
     const location = useLocation();
     const lessonId = location.pathname.split('/lesson/')[1];
+    const { id: forumPostId } = forumData.posts.find((post) => post.correspondingLessonId === lessonId);
     const { title: courseTitle, theory, youtubeLink } = courseData.courses.find((course) => course.id === lessonId);
     const { title: practicalTitle, question, hint, codesnippet, solution, language } = practicalData.practicals.find(
         (practical) => practical.correspondingLessonID === lessonId,
@@ -87,7 +89,7 @@ const FullLessonPage = () => {
                                 setCodeSubmitted(!isCodeSubmitted);
                             }}
                             getHelp={() => {
-                                /* redirect to ID 5 */
+                                history.push({ pathname: `/forum/${forumPostId}` });
                             }}
                         />
                     </PracticalContainer>
@@ -105,17 +107,16 @@ const FullLessonPage = () => {
             return (
                 <QuizContainer>
                     <PracticalQuizPage id={lessonId} />
-                    {/* <Button onClick={setpageName(pages[2])}/> */}
+                    <Button
+                        text="Finish"
+                        variant="outlined"
+                        onClick={() => setpageName(pages[3])}
+                        children={<RightIcon />}
+                    />
                 </QuizContainer>
             );
         default:
-            return (
-                <CompletionContainer>
-                    {/* Congratulations Component */}
-                    {/* Mark Lesson as complete and add to user profile as a completed course. Reward the user with some certificate. */}
-                    <Button text={`Download PDF Certificate and pan to that oage`} />
-                </CompletionContainer>
-            );
+            return <CompletionContainer>Lesson Completed! Fantastic Progress.</CompletionContainer>;
     }
 };
 

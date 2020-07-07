@@ -9,10 +9,11 @@ const Container = styled.div`
 `;
 const StyledHeading = styled.div`
     padding: 0 0 14px;
+    font-size: 2rem;
 `;
 const StyledWrapper = styled.div`
     display: grid;
-    grid-template-rows: 48px max-content
+    grid-template-rows: min-content max-content;
     grid-gap: 8px;
     margin: 0 auto;
 `;

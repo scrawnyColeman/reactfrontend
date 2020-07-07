@@ -17,11 +17,12 @@ const StyledTitle = styled.div`
     padding: 6px;
     color: ${colours.secondary}
     text-align: left;
+    font-size: 2rem;
 `;
 
 const StyledWrapper = styled.div`
     display: grid;
-    grid-template-rows: 1fr min-content;
+    grid-template-rows: min-content min-content;
     margin: 0 8px;
     text-align: left;
 `;
@@ -29,12 +30,11 @@ const StyledHead = styled.div`
     display: flex;
     justify-content: space-between;
     color: ${colours.primary};
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 `;
 const StyledBody = styled.div`
-    display flex;
-    justify-content: space-between;
-    color: ${colours.secondary}
+    color: ${colours.secondary};
+    font-size: 1rem;
 `;
 
 const ForumPreview = ({ onClick, posts }) => {
@@ -44,12 +44,17 @@ const ForumPreview = ({ onClick, posts }) => {
             <StyledTitle>Forum Posts:</StyledTitle>
             <StyledPostsContainer>
                 {posts.map((post) => {
-                    const { id, title, type, comments } = post;
+                    const { id, title, lesson } = { ...post };
+                    const { title: lessonName, language } = { ...lesson };
                     return (
                         <StyledWrapper key={id}>
                             <StyledHead>
-                                <p>{title}</p>
-                                <p>[{type.toUpperCase()}]</p>
+                                {title ? (
+                                    <p>{title}</p>
+                                ) : (
+                                    <p>{`${lessonName}: [${language.language.toUpperCase()}]`}</p>
+                                )}
+                                {lesson ? <p>[Lesson]</p> : <p>[Help]</p>}
                             </StyledHead>
                             <StyledBody>
                                 <Button
@@ -62,7 +67,6 @@ const ForumPreview = ({ onClick, posts }) => {
                                     variant="outlined"
                                     hierarchy="primary"
                                 />
-                                <p>{comments.length} comments</p>
                             </StyledBody>
                         </StyledWrapper>
                     );

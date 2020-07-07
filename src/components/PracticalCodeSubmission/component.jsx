@@ -30,7 +30,7 @@ const PracticalCodeSubmission = ({ data, getHelp, toggleSubmission, submitted })
         />
         <StyledButtonContainer>
             <Button text="Get help" onClick={() => getHelp()} />
-            <Button text={submitted ? 'View Question' : 'Submit'} onClick={() => toggleSubmission()} />
+            <Button text={submitted ? 'View Question' : 'View Solution'} onClick={() => toggleSubmission()} />
         </StyledButtonContainer>
     </Container>
 );

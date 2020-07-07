@@ -11,7 +11,7 @@ const Container1 = styled.div`
 `;
 const Container = styled.div`
     color: ${colours.primary}
-    height: 65vh;
+    height: 60vh;
     margin: 20vh auto 0;
     width: 90vw;
     border: 2px solid ${colours.primary};
