@@ -24,9 +24,8 @@ const ForumPage = () => {
                 setData(response.data);
             })
             .catch(errorLogger);
-    }, []); //call when data changes
+    }, []);
 
-    console.log(data);
     return (
         <StyledItemWrapper>
             {param ? (

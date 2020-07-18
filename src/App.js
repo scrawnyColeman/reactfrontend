@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Login from './components/Authentication/Login.jsx';
@@ -16,6 +16,8 @@ import NotFound from './components/NotFound/component';
 import TheoryPage from './components/TheoryPage/component';
 import PracticalQuizPage from './components/PracticalQuizPage/component';
 import FullLessonPage from './components/FullLessonPage/component';
+import NewLessonPage from './components/NewLessonPage/component';
+import ReviewLessonPage from './components/ReviewLessonPage/component';
 
 const Page = styled.div`
     display: grid;
@@ -24,7 +26,7 @@ const Page = styled.div`
 
 const App = () => {
     const history = createBrowserHistory();
-    const [username, setUsername] = useState(sessionStorage.getItem('activeUser') || null);
+    const username = sessionStorage.getItem('activeUser') || null;
     return (
         <Router history={history}>
             <Page className="App">
@@ -38,6 +40,8 @@ const App = () => {
                     <Route exact path="/learn/theory/:id" component={TheoryPage} />
                     <Route exact path="/learn/practical/:id" component={PracticalQuizPage} />
                     <Route exact path="/learn/lesson/:id" component={FullLessonPage} />
+                    <Route exact path="/lessons/new" component={NewLessonPage} />
+                    <Route exact path="/lessons/review" component={ReviewLessonPage} />
                     <Route exact path="/forum" component={ForumPage} />
                     <Route exact path="/forum/:id" component={ForumPostPage} />
                     <Route component={NotFound} />

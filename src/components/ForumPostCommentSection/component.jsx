@@ -47,7 +47,7 @@ const ForumPost = ({ id }) => {
                 setComments(response.data);
             })
             .catch(errorLogger);
-    }, []); //call when data changes
+    }, [id]); //call when data changes
     return (
         <Container>
             <StyledLabel>Discussion:</StyledLabel>

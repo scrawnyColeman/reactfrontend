@@ -1,25 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PopularCourses from '../PopularCourses/component';
-import data from '../../data/courses.js';
 import CoursesSearch from '../CoursesSearch/component';
-import { useLocation } from 'react-router-dom';
+import { fetchApprovedLessons } from '../../data/courses';
+import { errorLogger } from '../../data/errorLogger';
 
 const StyledItemWrapper = styled.div`
     display: grid;
     grid-template-columns: 3fr 3fr;
     grid-gap: 32px;
-    margin: 20vh 20px 0 20px;
+    margin: 20vh 20px 0;
 `;
 
 const LearnPage = () => {
-    const location = useLocation().search;
-    const [param, setParam] = useState(location);
-    const { courses } = data;
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        fetchApprovedLessons()
+            .then((response) => {
+                setCourses(response.data);
+                setLoading(false);
+            })
+            .catch(errorLogger);
+    }, []);
+
+    console.log({ courses });
+
     return (
         <StyledItemWrapper>
-            <CoursesSearch courses={courses} onClick={setParam} />
-            <PopularCourses courses={courses} onClick={setParam} />
+            <CoursesSearch courses={courses} isLoading={loading} />
+            <PopularCourses courses={courses} isLoading={loading} />
         </StyledItemWrapper>
     );
 };

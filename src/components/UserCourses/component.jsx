@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import Button from '../Button/component';
 import { colours, carouselSettings } from '../../constants/styles';
 import { useHistory } from 'react-router-dom';
+import { imageArray } from '../../images/imageLoader';
 
 const Container = styled.div`
     margin: 0 auto;
@@ -52,32 +53,35 @@ const StyledHeading = styled.span`
     margin: 0 auto;
 `;
 
-const UserCourses = ({ courses, id, onClick }) => {
+const UserCourses = ({ courses, onClick }) => {
     const history = useHistory();
+    console.log({ courses });
     return (
         <Container>
             <StyledLabel>Pick up where you left off...</StyledLabel>
             <Slider {...carouselSettings}>
-                {courses.map((course) =>
-                    course.currentUsers.includes(id) ? (
+                {courses.map((course) => {
+                    const { lesson } = course;
+                    const languageImage = imageArray.find((img) => img.path === lesson.language.imagePath);
+                    return (
                         <StyledCard key={course.id}>
                             <StyledCardHeader>
-                                <StyledImg src={course.header} />
+                                <StyledImg src={languageImage.img} />
                             </StyledCardHeader>
                             <StyledCardInformation>
                                 <StyledHeading>
-                                    <p>{course.title}</p>
-                                    <p>[{course.language.toUpperCase()}]</p>
+                                    <p>{lesson.title}</p>
+                                    <p>[{lesson.language.language.toUpperCase()}]</p>
                                 </StyledHeading>
                                 <StyledDescription>
-                                    {course.description.slice(0, 150)}
-                                    {course.description.length > 150 && '...'}
+                                    {lesson.description.slice(0, 150)}
+                                    {lesson.description.length > 150 && '...'}
                                 </StyledDescription>
                                 <Button
                                     onClick={() => {
                                         history.replace('/learn');
-                                        history.push({ pathname: `learn/${course.id}` });
-                                        onClick(course.id);
+                                        history.push({ pathname: `learn/${lesson.id}` });
+                                        onClick(lesson.id);
                                     }}
                                     text="Go"
                                     size="small"
@@ -86,8 +90,8 @@ const UserCourses = ({ courses, id, onClick }) => {
                                 />
                             </StyledCardInformation>
                         </StyledCard>
-                    ) : null,
-                )}
+                    );
+                })}
             </Slider>
         </Container>
     );

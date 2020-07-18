@@ -48,9 +48,12 @@ const LoginForm = () => {
                         text="Log in"
                         variant="text"
                         onClick={() => {
+                            /**
+                             * DO BACKEND
+                             */
                             if (username === 'scrawnycoleman' && password === 'dummy') {
                                 history.push({ pathname: `profile/${username}` });
-                                AuthenticationService.registerLogin(username);
+                                AuthenticationService.registerLogin(username, 'sample@email.com', 1);
                             }
                         }}
                     />

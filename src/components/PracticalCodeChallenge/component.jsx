@@ -45,7 +45,9 @@ const StyledEditorContainer = styled.div`
     text-align: left;
 `;
 
-const PracticalCodeChallenge = ({ data, submitted }) => {
+const PracticalCodeChallenge = ({ data, submitted, language }) => {
+    const { title, question, hint, codeSnippet, solution } = data;
+    console.log(solution);
     return submitted ? (
         <Container>
             <QuestionHeader>Solution</QuestionHeader>
@@ -56,22 +58,22 @@ const PracticalCodeChallenge = ({ data, submitted }) => {
                 </StyledHint>
                 <StyledCodeSnippet>
                     <StyledEditorContainer>
-                        <TextEditor value={data.solution.code} mode={data.language} />
+                        <TextEditor value={solution.codeSnippet} mode={language} />
                     </StyledEditorContainer>
-                    <StyledExplanation>{data.solution.explanation}</StyledExplanation>
+                    <StyledExplanation>{solution.explanation}</StyledExplanation>
                 </StyledCodeSnippet>
             </QuestionBody>
         </Container>
     ) : (
         <Container>
             <QuestionHeader>
-                <StyledTitle>{data.practicalTitle}</StyledTitle>
-                <Question>{data.question}</Question>
+                <StyledTitle>{title}</StyledTitle>
+                <Question>{question}</Question>
             </QuestionHeader>
             <QuestionBody>
-                <StyledHint>{data.hint}</StyledHint>
+                <StyledHint>{hint}</StyledHint>
                 <StyledCodeSnippet>
-                    <TextEditor value={data.codesnippet} mode={data.language} />
+                    <TextEditor value={codeSnippet} mode={language} />
                 </StyledCodeSnippet>
             </QuestionBody>
         </Container>

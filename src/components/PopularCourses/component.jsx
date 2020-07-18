@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
+import LoadingSpinner from '../LoadingSpinner/component';
 import { useHistory } from 'react-router-dom';
+import { iconArray } from '../../images/imageLoader';
 
 const Container = styled.div`
     text-align: left;
@@ -47,46 +49,54 @@ const StyledSpecialLabel = styled.span`
     color: ${colours.primary};
 `;
 
-const PopularCourses = ({ courses, onClick }) => {
+const PopularCourses = ({ courses, isLoading }) => {
     const history = useHistory();
     let counter = 1;
-    courses.sort((a, b) => b.activeUsers - a.activeUsers);
+    const popularCourses = courses;
+    popularCourses.sort((a, b) => b.activeUsers - a.activeUsers);
 
     return (
         <Container>
             <StyledLabel>Top 5 courses:</StyledLabel>
             <StyledCoursesContainer>
-                {courses.slice(0, 5).map((course) => (
-                    <StyledWrapper key={course.id}>
-                        <StyledText>
-                            <StyledHeading>
-                                <p> {`${counter++}: ${course.title} `}</p>
-                                <p>[{course.language.toUpperCase()}]</p>
-                            </StyledHeading>
-                            <p>
-                                {course.description.slice(0, 180)}
-                                {course.description.length > 180 && '...'}
-                            </p>
-                            <span>
-                                <p>
-                                    <StyledSpecialLabel>{course.activeUsers}</StyledSpecialLabel> people have taken this
-                                    course!
-                                </p>
-                                <Button
-                                    onClick={() => {
-                                        history.push({ pathname: `learn/${course.id}` });
-                                        onClick(course.id);
-                                    }}
-                                    text="Go"
-                                    size="small"
-                                    variant="outlined"
-                                    hierarchy="primary"
-                                />
-                            </span>
-                        </StyledText>
-                        <StyledImg src={course.icon} />
-                    </StyledWrapper>
-                ))}
+                {isLoading ? (
+                    <LoadingSpinner />
+                ) : (
+                    popularCourses.slice(0, 5).map((course) => {
+                        const { description, id, language, title, activeUsers } = course;
+                        const languageIcon = iconArray.find((icon) => icon.path === language.iconPath);
+                        return (
+                            <StyledWrapper key={id}>
+                                <StyledText>
+                                    <StyledHeading>
+                                        <p> {`${counter++}: ${title} `}</p>
+                                        <p>[{language.language.toUpperCase()}]</p>
+                                    </StyledHeading>
+                                    <p>
+                                        {description.slice(0, 180)}
+                                        {description.length > 180 && '...'}
+                                    </p>
+                                    <span>
+                                        <p>
+                                            <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel>{' '}
+                                            {activeUsers > 1 ? `people` : `person`} have taken this course!
+                                        </p>
+                                        <Button
+                                            onClick={() => {
+                                                history.push({ pathname: `learn/${id}` });
+                                            }}
+                                            text="Go"
+                                            size="small"
+                                            variant="outlined"
+                                            hierarchy="primary"
+                                        />
+                                    </span>
+                                </StyledText>
+                                <StyledImg src={languageIcon.icon} alt={`${language.language}`} />
+                            </StyledWrapper>
+                        );
+                    })
+                )}
             </StyledCoursesContainer>
         </Container>
     );

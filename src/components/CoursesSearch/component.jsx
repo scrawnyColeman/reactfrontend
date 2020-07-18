@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import Button from '../Button/component';
+import LoadingSpinner from '../LoadingSpinner/component';
 import TextField from '../TextField/component';
 
 const Container = styled.div`
@@ -36,10 +37,12 @@ const StyledHorizontalLine = styled.hr`
     border-radius: 3px;
     width: 100%;
 `;
-const CoursesSearch = ({ courses, onClick }) => {
+const CoursesSearch = ({ courses, isLoading }) => {
     const history = useHistory();
     const [title, setTitle] = useState('');
-
+    const sortedCourses = courses.sort(function (a, b) {
+        return a.title.localeCompare(b.title);
+    });
     return (
         <Container>
             <StyledSearchBar>
@@ -53,57 +56,61 @@ const CoursesSearch = ({ courses, onClick }) => {
                 />
             </StyledSearchBar>
             <StyledCoursesContainer>
-                {courses.map((course) => {
-                    const userSearchFilter = title.toLowerCase().replace(/\s+/g, '');
-                    const courseNameThenLanguage = course.title
-                        .replace(/\s+/g, '')
-                        .concat(course.language)
-                        .toLowerCase();
-                    //recursionjava
-                    const courseLanguageThenName = course.language
-                        .concat(course.title.replace(/\s+/g, ''))
-                        .toLowerCase();
-                    //javarecursion
+                {isLoading ? (
+                    <LoadingSpinner />
+                ) : (
+                    sortedCourses.map((course) => {
+                        const { description, id, title: courseTitle, language, activeUsers } = course;
+                        const userSearchFilter = title.toLowerCase().replace(/\s+/g, '');
+                        const courseNameThenLanguage = courseTitle
+                            .replace(/\s+/g, '')
+                            .concat(language.language)
+                            .toLowerCase();
+                        //recursionjava
+                        const courseLanguageThenName = language.language
+                            .concat(courseTitle.replace(/\s+/g, ''))
+                            .toLowerCase();
+                        //javarecursion
 
-                    if (
-                        courseLanguageThenName.includes(userSearchFilter) ||
-                        courseNameThenLanguage.includes(userSearchFilter) ||
-                        !title
-                    ) {
-                        return (
-                            <StyledWrapper key={course.id}>
-                                <StyledText>
-                                    <StyledHeading>
-                                        <p>{course.title}</p>
-                                        <p>[{course.language.toUpperCase()}]</p>
-                                    </StyledHeading>
-                                    <p>
-                                        {course.description.slice(0, 180)}
-                                        {course.description.length > 180 && '...'}
-                                    </p>
-                                    <span>
+                        if (
+                            courseLanguageThenName.includes(userSearchFilter) ||
+                            courseNameThenLanguage.includes(userSearchFilter) ||
+                            !title
+                        ) {
+                            return (
+                                <StyledWrapper key={id}>
+                                    <StyledText>
+                                        <StyledHeading>
+                                            <p>{courseTitle}</p>
+                                            <p>[{language.language.toUpperCase()}]</p>
+                                        </StyledHeading>
                                         <p>
-                                            <span style={{ color: `${colours.primary}` }}>{course.activeUsers}</span>{' '}
-                                            people have taken this course!
+                                            {description.slice(0, 180)}
+                                            {description.length > 180 && '...'}
                                         </p>
-                                        <Button
-                                            onClick={() => {
-                                                history.push({ pathname: `learn/${course.id}` });
-                                                onClick(course.id);
-                                            }}
-                                            text="Go"
-                                            size="small"
-                                            variant="outlined"
-                                            hierarchy="primary"
-                                        />
-                                    </span>
-                                    <StyledHorizontalLine />
-                                </StyledText>
-                            </StyledWrapper>
-                        );
-                    }
-                    return true;
-                })}
+                                        <span>
+                                            <p>
+                                                <span style={{ color: colours.primary }}>{activeUsers}</span> people
+                                                have taken this course!
+                                            </p>
+                                            <Button
+                                                onClick={() => {
+                                                    history.push({ pathname: `learn/${id}` });
+                                                }}
+                                                text="Go"
+                                                size="small"
+                                                variant="outlined"
+                                                hierarchy="primary"
+                                            />
+                                        </span>
+                                        <StyledHorizontalLine />
+                                    </StyledText>
+                                </StyledWrapper>
+                            );
+                        }
+                        return true;
+                    })
+                )}
             </StyledCoursesContainer>
         </Container>
     );

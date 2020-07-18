@@ -4,6 +4,7 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
 import { useHistory } from 'react-router-dom';
+import LoginError from '../LoginError/component';
 
 const StyledWrapper = styled.div`
     display: grid;
@@ -24,12 +25,14 @@ const StyledName = styled.div`
 
 const Login = () => {
     const [hasAccount, setHasAccount] = useState(false);
+    const [displayError, setDisplayError] = useState(true);
     const history = useHistory();
     if (sessionStorage.getItem('activeUser')) {
         history.push({ pathname: `/profile/${sessionStorage.getItem('activeUser')}` });
     }
     return (
         <StyledWrapper>
+            {displayError && <LoginError message={'Account information is invalid.'} />}
             <StyledLogoContainer>
                 <StyledName>NJOY LEARNING</StyledName>
             </StyledLogoContainer>

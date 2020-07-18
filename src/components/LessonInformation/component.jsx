@@ -12,12 +12,17 @@ const Container = styled.div`
     height: 60vh;
 `;
 
-const LessonInformation = ({ lessonId, courses }) => {
-    const { title, language, description, prereqs } = courses.find((course) => course.id === lessonId);
+const LessonInformation = ({ course }) => {
+    const { id, title, language, description, recommendedLessons } = course;
     return (
         <Container>
-            <LessonDisplayPage title={title} language={language} description={description} prereqs={prereqs} />
-            <LessonPathways id={lessonId} />
+            <LessonDisplayPage
+                title={title}
+                language={language}
+                description={description}
+                recommendedLessons={recommendedLessons}
+            />
+            <LessonPathways id={id} />
         </Container>
     );
 };

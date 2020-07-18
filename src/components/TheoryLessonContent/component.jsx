@@ -24,10 +24,10 @@ const StyledBody = styled.div`
     line-height: 36px;
 `;
 
-const TheoryLessonContent = ({ id, courseData }) => (
+const TheoryLessonContent = ({ courseData }) => (
     <Container>
         <StyledWrapper>
-            <StyledHead>{courseData.courseTitle}</StyledHead>
+            <StyledHead>{courseData.title}</StyledHead>
             <StyledBody>{courseData.theory}</StyledBody>
         </StyledWrapper>
     </Container>

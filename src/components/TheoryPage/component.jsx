@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TheoryLessonContent from '../TheoryLessonContent/component';
 import TheoryVisualAid from '../TheoryVisualAid/component';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import courseData from '../../data/courses';
+import { fetchLessonById } from '../../data/courses';
+import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div`
     margin: 12vh auto 0 auto;
@@ -18,15 +19,24 @@ const StyledWrapper = styled.div`
 const TheoryPage = () => {
     const location = useLocation();
     const lessonId = location.pathname.split('/theory/')[1];
-    const { title: courseTitle, theory, youtubeLink } = courseData.courses.find((course) => course.id === lessonId);
-
-    return (
+    const [lesson, setLesson] = useState(null);
+    useEffect(() => {
+        fetchLessonById(lessonId)
+            .then((response) => {
+                setLesson(response.data);
+            })
+            .catch(errorLogger);
+    });
+    console.log(lesson);
+    return lesson ? (
         <Container>
             <StyledWrapper>
-                <TheoryLessonContent id={lessonId} courseData={{ courseTitle, theory }} />
-                <TheoryVisualAid id={lessonId} courseData={youtubeLink} />
+                <TheoryLessonContent id={lessonId} courseData={lesson} />
+                <TheoryVisualAid id={lessonId} courseData={lesson.youtubeLink} />
             </StyledWrapper>
         </Container>
+    ) : (
+        <></>
     );
 };
 

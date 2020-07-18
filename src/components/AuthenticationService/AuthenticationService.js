@@ -1,11 +1,15 @@
 class AuthenticationService {
-    registerLogin(username) {
+    registerLogin(username, email, id, userType) {
         sessionStorage.setItem('activeUser', username);
-        console.log('registered');
+        sessionStorage.setItem('activeEmail', email);
+        sessionStorage.setItem('activeId', id);
+        sessionStorage.setItem('activeType', 'admin');
     }
     destroyLogin() {
         sessionStorage.removeItem('activeUser');
-        console.log('logged out');
+        sessionStorage.removeItem('activeEmail');
+        sessionStorage.removeItem('activeId');
+        sessionStorage.removeItem('activeType');
     }
 }
 

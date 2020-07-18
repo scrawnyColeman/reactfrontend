@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { carouselSettings, colours } from '../../constants/styles';
-import data from '../../data/quizzes.js';
+import { fetchAllQuestionsByLessonId, fetchAllAnswersByLessonId } from '../../data/quizzes.js';
 import Slider from 'react-slick';
 import TextEditor from '../TextEditor/component';
 import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { errorLogger } from '../../data/errorLogger';
 
-const Container1 = styled.div`
+const Wrapper = styled.div`
     margin: 20px 20px 0 20px;
 `;
 const Container = styled.div`
@@ -24,6 +26,7 @@ const StyledWrapper = styled.div`
     min-height: 60vh;
     box-sizing: border-box;
 `;
+const SliderContainer = styled.div``;
 const StyledAnswer = styled.a`
     color: ${colours.secondary}
     text-align: center;
@@ -68,13 +71,7 @@ const StyledResponse = styled.div`
     width: 60%;
 `;
 
-const PracticalQuizPage = ({ id }) => {
-    const location = useLocation();
-    const lessonId = id || location.pathname.split('/practical/')[1];
-    const { quizzes } = data;
-    const quizQuestions = quizzes.find((quiz) => quiz.correspondingLessonID.includes(lessonId));
-    const [showResponse, setShowResponse] = useState(false);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+const PracticalQuizPage = ({ fullLessonId }) => {
     const carousel = {
         ...carouselSettings,
         slidesToShow: 1,
@@ -83,72 +80,94 @@ const PracticalQuizPage = ({ id }) => {
             setShowResponse(false);
         },
     };
+    const location = useLocation();
+    const lessonId = location.pathname.split('/practical/')[1] || fullLessonId;
+    const [showResponse, setShowResponse] = useState(false);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [answers, setAnswers] = useState();
+    const [questions, setQuestions] = useState();
 
-    return (
-        <Container1>
-            <Container>
-                <Slider {...carousel}>
-                    {quizQuestions.questions.map((question, index) => {
-                        const { id: questionId, question: innerQuestion, codesnippet, answers } = question;
+    useEffect(() => {
+        fetchAllQuestionsByLessonId(lessonId)
+            .then((response) => setQuestions(response.data))
+            .catch(errorLogger);
+        fetchAllAnswersByLessonId(lessonId)
+            .then((response) => setAnswers(response.data))
+            .catch(errorLogger);
+    }, [lessonId]);
 
-                        return (
-                            <StyledWrapper key={index}>
-                                <StyledHeading>
-                                    <StyledQuestionWrapper>
-                                        <StyledQuestion>{`${questionId}: ${innerQuestion}`}</StyledQuestion>
-                                        {codesnippet && (
-                                            <StyledEditor>
-                                                <TextEditor value={codesnippet} />
-                                            </StyledEditor>
-                                        )}
-                                    </StyledQuestionWrapper>
-                                </StyledHeading>
-                                <StyledBody>
-                                    {answers.map((answer, index) => {
-                                        const { type, answer: nestedAnswer, responseMessage } = answer;
-                                        if (type === 'code') {
-                                            return (
-                                                <StyledAnswerWrapper key={index}>
-                                                    <span>
-                                                        <TextEditor value={nestedAnswer} />
-                                                    </span>
-                                                    <span>
-                                                        <StyledAnswer
-                                                            href="#"
-                                                            onClick={() => {
-                                                                setShowResponse(true);
-                                                                setSelectedAnswer(responseMessage);
-                                                            }}
-                                                        >
-                                                            btn
-                                                        </StyledAnswer>
-                                                    </span>
-                                                </StyledAnswerWrapper>
-                                            );
-                                        } else {
-                                            return (
-                                                <StyledAnswerWrapper key={index}>
-                                                    <StyledAnswer
-                                                        href="#"
-                                                        onClick={() => {
-                                                            setShowResponse(true);
-                                                            setSelectedAnswer(responseMessage);
-                                                        }}
-                                                    >
-                                                        {`(${index + 1}) ${nestedAnswer}`}
-                                                    </StyledAnswer>
-                                                </StyledAnswerWrapper>
-                                            );
-                                        }
-                                    })}
-                                    {showResponse && <StyledResponse>{selectedAnswer}</StyledResponse>}
-                                </StyledBody>
-                            </StyledWrapper>
-                        );
-                    })}
-                </Slider>
-            </Container>
-        </Container1>
+    return questions && answers ? (
+        <SliderContainer>
+            {questions.map((q) => {
+                return (
+                    <Wrapper key={q.id}>
+                        <Container>
+                            <Slider {...carousel}>
+                                {questions.map((ques, index) => {
+                                    const { id: questionId, question, codeSnippet } = ques;
+                                    return (
+                                        <StyledWrapper key={index}>
+                                            <StyledHeading>
+                                                <StyledQuestionWrapper>
+                                                    <StyledQuestion>{`${questionId}: ${question}`}</StyledQuestion>
+                                                    {codeSnippet && (
+                                                        <StyledEditor>
+                                                            <TextEditor value={codeSnippet} />
+                                                        </StyledEditor>
+                                                    )}
+                                                </StyledQuestionWrapper>
+                                            </StyledHeading>
+                                            <StyledBody>
+                                                {answers
+                                                    .filter((answer) => answer.question.id === questionId)
+                                                    .map((answer, index) => {
+                                                        const { answerType, answer: ans, responseMessage } = answer;
+                                                        if (answerType.typeName === 'code') {
+                                                            return (
+                                                                <StyledAnswerWrapper key={index}>
+                                                                    <span>
+                                                                        <TextEditor value={ans} />
+                                                                    </span>
+                                                                    <span>
+                                                                        <StyledAnswer
+                                                                            href="#"
+                                                                            onClick={() => {
+                                                                                setShowResponse(true);
+                                                                                setSelectedAnswer(responseMessage);
+                                                                            }}
+                                                                        ></StyledAnswer>
+                                                                    </span>
+                                                                </StyledAnswerWrapper>
+                                                            );
+                                                        } else {
+                                                            return (
+                                                                <StyledAnswerWrapper key={index}>
+                                                                    <StyledAnswer
+                                                                        href="#"
+                                                                        onClick={() => {
+                                                                            setShowResponse(true);
+                                                                            setSelectedAnswer(responseMessage);
+                                                                        }}
+                                                                    >
+                                                                        {`(${index + 1}) ${ans}`}
+                                                                    </StyledAnswer>
+                                                                </StyledAnswerWrapper>
+                                                            );
+                                                        }
+                                                    })}
+                                                {showResponse && <StyledResponse>{selectedAnswer}</StyledResponse>}
+                                            </StyledBody>
+                                        </StyledWrapper>
+                                    );
+                                })}
+                            </Slider>
+                        </Container>
+                    </Wrapper>
+                );
+            })}
+        </SliderContainer>
+    ) : (
+        <div></div>
     );
 };
 

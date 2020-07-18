@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import data from '../../data/quizzes';
 import { colours } from '../../constants/styles';
 
 const Container = styled.div`
@@ -31,29 +30,28 @@ const StyledListItem = styled.li`
     color: ${colours.secondary};
 `;
 
-const LessonDisplayPage = ({ title, language, description, prereqs }) => (
+const LessonDisplayPage = ({ title, language, description, recommendedLessons }) => (
     <Container>
         <StyledHead>
             <StyledTitle>
                 <span>{title}</span>
-                <span>[{language}]</span>
+                <span>[{language.language}]</span>
             </StyledTitle>
             <StyledDesc>{description}</StyledDesc>
         </StyledHead>
         <StyledBody>
-            {prereqs.length > 0 ? (
-                <div>Before beginning this course, it is required the you have knowledge of the following:</div>
+            {recommendedLessons.length > 0 ? (
+                <div>Before beginning this course, it is adviced that you have knowledge of the following:</div>
             ) : (
                 <div>
                     There are no prerequisities for this lesson! Good luck and don't be afraid to visit the forum for
                     help.
                 </div>
             )}
-            {prereqs.length > 0 &&
-                prereqs.map((prereq) => {
-                    return data.quizzes.map(
-                        (quiz) => quiz.id === prereq && <StyledListItem>{quiz.name}</StyledListItem>,
-                    );
+            {recommendedLessons.length > 0 &&
+                recommendedLessons.map((prereq) => {
+                    console.log(prereq);
+                    return prereq && <StyledListItem>{prereq.title}</StyledListItem>;
                 })}
         </StyledBody>
     </Container>

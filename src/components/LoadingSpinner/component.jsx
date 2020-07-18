@@ -3,22 +3,17 @@ import spinner from '../../images/ajax-loader.gif';
 import styled from 'styled-components';
 
 const Container = styled.div`
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    display: flex;
 `;
 const StyledImg = styled.img`
-    top: 30%;
-    left: 48%;
     z-index: 1000;
-    position: absolute;
+    margin: auto;
+    padding-top: 18vh;
 `;
 
 const LoadingSpinner = () => (
     <Container>
-        <StyledImg src={spinner} alt="loading" />
+        <StyledImg src={spinner} alt="loading" width="100px" />
     </Container>
 );
 

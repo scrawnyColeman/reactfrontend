@@ -25,7 +25,7 @@ const ForumPostPage = () => {
                 setPost(response.data);
             })
             .catch(errorLogger);
-    }, []); //call when data changes
+    }, [postId]); //call when data changes
     console.log(post);
     return (
         <StyledItemWrapper>
