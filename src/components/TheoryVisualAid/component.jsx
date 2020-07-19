@@ -16,12 +16,10 @@ const divStyle = {
     margin: `auto`,
 };
 
-const TheoryVisualAid = ({ id, courseData }) => {
-    return (
-        <Container>
-            <Player style={divStyle} height={`100%`} width={`100%`} url={courseData} />
-        </Container>
-    );
-};
+const TheoryVisualAid = ({ courseData }) => (
+    <Container>
+        <Player style={divStyle} height="100%" width="100%" url={courseData} />
+    </Container>
+);
 
 export default TheoryVisualAid;

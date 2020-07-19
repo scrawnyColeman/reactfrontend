@@ -21,14 +21,6 @@ const StyledButton = styled.button`
 const BigButton = ({ text, path }) => {
     const history = useHistory();
 
-    return (
-        <StyledButton
-            onClick={() => {
-                history.push({ pathname: `${path}` });
-            }}
-        >
-            {text}
-        </StyledButton>
-    );
+    return <StyledButton onClick={() => history.push({ pathname: path })}>{text}</StyledButton>;
 };
 export default BigButton;

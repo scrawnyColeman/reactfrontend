@@ -11,7 +11,7 @@ const Container = styled.div`
     font-size: 1.5rem;
     border: 2px solid red;
 `;
-const LoginError = ({ message }) => {
-    return <Container>{message}</Container>;
-};
+
+const LoginError = ({ message }) => <Container>{message}</Container>;
+
 export default LoginError;

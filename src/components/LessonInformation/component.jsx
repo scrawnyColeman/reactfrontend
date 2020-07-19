@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import LessonDisplayPage from '../LessonDisplayPage/component';
-import LessonPathways from '../LessonPathways/component';
+import LessonPath from '../LessonPath/component';
 
 const Container = styled.div`
     color: ${colours.primary}
@@ -10,6 +10,10 @@ const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 8px;
     height: 60vh;
+`;
+
+const LessonContainer = styled.div`
+    margin: 10vh 0 0;
 `;
 
 const LessonInformation = ({ course }) => {
@@ -22,7 +26,11 @@ const LessonInformation = ({ course }) => {
                 description={description}
                 recommendedLessons={recommendedLessons}
             />
-            <LessonPathways id={id} />
+            <LessonContainer>
+                <LessonPath text="Theory" id={id} path="theory" />
+                <LessonPath text="Practice Questions" id={id} path="practical" />
+                <LessonPath text="Full Lesson" id={id} path="lesson" />
+            </LessonContainer>
         </Container>
     );
 };

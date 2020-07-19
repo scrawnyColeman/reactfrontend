@@ -9,7 +9,7 @@ import TextField from '../TextField/component';
 const Container = styled.div`
     text-align: left;
 `;
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     margin: 0 auto;
 `;
 const StyledCoursesContainer = styled.div`
@@ -40,9 +40,8 @@ const StyledHorizontalLine = styled.hr`
 const CoursesSearch = ({ courses, isLoading }) => {
     const history = useHistory();
     const [title, setTitle] = useState('');
-    const sortedCourses = courses.sort(function (a, b) {
-        return a.title.localeCompare(b.title);
-    });
+    const sortedCourses = courses.sort((a, b) => a.title.localeCompare(b.title));
+
     return (
         <Container>
             <StyledSearchBar>
@@ -50,7 +49,6 @@ const CoursesSearch = ({ courses, isLoading }) => {
                     id="outlined-full-width"
                     label="Label"
                     placeholder="Search..."
-                    size="small"
                     margin="normal"
                     onChange={(event) => setTitle(event.target.value)}
                 />
@@ -94,9 +92,7 @@ const CoursesSearch = ({ courses, isLoading }) => {
                                                 have taken this course!
                                             </p>
                                             <Button
-                                                onClick={() => {
-                                                    history.push({ pathname: `learn/${id}` });
-                                                }}
+                                                onClick={() => history.push({ pathname: `learn/${id}` })}
                                                 text="Go"
                                                 size="small"
                                                 variant="outlined"

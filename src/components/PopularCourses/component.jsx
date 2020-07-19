@@ -9,7 +9,7 @@ import { iconArray } from '../../images/imageLoader';
 const Container = styled.div`
     text-align: left;
 `;
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr min-content;
     margin: 0 8px;
@@ -52,8 +52,7 @@ const StyledSpecialLabel = styled.span`
 const PopularCourses = ({ courses, isLoading }) => {
     const history = useHistory();
     let counter = 1;
-    const popularCourses = courses;
-    popularCourses.sort((a, b) => b.activeUsers - a.activeUsers);
+    courses.sort((a, b) => b.activeUsers - a.activeUsers);
 
     return (
         <Container>
@@ -62,7 +61,7 @@ const PopularCourses = ({ courses, isLoading }) => {
                 {isLoading ? (
                     <LoadingSpinner />
                 ) : (
-                    popularCourses.slice(0, 5).map((course) => {
+                    courses.slice(0, 5).map((course) => {
                         const { description, id, language, title, activeUsers } = course;
                         const languageIcon = iconArray.find((icon) => icon.path === language.iconPath);
                         return (
@@ -78,13 +77,11 @@ const PopularCourses = ({ courses, isLoading }) => {
                                     </p>
                                     <span>
                                         <p>
-                                            <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel>{' '}
+                                            <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel>
                                             {activeUsers > 1 ? `people` : `person`} have taken this course!
                                         </p>
                                         <Button
-                                            onClick={() => {
-                                                history.push({ pathname: `learn/${id}` });
-                                            }}
+                                            onClick={() => history.push({ pathname: `learn/${id}` })}
                                             text="Go"
                                             size="small"
                                             variant="outlined"

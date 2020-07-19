@@ -2,6 +2,6 @@
 
 exports[`NotFound component component matches snapshot 1`] = `
 <styled.div>
-  Oops... something went wrong! Path not found
+  Oops... something went wrong! Path not found.
 </styled.div>
 `;

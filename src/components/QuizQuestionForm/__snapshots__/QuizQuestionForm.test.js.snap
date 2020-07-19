@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizQuestionForm component component matches snapshot 1`] = `
+<Fragment>
+  <styled.div>
+    <styled.div>
+      8
+      /10
+    </styled.div>
+  </styled.div>
+  <TextField
+    placeholder="Question 8"
+  />
+  <styled.div>
+    <TextField
+      placeholder="Correct Answer:"
+    />
+    <TextField
+      placeholder="Response Message:"
+    />
+  </styled.div>
+  <styled.div>
+    <TextField
+      placeholder="Incorrect Answer 1:"
+    />
+    <TextField
+      placeholder="Response Message 1:"
+    />
+  </styled.div>
+  <styled.div>
+    <TextField
+      placeholder="Incorrect Answer 2:"
+    />
+    <TextField
+      placeholder="Response Message 2:"
+    />
+  </styled.div>
+</Fragment>
+`;

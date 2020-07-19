@@ -11,7 +11,7 @@ const StyledItemWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 8px;
-    margin: 20vh 20px 0 20px;
+    margin: 20vh 20px 0;
 `;
 
 const ForumPostPage = () => {
@@ -25,8 +25,8 @@ const ForumPostPage = () => {
                 setPost(response.data);
             })
             .catch(errorLogger);
-    }, [postId]); //call when data changes
-    console.log(post);
+    }, [postId]);
+
     return (
         <StyledItemWrapper>
             <ForumPost id={postId} data={post} />

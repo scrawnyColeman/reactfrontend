@@ -50,12 +50,7 @@ const Header = ({ username }) => (
             <StyledNavLinks href="/learn">Learn</StyledNavLinks>
             <StyledNavLinks href="/forum">Forum</StyledNavLinks>
             {username ? (
-                <StyledNavLinks
-                    href="/login"
-                    onClick={() => {
-                        AuthenticationService.destroyLogin();
-                    }}
-                >
+                <StyledNavLinks href="/login" onClick={() => AuthenticationService.destroyLogin()}>
                     Logout
                 </StyledNavLinks>
             ) : (

@@ -71,6 +71,28 @@ const StyledPreviewHeadWrapper = styled.div`
     font-size: 1.5rem;
 `;
 
+const defaultQuestions = new Array(10).fill({
+    question: '',
+    codeSnippet: null,
+    answers: [
+        {
+            answer: '',
+            responseMessage: '',
+            correct: true,
+        },
+        {
+            answer: '',
+            responseMessage: '',
+            correct: true,
+        },
+        {
+            answer: '',
+            responseMessage: '',
+            correct: true,
+        },
+    ],
+});
+
 const NewLessonPage = () => {
     const RightIcon = () => <StyledArrowRight icon={faArrowCircleRight} />;
     const youtubeURLBase = `https://www.youtube.com/watch?v=`;
@@ -84,29 +106,8 @@ const NewLessonPage = () => {
     const [languageId, setLanguageId] = useState(null);
     const [title, setTitle] = useState('');
     const [ytLink, setYTLink] = useState('');
-    const [questions, setQuestions] = useState(
-        new Array(10).fill({
-            question: '',
-            codeSnippet: null,
-            answers: [
-                {
-                    answer: '',
-                    responseMessage: '',
-                    correct: true,
-                },
-                {
-                    answer: '',
-                    responseMessage: '',
-                    correct: true,
-                },
-                {
-                    answer: '',
-                    responseMessage: '',
-                    correct: true,
-                },
-            ],
-        }),
-    );
+    const [questions, setQuestions] = useState(defaultQuestions);
+
     if (page === 1)
         return (
             <Container>
@@ -150,7 +151,6 @@ const NewLessonPage = () => {
                                 <StyledExplanation>
                                     <TextField
                                         id="filled-multiline-static"
-                                        size="large"
                                         margin="normal"
                                         rows={16}
                                         multiline={true}

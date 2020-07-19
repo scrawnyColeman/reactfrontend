@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TheoryVisualAid component component matches snapshot 1`] = `
+<styled.div>
+  <ReactPlayer
+    config={
+      Object {
+        "dailymotion": Object {
+          "params": Object {
+            "api": 1,
+            "endscreen-enable": false,
+          },
+        },
+        "facebook": Object {
+          "appId": "1309697205772819",
+          "playerId": null,
+          "version": "v3.3",
+        },
+        "file": Object {
+          "attributes": Object {},
+          "dashVersion": "2.9.2",
+          "forceAudio": false,
+          "forceDASH": false,
+          "forceHLS": false,
+          "forceVideo": false,
+          "hlsOptions": Object {},
+          "hlsVersion": "0.13.1",
+          "tracks": Array [],
+        },
+        "mixcloud": Object {
+          "options": Object {
+            "hide_cover": 1,
+          },
+        },
+        "soundcloud": Object {
+          "options": Object {
+            "buying": false,
+            "download": false,
+            "liking": false,
+            "sharing": false,
+            "show_comments": false,
+            "show_playcount": false,
+            "visual": true,
+          },
+        },
+        "twitch": Object {
+          "options": Object {},
+          "playerId": null,
+        },
+        "vidyard": Object {
+          "options": Object {},
+        },
+        "vimeo": Object {
+          "playerOptions": Object {
+            "autopause": false,
+            "byline": false,
+            "portrait": false,
+            "title": false,
+          },
+        },
+        "wistia": Object {
+          "options": Object {},
+        },
+        "youtube": Object {
+          "embedOptions": Object {},
+          "onUnstarted": [Function],
+          "playerVars": Object {
+            "iv_load_policy": 3,
+            "modestbranding": 1,
+            "playsinline": 1,
+            "rel": 0,
+            "showinfo": 0,
+          },
+        },
+      }
+    }
+    controls={false}
+    height="100%"
+    light={false}
+    loop={false}
+    muted={false}
+    onBuffer={[Function]}
+    onBufferEnd={[Function]}
+    onDisablePIP={[Function]}
+    onDuration={[Function]}
+    onEnablePIP={[Function]}
+    onEnded={[Function]}
+    onError={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onProgress={[Function]}
+    onReady={[Function]}
+    onSeek={[Function]}
+    onStart={[Function]}
+    pip={false}
+    playbackRate={1}
+    playing={false}
+    playsinline={false}
+    progressInterval={1000}
+    style={
+      Object {
+        "margin": "auto",
+        "maxWidth": "100%",
+      }
+    }
+    url={
+      Object {
+        "activeUsers": 1,
+        "approved": true,
+        "description": "Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.",
+        "id": 1,
+        "recommendedLessons": Array [
+          Object {
+            "activeUsers": 1,
+            "approved": true,
+            "description": "Learn how to utilise Loops in your programs.",
+            "id": 5,
+            "language": Object {
+              "iconPath": "JavaIcon",
+              "id": 1,
+              "imagePath": "JavaImg",
+              "language": "java",
+            },
+            "recommendedLessons": Array [],
+            "theory": "The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
+
+There are three types of for loops in java.
+
+Simple For Loop
+For-each or Enhanced For Loop
+Labeled For Loop
+Java Simple For Loop
+A simple for loop is the same as C/C++. We can initialize the variable, check condition and increment/decrement value. It consists of four parts:
+
+Initialization: It is the initial condition which is executed once when the loop starts. Here, we can initialize the variable, or we can use an already initialized variable. It is an optional condition.
+Condition: It is the second condition which is executed each time to test the condition of the loop. It continues execution until the condition is false. It must return boolean value either true or false. It is an optional condition.
+Statement: The statement of the loop is executed each time until the second condition is false.
+Increment/Decrement: It increments or decrements the variable value. It is an optional condition.",
+            "title": "Loops",
+            "youtubeLink": "https://www.youtube.com/watch?v=guXgBe2wvEA",
+          },
+        ],
+        "theory": "A common computer programming tactic is to divide a problem into sub-problems of the same type as the original, solve those sub-problems, and combine the results. This is often referred to as the divide-and-conquer method; when combined with a lookup table that stores the results of solving sub-problems (to avoid solving them repeatedly and incurring extra computation time), it can be referred to as dynamic programming or memoization.\\\\n
+            A recursive function definition has one or more base cases, meaning input(s) for which the function produces a result trivially (without recurring), and one or more recursive cases, meaning input(s) for which the program recurs (calls itself). For example, the factorial function can be defined recursively by the equations 0! = 1 and, for all n > 0, n! = n(n − 1)!. Neither equation by itself constitutes a complete definition; the first is the base case, and the second is the recursive case. Because the base case breaks the chain of recursion, it is sometimes also called the \\"terminating case\\".\\\\n
+            The job of the recursive cases can be seen as breaking down complex inputs into simpler ones. In a properly designed recursive function, with each recursive call, the input problem must be simplified in such a way that eventually the base case must be reached. (Functions that are not intended to terminate under normal circumstances—for example, some system and server processes—are an exception to this.) Neglecting to write a base case, or testing for it incorrectly, can cause an infinite loop.\\\\n
+            For some functions (such as one that computes the series for e = 1/0! + 1/1! + 1/2! + 1/3! + ...) there is not an obvious base case implied by the input data; for these one may add a parameter (such as the number of terms to be added, in our series example) to provide a 'stopping criterion' that establishes the base case. Such an example is more naturally treated by co-recursion, where successive terms in the output are the partial sums; this can be converted to a recursion by using the indexing parameter to say \\"compute the nth term (nth partial sum)",
+        "title": "Recursion",
+        "youtubeLink": "https://www.youtube.com/watch?v=Mv9NEXX1VHc&feature=emb_title",
+      }
+    }
+    volume={null}
+    width="100%"
+    wrapper="div"
+  />
+</styled.div>
+`;

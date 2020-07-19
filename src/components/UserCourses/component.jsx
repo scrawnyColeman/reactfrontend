@@ -55,7 +55,7 @@ const StyledHeading = styled.span`
 
 const UserCourses = ({ courses, onClick }) => {
     const history = useHistory();
-    console.log({ courses });
+
     return (
         <Container>
             <StyledLabel>Pick up where you left off...</StyledLabel>
@@ -79,7 +79,6 @@ const UserCourses = ({ courses, onClick }) => {
                                 </StyledDescription>
                                 <Button
                                     onClick={() => {
-                                        history.replace('/learn');
                                         history.push({ pathname: `learn/${lesson.id}` });
                                         onClick(lesson.id);
                                     }}

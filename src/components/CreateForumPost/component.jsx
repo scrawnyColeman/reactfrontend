@@ -30,7 +30,6 @@ const CreateForumPost = () => {
                     id="outlined-full-width"
                     label="Label"
                     text={title}
-                    size="small"
                     margin="normal"
                     onChange={(event) => setTitle(event.target.value)}
                     placeholder={'Question Title:'}
@@ -38,7 +37,6 @@ const CreateForumPost = () => {
                 <TextField
                     id="filled-multiline-static"
                     text={question}
-                    size="large"
                     margin="normal"
                     rows={20}
                     multiline={true}

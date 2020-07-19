@@ -20,7 +20,6 @@ const LoginForm = () => {
                 <Grid item xs={12}>
                     <TextField
                         id="outlined-username"
-                        label="Username"
                         name="Username"
                         type="text"
                         variant="filled"
@@ -33,7 +32,6 @@ const LoginForm = () => {
                 <Grid item xs={12}>
                     <TextField
                         id="outlined-password"
-                        label="Password"
                         type="password"
                         autoComplete="current-password"
                         variant="filled"

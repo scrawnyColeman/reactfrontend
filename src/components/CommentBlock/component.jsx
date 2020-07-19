@@ -23,38 +23,34 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const CommentBlock = ({ childComments, allComments }) => {
-    return (
-        <Container>
-            {childComments.map((comment) => (
-                <StyledWrapper key={comment.id} className={`parentComment-${comment.id}`}>
+const CommentBlock = ({ childComments, allComments }) => (
+    <Container>
+        {childComments.map((comment) => {
+            const { author, comment: commentText, id, nestingValue } = comment;
+            const showCommentButton =
+                author.username && author.username.toLowerCase() === sessionStorage.getItem('activeUser').toLowerCase();
+
+            return (
+                <StyledWrapper key={id} className={`parentComment-${id}`}>
                     <StyledCommentContainer>
                         <StyledComment>
-                            <StyledCommentUsername>[{comment.author.username}]:</StyledCommentUsername>{' '}
-                            {comment.comment}
+                            <StyledCommentUsername>[{author.username}]:</StyledCommentUsername> {commentText}
                         </StyledComment>
                         <StyledCommentButtons>
-                            {comment.nestingValue < '2' && <CommentButton text="Reply" size="small" />}
-                            {comment.author.username &&
-                                comment.author.username.toLowerCase() ===
-                                    sessionStorage.getItem('activeUser').toLowerCase() && (
-                                    <CommentButton text="Edit" size="small" />
-                                )}
-                            {comment.author.username &&
-                                comment.author.username.toLowerCase() ===
-                                    sessionStorage.getItem('activeUser').toLowerCase() && (
-                                    <CommentButton text="Delete" size="small" />
-                                )}
+                            {nestingValue < '2' && <CommentButton text="Reply" size="small" />}
+                            {showCommentButton && <CommentButton text="Edit" size="small" />}
+                            {showCommentButton && <CommentButton text="Delete" size="small" />}
                         </StyledCommentButtons>
                     </StyledCommentContainer>
                     <CommentBlock
-                        childComments={allComments.filter((searchComment) => searchComment.parentId === comment.id)}
+                        childComments={allComments.filter((searchComment) => searchComment.parentId === id)}
                         allComments={allComments}
-                        className={`childComment-${comment.id}`}
+                        className={`childComment-${id}`}
                     />
                 </StyledWrapper>
-            ))}
-        </Container>
-    );
-};
+            );
+        })}
+    </Container>
+);
+
 export default CommentBlock;

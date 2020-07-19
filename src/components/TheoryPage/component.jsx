@@ -20,6 +20,7 @@ const TheoryPage = () => {
     const location = useLocation();
     const lessonId = location.pathname.split('/theory/')[1];
     const [lesson, setLesson] = useState(null);
+
     useEffect(() => {
         fetchLessonById(lessonId)
             .then((response) => {
@@ -27,16 +28,16 @@ const TheoryPage = () => {
             })
             .catch(errorLogger);
     });
-    console.log(lesson);
-    return lesson ? (
-        <Container>
-            <StyledWrapper>
-                <TheoryLessonContent id={lessonId} courseData={lesson} />
-                <TheoryVisualAid id={lessonId} courseData={lesson.youtubeLink} />
-            </StyledWrapper>
-        </Container>
-    ) : (
-        <></>
+
+    return (
+        lesson && (
+            <Container>
+                <StyledWrapper>
+                    <TheoryLessonContent id={lessonId} courseData={lesson} />
+                    <TheoryVisualAid id={lessonId} courseData={lesson.youtubeLink} />
+                </StyledWrapper>
+            </Container>
+        )
     );
 };
 

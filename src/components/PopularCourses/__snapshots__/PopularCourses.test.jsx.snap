@@ -1,133 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PopularCourses component component matches snapshot 1`] = `
+exports[`PopularCourses component component matches snapshot when loading 1`] = `
+<styled.div>
+  <styled.div>
+    Top 5 courses:
+  </styled.div>
+  <styled.div>
+    <LoadingSpinner />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`PopularCourses component component matches snapshot when not oading 1`] = `
 <styled.div>
   <styled.div>
     Top 5 courses:
   </styled.div>
   <styled.div>
     <styled.div
-      key="1"
+      key="5"
     >
       <styled.div>
         <styled.span>
           <p>
              
-            1: ReactJS 
-          </p>
-          <p>
-            [
-            JAVASCRIPT
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.
-        </p>
-        <span>
-          <p>
-            <styled.span>
-              3514
-            </styled.span>
-             people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-      </styled.div>
-      <styled.img
-        src="js.png"
-      />
-    </styled.div>
-    <styled.div
-      key="7"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-             
-            2: ES6 Arrow Functions 
-          </p>
-          <p>
-            [
-            JAVASCRIPT
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
-        </p>
-        <span>
-          <p>
-            <styled.span>
-              2154
-            </styled.span>
-             people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-      </styled.div>
-      <styled.img
-        src="js.png"
-      />
-    </styled.div>
-    <styled.div
-      key="3"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-             
-            3: Recursion 
-          </p>
-          <p>
-            [
-            PYTHON
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.
-        </p>
-        <span>
-          <p>
-            <styled.span>
-              802
-            </styled.span>
-             people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-      </styled.div>
-      <styled.img
-        src="python.png"
-      />
-    </styled.div>
-    <styled.div
-      key="4"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-             
-            4: Polymorphism 
+            1: Loops 
           </p>
           <p>
             [
@@ -136,14 +33,15 @@ exports[`PopularCourses component component matches snapshot 1`] = `
           </p>
         </styled.span>
         <p>
-          Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.
+          Learn how to utilise Loops in your programs.
         </p>
         <span>
           <p>
             <styled.span>
-              604
+              1
             </styled.span>
-             people have taken this course!
+            person
+             have taken this course!
           </p>
           <Button
             hierarchy="primary"
@@ -155,45 +53,8 @@ exports[`PopularCourses component component matches snapshot 1`] = `
         </span>
       </styled.div>
       <styled.img
+        alt="java"
         src="java.png"
-      />
-    </styled.div>
-    <styled.div
-      key="6"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-             
-            5: Classes and Objects 
-          </p>
-          <p>
-            [
-            PYTHON
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn the fundamental elements that make up the world of Object-Oriented Programming.
-        </p>
-        <span>
-          <p>
-            <styled.span>
-              334
-            </styled.span>
-             people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-      </styled.div>
-      <styled.img
-        src="python.png"
       />
     </styled.div>
   </styled.div>

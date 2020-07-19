@@ -25,7 +25,8 @@ const StyledDesc = styled.div`
 const StyledBody = styled.div`
     text-align: left;
 `;
-const StyledListItem = styled.li`
+
+export const StyledListItem = styled.li`
     margin: 4px;
     color: ${colours.secondary};
 `;
@@ -49,10 +50,9 @@ const LessonDisplayPage = ({ title, language, description, recommendedLessons })
                 </div>
             )}
             {recommendedLessons.length > 0 &&
-                recommendedLessons.map((prereq) => {
-                    console.log(prereq);
-                    return prereq && <StyledListItem>{prereq.title}</StyledListItem>;
-                })}
+                recommendedLessons.map(
+                    (prereq) => prereq && <StyledListItem key={prereq.id}>{prereq.title}</StyledListItem>,
+                )}
         </StyledBody>
     </Container>
 );

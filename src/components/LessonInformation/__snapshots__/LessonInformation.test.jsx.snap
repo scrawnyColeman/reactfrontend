@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LessonInformation component component matches snapshot 1`] = `
+<styled.div>
+  <LessonDisplayPage
+    description="Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here."
+    recommendedLessons={
+      Array [
+        Object {
+          "activeUsers": 1,
+          "approved": true,
+          "description": "Learn how to utilise Loops in your programs.",
+          "id": 5,
+          "language": Object {
+            "iconPath": "JavaIcon",
+            "id": 1,
+            "imagePath": "JavaImg",
+            "language": "java",
+          },
+          "recommendedLessons": Array [],
+          "theory": "The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
+
+There are three types of for loops in java.
+
+Simple For Loop
+For-each or Enhanced For Loop
+Labeled For Loop
+Java Simple For Loop
+A simple for loop is the same as C/C++. We can initialize the variable, check condition and increment/decrement value. It consists of four parts:
+
+Initialization: It is the initial condition which is executed once when the loop starts. Here, we can initialize the variable, or we can use an already initialized variable. It is an optional condition.
+Condition: It is the second condition which is executed each time to test the condition of the loop. It continues execution until the condition is false. It must return boolean value either true or false. It is an optional condition.
+Statement: The statement of the loop is executed each time until the second condition is false.
+Increment/Decrement: It increments or decrements the variable value. It is an optional condition.",
+          "title": "Loops",
+          "youtubeLink": "https://www.youtube.com/watch?v=guXgBe2wvEA",
+        },
+      ]
+    }
+    title="Recursion"
+  />
+  <styled.div>
+    <LessonPath
+      id={1}
+      path="theory"
+      text="Theory"
+    />
+    <LessonPath
+      id={1}
+      path="practical"
+      text="Practice Questions"
+    />
+    <LessonPath
+      id={1}
+      path="lesson"
+      text="Full Lesson"
+    />
+  </styled.div>
+</styled.div>
+`;

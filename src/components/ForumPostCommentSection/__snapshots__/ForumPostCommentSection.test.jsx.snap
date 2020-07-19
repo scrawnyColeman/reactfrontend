@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostComment component component matches snapshot with no comments 1`] = `
+<styled.div>
+  <styled.div>
+    Discussion:
+  </styled.div>
+</styled.div>
+`;

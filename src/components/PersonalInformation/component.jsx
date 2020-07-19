@@ -58,47 +58,43 @@ const PersonalInformation = ({ user }) => {
     return (
         <StyledItemWrapper>
             {checkPassword ? (
-                <>
-                    <StyledAccountInformation>
-                        <StyledAccountHead>Verify Password</StyledAccountHead>
-                        <StyledAccountBody>
-                            <TextField
-                                id="outlined-full-width"
-                                label="Label"
-                                size="small"
-                                placeholder={'Enter your password'}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                        </StyledAccountBody>
-                        <StyledBtnContainer>
-                            <Button
-                                onClick={() => {
-                                    setCheckPassword(false);
-                                    setEditInfo(false);
-                                }}
-                                text="Cancel"
-                                size="small"
-                                variant="outlined"
-                                hierarchy="primary"
-                                style={{ margin: '8px' }}
-                            />
-                            <Button
-                                onClick={() => {
-                                    //call password check function
-                                    //-->call PUT request
-                                    //---->reset form
-                                    setEditInfo(false);
-                                    setCheckPassword(false);
-                                }}
-                                text="Submit"
-                                size="small"
-                                variant="outlined"
-                                hierarchy="primary"
-                                style={{ margin: '8px' }}
-                            />
-                        </StyledBtnContainer>
-                    </StyledAccountInformation>
-                </>
+                <StyledAccountInformation>
+                    <StyledAccountHead>Verify Password</StyledAccountHead>
+                    <StyledAccountBody>
+                        <TextField
+                            id="outlined-full-width"
+                            placeholder={'Enter your password'}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </StyledAccountBody>
+                    <StyledBtnContainer>
+                        <Button
+                            onClick={() => {
+                                setCheckPassword(false);
+                                setEditInfo(false);
+                            }}
+                            text="Cancel"
+                            size="small"
+                            variant="outlined"
+                            hierarchy="primary"
+                            style={{ margin: '8px' }}
+                        />
+                        <Button
+                            onClick={() => {
+                                //call password check function
+                                //-->call PUT request
+                                //---->reset form
+                                setEditInfo(false);
+                                setCheckPassword(false);
+                            }}
+                            text="Submit"
+                            size="small"
+                            variant="outlined"
+                            hierarchy="primary"
+                            style={{ margin: '8px' }}
+                        />
+                    </StyledBtnContainer>
+                </StyledAccountInformation>
             ) : (
                 <>
                     <StyledAccountInformation>
@@ -112,8 +108,6 @@ const PersonalInformation = ({ user }) => {
                                 {editInfo && (
                                     <TextField
                                         id="outlined-full-width"
-                                        label="Label"
-                                        size="small"
                                         placeholder={'Enter new Username'}
                                         onChange={(e) => setUsername(e.target.value)}
                                     />

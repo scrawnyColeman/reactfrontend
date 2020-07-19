@@ -14,7 +14,7 @@ const StyledHR = styled.hr`
 `;
 const Container = styled.div`
     max-height: 300px;
-    margin: auto auto;
+    margin: auto;
     width: 75%;
 `;
 const StyledText = styled.div`
@@ -29,12 +29,7 @@ const LessonPath = ({ text, id, path }) => {
         <Container>
             <StyledWrapper>
                 <StyledText>{text}</StyledText>
-                <Button
-                    text="Begin"
-                    onClick={() => {
-                        history.push({ pathname: `${path}/${id}` });
-                    }}
-                />
+                <Button text="Begin" onClick={() => history.push({ pathname: `${path}/${id}` })} />
             </StyledWrapper>
             <StyledHR />
         </Container>

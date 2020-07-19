@@ -2,6 +2,7 @@
 
 exports[`TextField component large TextField matches snapshot 1`] = `
 <WithStyles(ForwardRef(TextField))
+  disabled={false}
   id="standard-multiline-flexible"
   multiline={false}
   placeholder="Second TextField"
@@ -24,6 +25,7 @@ exports[`TextField component large TextField matches snapshot 1`] = `
 
 exports[`TextField component multiline TextField matches snapshot 1`] = `
 <WithStyles(ForwardRef(TextField))
+  disabled={false}
   id="standard-multiline-flexible"
   multiline={true}
   placeholder="Second TextField"
@@ -46,6 +48,7 @@ exports[`TextField component multiline TextField matches snapshot 1`] = `
 
 exports[`TextField component primary TextField matches snapshot 1`] = `
 <WithStyles(ForwardRef(TextField))
+  disabled={false}
   id="standard-multiline-flexible"
   multiline={false}
   placeholder="primary TextField"
@@ -68,6 +71,7 @@ exports[`TextField component primary TextField matches snapshot 1`] = `
 
 exports[`TextField component secondary TextField matches snapshot 1`] = `
 <WithStyles(ForwardRef(TextField))
+  disabled={false}
   id="standard-multiline-flexible"
   multiline={false}
   placeholder="Second TextField"

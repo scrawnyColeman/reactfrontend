@@ -26,8 +26,6 @@ const LearnPage = () => {
             .catch(errorLogger);
     }, []);
 
-    console.log({ courses });
-
     return (
         <StyledItemWrapper>
             <CoursesSearch courses={courses} isLoading={loading} />

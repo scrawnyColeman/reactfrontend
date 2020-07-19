@@ -29,7 +29,6 @@ const ForumPostNewCommentForm = () => {
                 <TextField
                     id="outlined-full-width"
                     label="Label"
-                    size="small"
                     margin="normal"
                     onChange={(event) => setCommentUser(event.target.value)}
                     disabled
@@ -37,7 +36,6 @@ const ForumPostNewCommentForm = () => {
                 />
                 <TextField
                     id="filled-multiline-static"
-                    size="large"
                     text={question}
                     margin="normal"
                     rows={20}

@@ -3,61 +3,87 @@
 exports[`CommentBlock component component matches snapshot with comments 1`] = `
 <styled.div>
   <styled.div
-    className="parentComment-3"
-    key="3"
+    className="parentComment-100"
+    key="100"
   >
-    [
-    Testy McTestFace
-    ]: 
-    This is the best test
+    <styled.div>
+      <styled.div>
+        <styled.span>
+          [
+          ]:
+        </styled.span>
+         
+        This is the best test
+      </styled.div>
+      <styled.div />
+    </styled.div>
     <CommentBlock
       allComments={
         Array [
           Object {
-            "authorusername": "Testy McTestFace",
+            "author": Object {
+              "userName": "Testy McTestFace",
+            },
             "comment": "This is the best test",
             "commentid": "1",
+            "id": "98",
             "parentid": "0",
           },
           Object {
-            "authorusername": "Tester Zero",
+            "author": Object {
+              "userName": "Tester Zero",
+            },
             "comment": "Im just happy to be here",
             "commentid": "2",
+            "id": "99",
             "parentid": "0",
           },
         ]
       }
       childComments={Array []}
-      className="childComment-3"
+      className="childComment-100"
     />
   </styled.div>
   <styled.div
-    className="parentComment-4"
-    key="4"
+    className="parentComment-101"
+    key="101"
   >
-    [
-    Tester Zero
-    ]: 
-    Im just happy to be here
+    <styled.div>
+      <styled.div>
+        <styled.span>
+          [
+          ]:
+        </styled.span>
+         
+        Im just happy to be here
+      </styled.div>
+      <styled.div />
+    </styled.div>
     <CommentBlock
       allComments={
         Array [
           Object {
-            "authorusername": "Testy McTestFace",
+            "author": Object {
+              "userName": "Testy McTestFace",
+            },
             "comment": "This is the best test",
             "commentid": "1",
+            "id": "98",
             "parentid": "0",
           },
           Object {
-            "authorusername": "Tester Zero",
+            "author": Object {
+              "userName": "Tester Zero",
+            },
             "comment": "Im just happy to be here",
             "commentid": "2",
+            "id": "99",
             "parentid": "0",
           },
         ]
       }
       childComments={Array []}
-      className="childComment-4"
+      className="childComment-101"
     />
   </styled.div>
 </styled.div>

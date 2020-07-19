@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateForumPost component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    Reach out to the community...
+  </styled.div>
+  <styled.div>
+    <TextField
+      id="outlined-full-width"
+      label="Label"
+      margin="normal"
+      onChange={[Function]}
+      placeholder="Question Title:"
+      text={null}
+    />
+    <TextField
+      id="filled-multiline-static"
+      margin="normal"
+      multiline={true}
+      onChange={[Function]}
+      placeholder="Write your question here..."
+      rows={20}
+      text={null}
+    />
+    <Button
+      hierarchy="primary"
+      onClick={[Function]}
+      size="large"
+      text="View"
+      variant="outlined"
+    />
+  </styled.div>
+</styled.div>
+`;

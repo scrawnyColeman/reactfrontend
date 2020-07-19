@@ -5,7 +5,7 @@ import React from 'react';
 import ForumPostPage from './component';
 
 jest.mock('react-router-dom', () => {
-    const useLocation = jest.fn(() => ({ pathname: 'something' }));
+    const useLocation = jest.fn(() => ({ pathname: 'something', search: 'somewhere' }));
     return { useLocation };
 });
 

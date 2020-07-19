@@ -24,7 +24,7 @@ const Question = styled.div`
 const QuestionBody = styled.div`
     overflow-y: scroll;
 `;
-const StyledHint = styled.div`
+export const StyledHint = styled.div`
     color: ${colours.primary};
     margin: 12px;
 `;
@@ -47,7 +47,7 @@ const StyledEditorContainer = styled.div`
 
 const PracticalCodeChallenge = ({ data, submitted, language }) => {
     const { title, question, hint, codeSnippet, solution } = data;
-    console.log(solution);
+
     return submitted ? (
         <Container>
             <QuestionHeader>Solution</QuestionHeader>

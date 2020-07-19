@@ -22,8 +22,41 @@ exports[`UserCourses component component matches snapshot 1`] = `
       ]
     }
     slidesToScroll={1}
-    slidesToShow={2}
+    slidesToShow={1}
     speed={500}
-  />
+  >
+    <styled.div
+      key="1"
+    >
+      <styled.div>
+        <styled.img
+          src="JSImg.jpg"
+        />
+      </styled.div>
+      <styled.div>
+        <styled.span>
+          <p>
+            Recursion
+          </p>
+          <p>
+            [
+            JAVASCRIPT
+            ]
+          </p>
+        </styled.span>
+        <styled.p>
+          Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginnin
+          ...
+        </styled.p>
+        <Button
+          hierarchy="primary"
+          onClick={[Function]}
+          size="small"
+          text="Go"
+          variant="outlined"
+        />
+      </styled.div>
+    </styled.div>
+  </Slider>
 </styled.div>
 `;

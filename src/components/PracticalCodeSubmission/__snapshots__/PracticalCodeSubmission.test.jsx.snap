@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PracticalCodeSubmission component component matches snapshot 1`] = `
+<styled.div>
+  <TextEditor
+    fontSize={18}
+    maxLines={20}
+    minLines={20}
+    mode="Java"
+    placeholder="// Write your code here
+//Don't be afraid to seek help from the forum"
+    readOnly={false}
+  />
+  <styled.div>
+    <Button
+      onClick={[MockFunction]}
+      text="Get help"
+    />
+    <Button
+      onClick={[MockFunction]}
+      text="View Solution"
+    />
+  </styled.div>
+</styled.div>
+`;

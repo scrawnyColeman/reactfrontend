@@ -3,9 +3,10 @@ import Adapter from 'enzyme-adapter-react-16';
 import 'jest-styled-components';
 import React from 'react';
 import ForumPage from './component';
+import { useLocation } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => {
-    const useLocation = jest.fn(() => ({ pathname: 'something' }));
+    const useLocation = jest.fn(() => ({ pathname: 'something', search: 'somewhere' }));
     return { useLocation };
 });
 
@@ -16,7 +17,8 @@ describe('ForumPage component', () => {
         const wrapper = shallow(<ForumPage />);
         expect(wrapper).toMatchSnapshot();
     });
-    test('component matches snapshot with URL param', () => {
+    test('component matches snapshot with no URL param', () => {
+        useLocation.mockReturnValue({ search: null });
         const wrapper = shallow(<ForumPage />);
         expect(wrapper).toMatchSnapshot();
     });

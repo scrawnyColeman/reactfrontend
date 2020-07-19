@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CoursesSearch component component matches snapshot 1`] = `
+exports[`CoursesSearch component component matches snapshot when loading 1`] = `
 <styled.div>
   <styled.div>
     <TextField
@@ -9,194 +9,42 @@ exports[`CoursesSearch component component matches snapshot 1`] = `
       margin="normal"
       onChange={[Function]}
       placeholder="Search..."
-      size="small"
     />
   </styled.div>
   <styled.div>
-    <styled.div
-      key="1"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            ReactJS
-          </p>
-          <p>
-            [
-            JAVASCRIPT
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn React, an open-source JavaScript library, for building fast webapps and clever User interfaces.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              3514
-            </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="2"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            Lambda Functions
-          </p>
-          <p>
-            [
-            JAVA
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Produce concise lambda functions to enhance your functional programming skills. It is recommended that users complete our interfaces lesson first.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              38
-            </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="3"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            Recursion
-          </p>
-          <p>
-            [
-            PYTHON
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn recursive functions to ace all of your coding interviews. We recommend that all users complete our loops and conditionals lesson before beginning here.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              802
-            </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="4"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            Polymorphism
-          </p>
-          <p>
-            [
-            JAVA
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Meaning to take many forms, polymorphism is among the four pillars of Object-oriented programming; a must know for all programmers.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              604
-            </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
+    <LoadingSpinner />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`CoursesSearch component component matches snapshot when not loading 1`] = `
+<styled.div>
+  <styled.div>
+    <TextField
+      id="outlined-full-width"
+      label="Label"
+      margin="normal"
+      onChange={[Function]}
+      placeholder="Search..."
+    />
+  </styled.div>
+  <styled.div>
     <styled.div
       key="5"
     >
       <styled.div>
         <styled.span>
           <p>
-            Control Flow and Conditionals
+            Loops
           </p>
           <p>
             [
-            PYTHON
+            JAVA
             ]
           </p>
         </styled.span>
         <p>
-          Learn how to write a program that is able to do hundreds of hours of human cognition in seconds through repetition and scripted decision making
+          Learn how to utilise Loops in your programs.
         </p>
         <span>
           <p>
@@ -207,94 +55,9 @@ exports[`CoursesSearch component component matches snapshot 1`] = `
                 }
               }
             >
-              190
+              1
             </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="6"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            Classes and Objects
-          </p>
-          <p>
-            [
-            PYTHON
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn the fundamental elements that make up the world of Object-Oriented Programming.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              334
-            </span>
-             
-            people have taken this course!
-          </p>
-          <Button
-            hierarchy="primary"
-            onClick={[Function]}
-            size="small"
-            text="Go"
-            variant="outlined"
-          />
-        </span>
-        <styled.hr />
-      </styled.div>
-    </styled.div>
-    <styled.div
-      key="7"
-    >
-      <styled.div>
-        <styled.span>
-          <p>
-            ES6 Arrow Functions
-          </p>
-          <p>
-            [
-            JAVASCRIPT
-            ]
-          </p>
-        </styled.span>
-        <p>
-          Learn arrow functions - introduced with the ECMAScript 6 - and discover how to write shorter, more concise functions with more capable than before.
-        </p>
-        <span>
-          <p>
-            <span
-              style={
-                Object {
-                  "color": "#B4DF4E",
-                }
-              }
-            >
-              2154
-            </span>
-             
-            people have taken this course!
+             people have taken this course!
           </p>
           <Button
             hierarchy="primary"

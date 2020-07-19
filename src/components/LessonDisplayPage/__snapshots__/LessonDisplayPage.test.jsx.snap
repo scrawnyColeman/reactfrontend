@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LessonDisplayPage component component matches snapshot with no recommended lessons 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <span>
+        Lesson title
+      </span>
+      <span>
+        [
+        Javascript
+        ]
+      </span>
+    </styled.div>
+    <styled.div>
+      JS lesson
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <div>
+      There are no prerequisities for this lesson! Good luck and don't be afraid to visit the forum for help.
+    </div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`LessonDisplayPage component component matches snapshot with recommended lessons 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <span>
+        Lesson title
+      </span>
+      <span>
+        [
+        Javascript
+        ]
+      </span>
+    </styled.div>
+    <styled.div>
+      JS lesson
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <div>
+      Before beginning this course, it is adviced that you have knowledge of the following:
+    </div>
+    <styled.li
+      key="1"
+    >
+      Java
+    </styled.li>
+    <styled.li
+      key="2"
+    >
+      Recursion
+    </styled.li>
+  </styled.div>
+</styled.div>
+`;

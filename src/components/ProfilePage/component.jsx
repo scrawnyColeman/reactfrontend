@@ -34,20 +34,20 @@ const ProfilePage = () => {
             })
             .catch(errorLogger);
     }, [userId]);
-    console.log(userLessons);
-    return userLessons ? (
-        <StyledItemWrapper>
-            <PersonalInformation user={user} />
-            {userLessons.length !== 0 ? (
-                <UserCourses courses={userLessons} id={userId} onClick={setParam} />
-            ) : (
-                <StyledButtonContainer>
-                    <BigButton text={`Begin Learning`} path={`/learn`} />
-                </StyledButtonContainer>
-            )}
-        </StyledItemWrapper>
-    ) : (
-        <div />
+
+    return (
+        userLessons && (
+            <StyledItemWrapper>
+                <PersonalInformation user={user} />
+                {userLessons.length !== 0 ? (
+                    <UserCourses courses={userLessons} id={userId} onClick={setParam} />
+                ) : (
+                    <StyledButtonContainer>
+                        <BigButton text={`Begin Learning`} path={`/learn`} />
+                    </StyledButtonContainer>
+                )}
+            </StyledItemWrapper>
+        )
     );
 };
 export default ProfilePage;

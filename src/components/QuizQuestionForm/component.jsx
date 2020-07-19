@@ -14,26 +14,25 @@ const StyledCounter = styled.div`
 const StyledAnswer = styled.div`
     padding-top: 16px;
 `;
-const QuizQuestionForm = ({ questionNumber }) => {
-    return (
-        <>
-            <Counter>
-                <StyledCounter>{questionNumber}/10</StyledCounter>
-            </Counter>
-            <TextField placeholder={`Question ${questionNumber}`} />
-            <StyledAnswer>
-                <TextField placeholder={`Correct Answer:`} />
-                <TextField placeholder={`Response Message:`} />
-            </StyledAnswer>
-            <StyledAnswer>
-                <TextField placeholder={`Incorrect Answer 1:`} />
-                <TextField placeholder={`Response Message 1:`} />
-            </StyledAnswer>
-            <StyledAnswer>
-                <TextField placeholder={`Incorrect Answer 2:`} />
-                <TextField placeholder={`Response Message 2:`} />
-            </StyledAnswer>
-        </>
-    );
-};
+const QuizQuestionForm = ({ questionNumber }) => (
+    <>
+        <Counter>
+            <StyledCounter>{questionNumber}/10</StyledCounter>
+        </Counter>
+        <TextField placeholder={`Question ${questionNumber}`} />
+        <StyledAnswer>
+            <TextField placeholder={`Correct Answer:`} />
+            <TextField placeholder={`Response Message:`} />
+        </StyledAnswer>
+        <StyledAnswer>
+            <TextField placeholder={`Incorrect Answer 1:`} />
+            <TextField placeholder={`Response Message 1:`} />
+        </StyledAnswer>
+        <StyledAnswer>
+            <TextField placeholder={`Incorrect Answer 2:`} />
+            <TextField placeholder={`Response Message 2:`} />
+        </StyledAnswer>
+    </>
+);
+
 export default QuizQuestionForm;

@@ -20,7 +20,7 @@ const StyledTitle = styled.div`
     font-size: 2rem;
 `;
 
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
     display: grid;
     grid-template-rows: min-content min-content;
     margin: 0 8px;

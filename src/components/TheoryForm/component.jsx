@@ -42,7 +42,6 @@ const TheoryForm = ({ theory, setTheory }) => {
                     multiline={true}
                     onChange={(event) => {
                         setTheory(event.target.value);
-                        console.log(theory);
                     }}
                     placeholder={'Write your theory here...'}
                 />

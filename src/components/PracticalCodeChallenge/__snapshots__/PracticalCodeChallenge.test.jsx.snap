@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PracticalCodeChallenge component component matches snapshot when code is not submitted 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      title
+    </styled.div>
+    <styled.div>
+      question
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      hint here
+    </styled.div>
+    <styled.div>
+      <TextEditor
+        mode="Java"
+        value="Code snippet.js"
+      />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
+
+exports[`PracticalCodeChallenge component component matches snapshot when code is submitted 1`] = `
+<styled.div>
+  <styled.div>
+    Solution
+  </styled.div>
+  <styled.div>
+    <styled.div>
+      If you are struggling to come to terms with this solution, select 'Get Help' to access the lessons forum discussion page.
+    </styled.div>
+    <styled.div>
+      <styled.div>
+        <TextEditor
+          mode="Java"
+        />
+      </styled.div>
+      <styled.div />
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;

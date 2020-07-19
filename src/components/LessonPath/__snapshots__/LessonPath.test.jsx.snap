@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LessonPath component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      Java
+    </styled.div>
+    <Button
+      onClick={[Function]}
+      text="Begin"
+    />
+  </styled.div>
+  <styled.hr />
+</styled.div>
+`;

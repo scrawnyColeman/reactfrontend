@@ -25,12 +25,12 @@ const PracticalCodeSubmission = ({ data, getHelp, toggleSubmission, submitted })
             readOnly={false}
             minLines={20}
             maxLines={20}
-            placeholder={`//Write your code here\n//Don't be afraid to seek help from the forum`}
+            placeholder={`// Write your code here\n//Don't be afraid to seek help from the forum`}
             fontSize={18}
         />
         <StyledButtonContainer>
-            <Button text="Get help" onClick={() => getHelp()} />
-            <Button text={submitted ? 'View Question' : 'View Solution'} onClick={() => toggleSubmission()} />
+            <Button text="Get help" onClick={getHelp} />
+            <Button text={submitted ? 'View Question' : 'View Solution'} onClick={toggleSubmission} />
         </StyledButtonContainer>
     </Container>
 );

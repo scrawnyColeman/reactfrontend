@@ -8,7 +8,7 @@ exports[`Button component large button matches snapshot 1`] = `
     Object {
       "borderColor": "#B4DF4E",
       "color": "#B4DF4E",
-      "fontSize": "1.25rem",
+      "fontSize": "1.5rem",
       "textTransform": "unset",
     }
   }
@@ -25,7 +25,7 @@ exports[`Button component primary button matches snapshot 1`] = `
     Object {
       "borderColor": "#B4DF4E",
       "color": "#B4DF4E",
-      "fontSize": "1.25rem",
+      "fontSize": "1.5rem",
       "textTransform": "unset",
     }
   }
@@ -42,7 +42,7 @@ exports[`Button component secondary button matches snapshot 1`] = `
     Object {
       "borderColor": "#B4DF4E",
       "color": "#B4DF4E",
-      "fontSize": "1.25rem",
+      "fontSize": "1.5rem",
       "textTransform": "unset",
     }
   }

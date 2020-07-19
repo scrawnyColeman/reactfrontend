@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
 `;
 
-const ForumComment = ({ posts }) => {
+const ForumComment = () => {
     const [title, setTitle] = useState(null);
     const [question, setQuestion] = useState(null);
 
@@ -25,7 +25,6 @@ const ForumComment = ({ posts }) => {
                     id="outlined-full-width"
                     label="Label"
                     text={title}
-                    size="small"
                     margin="normal"
                     disabled
                     onChange={(event) => setTitle(event.target.value)}
@@ -34,7 +33,6 @@ const ForumComment = ({ posts }) => {
                 <TextField
                     id="filled-multiline-static"
                     text={question}
-                    size="large"
                     margin="normal"
                     rows={20}
                     multiline={true}

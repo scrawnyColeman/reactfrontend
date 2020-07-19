@@ -96,10 +96,11 @@ const PracticalQuizPage = ({ fullLessonId }) => {
             .catch(errorLogger);
     }, [lessonId]);
 
-    return questions && answers ? (
-        <SliderContainer>
-            {questions.map((q) => {
-                return (
+    return (
+        questions &&
+        answers && (
+            <SliderContainer>
+                {questions.map((q) => (
                     <Wrapper key={q.id}>
                         <Container>
                             <Slider {...carousel}>
@@ -163,11 +164,9 @@ const PracticalQuizPage = ({ fullLessonId }) => {
                             </Slider>
                         </Container>
                     </Wrapper>
-                );
-            })}
-        </SliderContainer>
-    ) : (
-        <div></div>
+                ))}
+            </SliderContainer>
+        )
     );
 };
 

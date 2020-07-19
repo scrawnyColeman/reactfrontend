@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewLessonPage component component matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <TheoryForm
+        setLanguageId={[Function]}
+        setTheory={[Function]}
+        setTitle={[Function]}
+        setYTLink={[Function]}
+      />
+    </styled.div>
+    <styled.div>
+      <QuizForm
+        handleQuestion={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+  <styled.div>
+    <Button
+      onClick={[Function]}
+      text="Practicals"
+      variant="outlined"
+    >
+      <RightIcon />
+    </Button>
+  </styled.div>
+</styled.div>
+`;

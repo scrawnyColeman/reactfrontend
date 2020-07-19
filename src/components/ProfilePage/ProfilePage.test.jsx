@@ -4,6 +4,11 @@ import 'jest-styled-components';
 import React from 'react';
 import ProfilePage from './component';
 
+jest.mock('react-router-dom', () => {
+    const useLocation = jest.fn(() => ({ pathname: 'something', search: 'somewhere' }));
+    return { useLocation };
+});
+
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('ProfilePage component', () => {
