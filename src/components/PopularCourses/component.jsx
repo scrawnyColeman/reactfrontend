@@ -78,10 +78,10 @@ const PopularCourses = ({ courses, isLoading }) => {
                                     <span>
                                         <p>
                                             <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel>
-                                            {activeUsers > 1 ? `people` : `person`} have taken this course!
+                                            {activeUsers > 1 ? ` people have` : ` person has`} taken this course!
                                         </p>
                                         <Button
-                                            onClick={() => history.push({ pathname: `learn/${id}` })}
+                                            onClick={() => history.push({ pathname: `/learn/${id}` })}
                                             text="Go"
                                             size="small"
                                             variant="outlined"

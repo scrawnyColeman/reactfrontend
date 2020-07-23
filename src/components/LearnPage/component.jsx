@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PopularCourses from '../PopularCourses/component';
 import CoursesSearch from '../CoursesSearch/component';
-import { fetchApprovedLessons } from '../../data/courses';
+import { fetchApprovedLessons } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 
 const StyledItemWrapper = styled.div`

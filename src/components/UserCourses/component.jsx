@@ -79,7 +79,7 @@ const UserCourses = ({ courses, onClick }) => {
                                 </StyledDescription>
                                 <Button
                                     onClick={() => {
-                                        history.push({ pathname: `learn/${lesson.id}` });
+                                        history.push({ pathname: `/learn/${lesson.id}` });
                                         onClick(lesson.id);
                                     }}
                                     text="Go"

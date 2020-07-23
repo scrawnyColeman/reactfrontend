@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
 import TextField from '../TextField/component';
 import Button from '../Button/component';
@@ -28,7 +27,7 @@ const ForumComment = () => {
                     margin="normal"
                     disabled
                     onChange={(event) => setTitle(event.target.value)}
-                    placeholder="Replying to:"
+                    placeholder="Replying to: yeet"
                 />
                 <TextField
                     id="filled-multiline-static"

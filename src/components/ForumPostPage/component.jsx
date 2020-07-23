@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import ForumPost from '../ForumPost/component';
 import ForumPostNewCommentForm from '../ForumPostNewCommentForm/component';
-import { fetchForumPost } from '../../data/forumposts';
+import { fetchForumPost } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 import { useState } from 'react';
 
@@ -18,6 +18,8 @@ const ForumPostPage = () => {
     const location = useLocation();
     const postId = location.pathname.split('/forum/')[1];
     const [post, setPost] = useState([]);
+    const [isReplying, setReplying] = useState(false);
+    const [replyingTo, setReplyingTo] = useState(null);
 
     useEffect(() => {
         fetchForumPost(postId)
@@ -29,8 +31,8 @@ const ForumPostPage = () => {
 
     return (
         <StyledItemWrapper>
-            <ForumPost id={postId} data={post} />
-            <ForumPostNewCommentForm />
+            <ForumPost id={postId} data={post} setReplying={setReplying} setReplyingTo={setReplyingTo} />
+            <ForumPostNewCommentForm isReplying={isReplying} replyingTo={replyingTo} />
         </StyledItemWrapper>
     );
 };

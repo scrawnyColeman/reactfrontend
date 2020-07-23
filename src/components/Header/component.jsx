@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
@@ -36,31 +37,36 @@ const StyledLogoContainer = styled.div`
         display: none;
     }
 `;
-
-const Header = ({ username }) => (
-    <StyledHeader>
-        <StyledNavBar>
-            {username ? (
-                <StyledNavLinks href={`/profile/${username}`} username>
-                    {username}
-                </StyledNavLinks>
-            ) : (
-                <StyledNavLinks href="/login">Login</StyledNavLinks>
-            )}
-            <StyledNavLinks href="/learn">Learn</StyledNavLinks>
-            <StyledNavLinks href="/forum">Forum</StyledNavLinks>
-            {username ? (
-                <StyledNavLinks href="/login" onClick={() => AuthenticationService.destroyLogin()}>
-                    Logout
-                </StyledNavLinks>
-            ) : (
-                <div />
-            )}
-        </StyledNavBar>
-        <StyledLogoContainer>
-            <Logo />
-        </StyledLogoContainer>
-    </StyledHeader>
-);
+const Header = ({ username }) => {
+    const history = useHistory();
+    return (
+        <StyledHeader>
+            <StyledNavBar>
+                {username ? (
+                    <StyledNavLinks href={`/profile/${username}`} username>
+                        {username}
+                    </StyledNavLinks>
+                ) : (
+                    <StyledNavLinks href="/login">Login</StyledNavLinks>
+                )}
+                <StyledNavLinks href="/learn">Learn</StyledNavLinks>
+                <StyledNavLinks href="/forum">Forum</StyledNavLinks>
+                {username ? (
+                    <StyledNavLinks
+                        href="/login"
+                        onClick={() => AuthenticationService.logout().then(() => history.push({ pathname: '/login' }))}
+                    >
+                        logout
+                    </StyledNavLinks>
+                ) : (
+                    <div />
+                )}
+            </StyledNavBar>
+            <StyledLogoContainer>
+                <Logo />
+            </StyledLogoContainer>
+        </StyledHeader>
+    );
+};
 
 export default Header;

@@ -1,15 +1,19 @@
+import axios from 'axios';
+
+const BASE_URL = `http://localhost:8080/njoy`;
+
 class AuthenticationService {
-    registerLogin(username, email, id, userType) {
-        sessionStorage.setItem('activeUser', username);
-        sessionStorage.setItem('activeEmail', email);
-        sessionStorage.setItem('activeId', id);
-        sessionStorage.setItem('activeType', 'admin');
-    }
-    destroyLogin() {
+    executeBasicAuth = (username, password) =>
+        axios.get(`${BASE_URL}/authenticate`, {
+            headers: { authorization: `Basic ${window.btoa(`${username}:${password}`)}` },
+        });
+
+    logout() {
         sessionStorage.removeItem('activeUser');
         sessionStorage.removeItem('activeEmail');
         sessionStorage.removeItem('activeId');
         sessionStorage.removeItem('activeType');
+        sessionStorage.removeItem('authToken');
     }
 }
 

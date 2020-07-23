@@ -2,9 +2,6 @@
 
 exports[`Login component component matches snapshot 1`] = `
 <styled.div>
-  <LoginError
-    message="Account information is invalid."
-  />
   <styled.div>
     <styled.div>
       NJOY LEARNING

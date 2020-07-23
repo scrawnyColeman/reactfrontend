@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CommentBlock from '../CommentBlock/component';
 import { colours } from '../../constants/styles';
 import CommentButton from '../CommentButton/component';
-import { fetchForumPostComments } from '../../data/forumposts';
+import { fetchForumPostComments } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div`
@@ -40,7 +40,7 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const ForumPost = ({ id }) => {
+const PostComments = ({ id, setReplying, setReplyingTo }) => {
     const [comments, setComments] = useState([]);
     useEffect(() => {
         fetchForumPostComments(id)
@@ -68,7 +68,15 @@ const ForumPost = ({ id }) => {
                                         <StyledCommentUsername>[{author.username}]:</StyledCommentUsername> {comment}
                                     </StyledComment>
                                     <StyledCommentButtons>
-                                        <CommentButton text="Reply" size="small" />
+                                        <CommentButton
+                                            text="Reply"
+                                            size="small"
+                                            onClick={() => {
+                                                setReplyingTo(author.username);
+                                                setReplying(true);
+                                                console.log('hello');
+                                            }}
+                                        />
                                         {showCommentButton && <CommentButton text="Edit" size="small" />}
                                         {showCommentButton && <CommentButton text="Delete" size="small" />}
                                     </StyledCommentButtons>
@@ -77,6 +85,8 @@ const ForumPost = ({ id }) => {
                                     <CommentBlock
                                         childComments={comments.filter((comment) => comment.parentId === id)}
                                         allComments={comments}
+                                        setReplying={setReplying}
+                                        setReplyingTo={setReplyingTo}
                                     />
                                 )}
                             </StyledText>
@@ -88,4 +98,4 @@ const ForumPost = ({ id }) => {
     );
 };
 
-export default ForumPost;
+export default PostComments;

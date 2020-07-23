@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { fetchLessonById } from '../../data/courses';
 import TheoryLessonContent from '../TheoryLessonContent/component';
 import TheoryVisualAid from '../TheoryVisualAid/component';
 import Button from '../Button/component';
@@ -8,8 +7,7 @@ import styled from 'styled-components';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PracticalQuizPage from '../PracticalQuizPage/component';
-import { fetchPracticalByLessonId } from '../../data/practical';
-import fetchForumPostByLesson from '../../data/forumposts';
+import { fetchPracticalByLessonId, fetchForumPostByLesson, fetchLessonById } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 import PracticalComponent from './practicalComponent';
 

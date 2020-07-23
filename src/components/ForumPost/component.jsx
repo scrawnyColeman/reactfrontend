@@ -40,9 +40,10 @@ const StyledHorizontalLine = styled.hr`
     width: 100%;
 `;
 
-const ForumPost = ({ id, data }) => {
+const ForumPost = ({ id, data, setReplying, setReplyingTo }) => {
     const { question, title, lesson } = { ...data };
     const { title: lessonTitle, language } = { ...lesson };
+
     return (
         <Container>
             <StyledWrapper key={id}>
@@ -60,7 +61,7 @@ const ForumPost = ({ id, data }) => {
                     <StyledHorizontalLine />
                 </StyledText>
             </StyledWrapper>
-            <PostComments id={id} />
+            <PostComments id={id} setReplying={setReplying} setReplyingTo={setReplyingTo} />
         </Container>
     );
 };

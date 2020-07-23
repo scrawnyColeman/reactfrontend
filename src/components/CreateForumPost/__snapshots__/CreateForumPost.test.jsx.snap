@@ -27,7 +27,7 @@ exports[`CreateForumPost component component matches snapshot 1`] = `
       hierarchy="primary"
       onClick={[Function]}
       size="large"
-      text="View"
+      text="Submit"
       variant="outlined"
     />
   </styled.div>

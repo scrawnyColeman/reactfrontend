@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
 import TextField from '../TextField/component';
 import Button from '../Button/component';
@@ -18,7 +17,7 @@ const StyledWrapper = styled.div`
     margin: 0 auto;
 `;
 
-const ForumPostNewCommentForm = () => {
+const ForumPostNewCommentForm = ({ isReplying, replyingTo }) => {
     const [commentUser, setCommentUser] = useState('default value');
     const [question, setQuestion] = useState(null);
 
@@ -26,14 +25,25 @@ const ForumPostNewCommentForm = () => {
         <Container>
             <StyledHeading>Join the discussion...</StyledHeading>
             <StyledWrapper>
-                <TextField
-                    id="outlined-full-width"
-                    label="Label"
-                    margin="normal"
-                    onChange={(event) => setCommentUser(event.target.value)}
-                    disabled
-                    placeholder={'Replying to: ' + commentUser}
-                />
+                {!isReplying ? (
+                    <TextField
+                        id="outlined-full-width"
+                        label="Label"
+                        margin="normal"
+                        onChange={(event) => setCommentUser(event.target.value)}
+                        disabled
+                        placeholder={'New Comment'}
+                    />
+                ) : (
+                    <TextField
+                        id="outlined-full-width"
+                        label="Label"
+                        margin="normal"
+                        onChange={(event) => setCommentUser(event.target.value)}
+                        disabled
+                        placeholder={`Replying to: ${replyingTo}`}
+                    />
+                )}
                 <TextField
                     id="filled-multiline-static"
                     text={question}
@@ -45,7 +55,7 @@ const ForumPostNewCommentForm = () => {
                 />
                 <Button
                     onClick={() => window.location.pathname === '/'}
-                    text="View"
+                    text="Submit"
                     size="large"
                     variant="outlined"
                     hierarchy="primary"

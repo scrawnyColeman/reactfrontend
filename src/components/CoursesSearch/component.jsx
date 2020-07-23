@@ -92,7 +92,7 @@ const CoursesSearch = ({ courses, isLoading }) => {
                                                 have taken this course!
                                             </p>
                                             <Button
-                                                onClick={() => history.push({ pathname: `learn/${id}` })}
+                                                onClick={() => history.push({ pathname: `/learn/${id}` })}
                                                 text="Go"
                                                 size="small"
                                                 variant="outlined"

@@ -23,13 +23,15 @@ const StyledName = styled.div`
     font-size: 3rem;
 `;
 
-const Login = () => {
+const Login = ({ setLocalUsername }) => {
     const [hasAccount, setHasAccount] = useState(false);
-    const [displayError, setDisplayError] = useState(true);
+    const [displayError, setDisplayError] = useState(false);
     const history = useHistory();
+
     if (sessionStorage.getItem('activeUser')) {
         history.push({ pathname: `/profile/${sessionStorage.getItem('activeUser')}` });
     }
+
     return (
         <StyledWrapper>
             {displayError && <LoginError message={'Account information is invalid.'} />}
@@ -37,7 +39,11 @@ const Login = () => {
                 <StyledName>NJOY LEARNING</StyledName>
             </StyledLogoContainer>
             <StyledFormContainer>
-                {hasAccount ? <LoginForm /> : <RegisterForm />}
+                {hasAccount ? (
+                    <LoginForm setLocalUsername={() => setLocalUsername()} />
+                ) : (
+                    <RegisterForm setLocalUsername={() => setLocalUsername()} />
+                )}
                 {hasAccount && (
                     <span>
                         Don't have an account?

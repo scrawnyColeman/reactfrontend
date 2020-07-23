@@ -11,7 +11,7 @@ exports[`ForumPost component component matches snapshot 1`] = `
       <styled.hr />
     </styled.div>
   </styled.div>
-  <ForumPost
+  <PostComments
     id="1"
   />
 </styled.div>

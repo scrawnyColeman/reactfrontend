@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PracticalCodeChallenge from '../PracticalCodeChallenge/component';
 import PracticalCodeSubmission from '../PracticalCodeSubmission/component';
-import { fetchSolutionByPracticalId } from '../../data/practical';
+import { fetchSolutionByPracticalId } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 import { useHistory } from 'react-router-dom';
 

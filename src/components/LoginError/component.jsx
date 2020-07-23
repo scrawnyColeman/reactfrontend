@@ -4,12 +4,13 @@ import { colours } from '../../constants/styles';
 
 const Container = styled.div`
     height: 36px;
-    width: 50vw;
+    padding-top: 4px;
+    width: 72vw;
     z-index: 1000;
     color: ${colours.primary};
-    position: relative;
-    font-size: 1.5rem;
-    border: 2px solid red;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    border-bottom: 2px solid ${colours.secondary};
 `;
 
 const LoginError = ({ message }) => <Container>{message}</Container>;

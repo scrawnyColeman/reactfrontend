@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TextField from '../TextField/component';
-import data from '../../data/languages';
+import { data } from '../../data/languages';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import styled from 'styled-components';

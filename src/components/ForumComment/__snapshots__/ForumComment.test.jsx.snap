@@ -9,7 +9,7 @@ exports[`ForumComment component component matches snapshot 1`] = `
       label="Label"
       margin="normal"
       onChange={[Function]}
-      placeholder="Replying to:"
+      placeholder="Replying to: yeet"
       text={null}
     />
     <TextField

@@ -12,7 +12,7 @@ exports[`ForumPostNewCommentForm component component matches snapshot 1`] = `
       label="Label"
       margin="normal"
       onChange={[Function]}
-      placeholder="Replying to: default value"
+      placeholder="New Comment"
     />
     <TextField
       id="filled-multiline-static"
@@ -27,7 +27,7 @@ exports[`ForumPostNewCommentForm component component matches snapshot 1`] = `
       hierarchy="primary"
       onClick={[Function]}
       size="large"
-      text="View"
+      text="Submit"
       variant="outlined"
     />
   </styled.div>

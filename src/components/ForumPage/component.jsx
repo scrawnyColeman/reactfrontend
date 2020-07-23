@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import ForumPreview from '../ForumPreview/component';
 import ForumPostPage from '../ForumPostPage/component';
 import { errorLogger } from '../../data/errorLogger.js';
-import { fetchAllForumPosts } from '../../data/forumposts.js';
+import { fetchAllForumPosts } from '../../data/apiCalls.js';
 import CreateForumPost from '../CreateForumPost/component';
 
 const StyledItemWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 20vh 20px 0 20px;
+    margin: 20vh 20px 0;
 `;
 
 const ForumPage = () => {
@@ -18,7 +18,7 @@ const ForumPage = () => {
     const [data, setData] = useState([]);
     const [param, setParam] = useState(location);
 
-    useEffect(() => {
+    React.useEffect(() => {
         fetchAllForumPosts()
             .then((response) => {
                 setData(response.data);

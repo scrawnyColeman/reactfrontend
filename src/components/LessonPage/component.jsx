@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import LessonInformation from '../LessonInformation/component';
-import { fetchLessonById } from '../../data/courses';
+import { fetchLessonById } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 import { useState } from 'react';
 

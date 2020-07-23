@@ -4,7 +4,12 @@ exports[`ForumPostPage component component matches snapshot 1`] = `
 <styled.div>
   <ForumPost
     data={Array []}
+    setReplying={[Function]}
+    setReplyingTo={[Function]}
   />
-  <ForumPostNewCommentForm />
+  <ForumPostNewCommentForm
+    isReplying={false}
+    replyingTo={null}
+  />
 </styled.div>
 `;

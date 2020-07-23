@@ -47,13 +47,13 @@ const StyledRequestTag = styled.a`
 `;
 
 const PersonalInformation = ({ user }) => {
+    const history = useHistory();
     const [editInfo, setEditInfo] = useState(false);
     const [checkPassword, setCheckPassword] = useState(false);
     const [username, setUsername] = useState(sessionStorage.getItem('activeUser').username);
     const [email, setEmail] = useState(sessionStorage.getItem('activeEmail'));
     const [userType, setUserType] = useState(sessionStorage.getItem('activeType'));
     const [password, setPassword] = useState('');
-    const history = useHistory();
 
     return (
         <StyledItemWrapper>
@@ -150,7 +150,7 @@ const PersonalInformation = ({ user }) => {
                             />
                         )}
                     </StyledBtnContainer>
-                    {userType === 'learner' && (
+                    {userType === 'user' && (
                         <StyledRequestTag onClick={() => console.log('requesting access')}>
                             Become an Author
                         </StyledRequestTag>

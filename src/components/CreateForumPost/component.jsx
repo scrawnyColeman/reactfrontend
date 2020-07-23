@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
 import TextField from '../TextField/component';
 import Button from '../Button/component';
@@ -45,7 +44,7 @@ const CreateForumPost = () => {
                 />
                 <Button
                     onClick={() => window.location.pathname === '/'}
-                    text="View"
+                    text="Submit"
                     size="large"
                     variant="outlined"
                     hierarchy="primary"

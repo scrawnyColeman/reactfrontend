@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PersonalInformation from '../PersonalInformation/component';
 import UserCourses from '../UserCourses/component';
-import { fetchUserLessons } from '../../data/courses.js';
-import userData from '../../data/user.js';
+import { fetchUserLessons } from '../../data/apiCalls.js';
 import { useLocation } from 'react-router-dom';
 import BigButton from '../BigButton/component';
 import { errorLogger } from '../../data/errorLogger';
@@ -23,31 +22,35 @@ const StyledButtonContainer = styled.div`
 const ProfilePage = () => {
     const location = useLocation().search;
     const [param, setParam] = useState(location);
-    const { user } = userData;
-    const userId = sessionStorage.getItem('activeId') || null;
-    const [userLessons, setUserLessons] = useState();
-
+    const user = {
+        username: sessionStorage.getItem('activeUser'),
+        email: sessionStorage.getItem('activeEmail'),
+        id: sessionStorage.getItem('activeId'),
+        userRole: sessionStorage.getItem('activeType'),
+    };
+    const [userLessons, setUserLessons] = useState(null);
     useEffect(() => {
-        fetchUserLessons(userId)
+        fetchUserLessons(user.id)
             .then((response) => {
                 setUserLessons(response.data);
             })
             .catch(errorLogger);
-    }, [userId]);
+    }, []);
 
-    return (
-        userLessons && (
-            <StyledItemWrapper>
-                <PersonalInformation user={user} />
-                {userLessons.length !== 0 ? (
-                    <UserCourses courses={userLessons} id={userId} onClick={setParam} />
-                ) : (
-                    <StyledButtonContainer>
-                        <BigButton text={`Begin Learning`} path={`/learn`} />
-                    </StyledButtonContainer>
-                )}
-            </StyledItemWrapper>
-        )
+    return userLessons ? (
+        <StyledItemWrapper>
+            <PersonalInformation user={user} />
+            {userLessons.length !== 0 ? (
+                <UserCourses courses={userLessons} id={user.id} onClick={setParam} />
+            ) : (
+                <StyledButtonContainer>
+                    <BigButton text={`Begin Learning`} path={`/learn`} />
+                </StyledButtonContainer>
+            )}
+        </StyledItemWrapper>
+    ) : (
+        <div />
     );
 };
+
 export default ProfilePage;

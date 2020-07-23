@@ -23,7 +23,7 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const CommentBlock = ({ childComments, allComments }) => (
+const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo }) => (
     <Container>
         {childComments.map((comment) => {
             const { author, comment: commentText, id, nestingValue } = comment;
@@ -37,7 +37,17 @@ const CommentBlock = ({ childComments, allComments }) => (
                             <StyledCommentUsername>[{author.username}]:</StyledCommentUsername> {commentText}
                         </StyledComment>
                         <StyledCommentButtons>
-                            {nestingValue < '2' && <CommentButton text="Reply" size="small" />}
+                            {nestingValue < '2' && (
+                                <CommentButton
+                                    text="Reply"
+                                    size="small"
+                                    onClick={() => {
+                                        setReplyingTo(author.username);
+                                        setReplying(true);
+                                        console.log('hello');
+                                    }}
+                                />
+                            )}
                             {showCommentButton && <CommentButton text="Edit" size="small" />}
                             {showCommentButton && <CommentButton text="Delete" size="small" />}
                         </StyledCommentButtons>

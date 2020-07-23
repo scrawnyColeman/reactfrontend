@@ -3,7 +3,7 @@ import TheoryLessonContent from '../TheoryLessonContent/component';
 import TheoryVisualAid from '../TheoryVisualAid/component';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import { fetchLessonById } from '../../data/courses';
+import { fetchLessonById } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div`
