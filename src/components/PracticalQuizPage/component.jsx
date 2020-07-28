@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
     color: ${colours.primary}
-    height: 60vh;
+    height: 40vh;
     margin: 20vh auto 0;
     width: 90vw;
     border: 2px solid ${colours.primary};
@@ -72,14 +72,6 @@ const StyledResponse = styled.div`
 `;
 
 const PracticalQuizPage = ({ fullLessonId }) => {
-    const carousel = {
-        ...carouselSettings,
-        slidesToShow: 1,
-        infinite: false,
-        afterChange: () => {
-            setShowResponse(false);
-        },
-    };
     const location = useLocation();
     const lessonId = location.pathname.split('/practical/')[1] || fullLessonId;
     const [showResponse, setShowResponse] = useState(false);
@@ -101,7 +93,7 @@ const PracticalQuizPage = ({ fullLessonId }) => {
             {questions.map((q) => (
                 <Wrapper key={q.id}>
                     <Container>
-                        <Slider {...carousel}>
+                        <Slider {...carouselSettings}>
                             {questions.map((ques, index) => {
                                 const { id: questionId, question, codeSnippet } = ques;
                                 return (

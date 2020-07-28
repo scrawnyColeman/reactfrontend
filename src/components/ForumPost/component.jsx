@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
-import PostComments from '../ForumPostCommentSection/component';
+import PostComments from '../PostComments/component';
 
 const Container = styled.div`
     text-align: left;
@@ -40,7 +40,7 @@ const StyledHorizontalLine = styled.hr`
     width: 100%;
 `;
 
-const ForumPost = ({ id, data, setReplying, setReplyingTo }) => {
+const ForumPost = ({ id, data, setReplying, setReplyingTo, setEditing, setCommentEditing }) => {
     const { question, title, lesson } = { ...data };
     const { title: lessonTitle, language } = { ...lesson };
 
@@ -61,7 +61,13 @@ const ForumPost = ({ id, data, setReplying, setReplyingTo }) => {
                     <StyledHorizontalLine />
                 </StyledText>
             </StyledWrapper>
-            <PostComments id={id} setReplying={setReplying} setReplyingTo={setReplyingTo} />
+            <PostComments
+                id={id}
+                setReplying={setReplying}
+                setReplyingTo={setReplyingTo}
+                setEditing={setEditing}
+                setCommentEditing={setCommentEditing}
+            />
         </Container>
     );
 };

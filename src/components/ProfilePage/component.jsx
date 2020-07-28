@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PersonalInformation from '../PersonalInformation/component';
 import UserCourses from '../UserCourses/component';
 import { fetchUserLessons } from '../../data/apiCalls.js';
-import { useLocation } from 'react-router-dom';
 import BigButton from '../BigButton/component';
 import { errorLogger } from '../../data/errorLogger';
 
@@ -19,9 +18,7 @@ const StyledButtonContainer = styled.div`
     margin: auto;
 `;
 
-const ProfilePage = () => {
-    const location = useLocation().search;
-    const [param, setParam] = useState(location);
+const ProfilePage = ({ setLocalUsername }) => {
     const user = {
         username: sessionStorage.getItem('activeUser'),
         email: sessionStorage.getItem('activeEmail'),
@@ -39,9 +36,9 @@ const ProfilePage = () => {
 
     return userLessons ? (
         <StyledItemWrapper>
-            <PersonalInformation user={user} />
+            <PersonalInformation user={user} setLocalUsername={() => setLocalUsername()} />
             {userLessons.length !== 0 ? (
-                <UserCourses courses={userLessons} id={user.id} onClick={setParam} />
+                <UserCourses courses={userLessons} id={user.id} />
             ) : (
                 <StyledButtonContainer>
                     <BigButton text={`Begin Learning`} path={`/learn`} />

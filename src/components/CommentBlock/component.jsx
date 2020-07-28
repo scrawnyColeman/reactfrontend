@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
 import CommentButton from '../CommentButton/component';
+import { deleteComment } from '../../data/apiCalls';
 
 const Container = styled.div`
     text-align: left;
 `;
 const StyledWrapper = styled.div`
-    margin: 12px 0 12px 24px;
+    margin: 0 0 0 24px;
 `;
 const StyledComment = styled.div`
     max-width: 85%;
@@ -23,7 +24,7 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo }) => (
+const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo, setEditing, setCommentEditing }) => (
     <Container>
         {childComments.map((comment) => {
             const { author, comment: commentText, id, nestingValue } = comment;
@@ -42,14 +43,43 @@ const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo }
                                     text="Reply"
                                     size="small"
                                     onClick={() => {
-                                        setReplyingTo(author.username);
+                                        setReplyingTo({
+                                            username: author.username,
+                                            id: author.id,
+                                            nest: nestingValue,
+                                            commentId: id,
+                                        });
                                         setReplying(true);
                                         console.log('hello');
                                     }}
                                 />
                             )}
-                            {showCommentButton && <CommentButton text="Edit" size="small" />}
-                            {showCommentButton && <CommentButton text="Delete" size="small" />}
+                            {showCommentButton && (
+                                <CommentButton
+                                    text="Edit"
+                                    size="small"
+                                    onClick={() => {
+                                        setReplying(false);
+                                        setReplyingTo(null);
+                                        setEditing(true);
+                                        setCommentEditing(id);
+                                        console.log('hi');
+                                    }}
+                                />
+                            )}
+                            {showCommentButton && (
+                                <CommentButton
+                                    text="Delete"
+                                    size="small"
+                                    onClick={() => {
+                                        deleteComment(id)
+                                            .then((response) => {
+                                                if (response.status === 200) window.location.reload();
+                                            })
+                                            .catch((error) => console.log(error));
+                                    }}
+                                />
+                            )}
                         </StyledCommentButtons>
                     </StyledCommentContainer>
                     <CommentBlock

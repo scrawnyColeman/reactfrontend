@@ -3,7 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import { default as MaterialTextField } from '@material-ui/core/TextField';
 import { materialStyles, textFieldOverrideStyles } from '../../constants/styles';
 
-const TextField = ({ defaultValue, onChange, disabled = false, multiline = false, rows = 1, placeholder = '' }) => {
+const TextField = ({
+    defaultValue,
+    onChange,
+    disabled = false,
+    type = 'text',
+    multiline = false,
+    rows = 1,
+    placeholder = '',
+}) => {
     const useStyles = makeStyles(materialStyles);
     const classes = useStyles();
 
@@ -15,6 +23,7 @@ const TextField = ({ defaultValue, onChange, disabled = false, multiline = false
             multiline={multiline}
             rowsMax={rows}
             rows={rows}
+            type={type}
             onChange={onChange}
             placeholder={placeholder}
             style={textFieldOverrideStyles}

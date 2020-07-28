@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../Button/component';
 import { colours } from '../../constants/styles';
 import { useHistory } from 'react-router-dom';
+import { setUserLesson, fetchUserLessons } from '../../data/apiCalls';
 
 const StyledWrapper = styled.div`
     display: flex;
@@ -25,11 +26,25 @@ const StyledText = styled.div`
 
 const LessonPath = ({ text, id, path }) => {
     const history = useHistory();
+    const user = sessionStorage.getItem('activeId') || null;
     return (
         <Container>
             <StyledWrapper>
                 <StyledText>{text}</StyledText>
-                <Button text="Begin" onClick={() => history.push({ pathname: `${path}/${id}` })} />
+                <Button
+                    text="Begin"
+                    onClick={() => {
+                        fetchUserLessons(user, id)
+                            .then((response) => {
+                                if (response.data.filter((lesson) => lesson.id === id).length === 0)
+                                    setUserLesson(user, id)
+                                        .then((response) => console.log(response))
+                                        .catch((error) => console.log(error));
+                            })
+                            .catch((error) => console.log(error));
+                        history.push({ pathname: `${path}/${id}` });
+                    }}
+                />
             </StyledWrapper>
             <StyledHR />
         </Container>

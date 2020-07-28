@@ -10,7 +10,7 @@ export const fetchAllLessons = () => axios.get(`${BASE_URL}/lessons`, headers);
 export const fetchLessonById = (id) => axios.get(`${BASE_URL}/lessons/${id}`, headers);
 export const fetchApprovedLessons = () => axios.get(`${BASE_URL}/lessons/approved`, headers);
 export const fetchActiveUsers = (id) => axios.get(`${BASE_URL}/activeUsers/${id}`, headers);
-export const fetchUserLessons = (id) => {
+export const fetchUserLessons = (id, lessonId) => {
     return axios.get(`${BASE_URL}/user_lessons/${id}`, headers);
 };
 
@@ -29,6 +29,25 @@ export const fetchAllQuestionsByLessonId = (id) => axios.get(`${BASE_URL}/questi
 export const fetchAllAnswersByLessonId = (id) => axios.get(`${BASE_URL}/questions/answers/lesson/${id}`, headers);
 
 /****** Languages fetch requests *******/
-export const fetchAllLanguages = () => {
-    axios.get(`${BASE_URL}/languages`, headers);
-};
+export const fetchAllLanguages = () => axios.get(`${BASE_URL}/languages`, headers);
+
+/****** Users fetch requests *******/
+export const fetchUserByUsernameOrEmail = (username, email) =>
+    axios.get(`${BASE_URL}/user/${username}/${email}`, headers);
+
+/****** Users update requests *******/
+export const updateUserInfo = (userId, username, email) =>
+    axios.put(`${BASE_URL}/users/${userId}/username/${username}/email/${email}`, headers);
+
+/****** Users post requests *******/
+export const setUserLesson = (userId, lessonId) => axios.post(`${BASE_URL}/user/${userId}/lesson/${lessonId}`, headers);
+
+export const createForumPost = (post) => axios.post(`${BASE_URL}/forum_posts`, post, headers);
+
+export const createComment = (comment, userId, postId) =>
+    axios.post(`${BASE_URL}/comments/${userId}/${postId}`, comment, headers);
+
+export const deleteComment = (commentId) => axios.put(`${BASE_URL}/comments/delete/${commentId}`, headers);
+
+export const editComment = (commentId, comment) =>
+    axios.put(`${BASE_URL}/comments/edit/${commentId}`, comment, headers);

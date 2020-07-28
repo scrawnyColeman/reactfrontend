@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
 import { useHistory } from 'react-router-dom';
-import LoginError from '../LoginError/component';
+import Error from '../LoginError/component';
 
 const StyledWrapper = styled.div`
     display: grid;
@@ -34,7 +34,7 @@ const Login = ({ setLocalUsername }) => {
 
     return (
         <StyledWrapper>
-            {displayError && <LoginError message={'Account information is invalid.'} />}
+            {displayError && <Error message={'Account information is invalid.'} />}
             <StyledLogoContainer>
                 <StyledName>NJOY LEARNING</StyledName>
             </StyledLogoContainer>

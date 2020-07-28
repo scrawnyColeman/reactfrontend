@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import TextField from '../TextField/component';
+import CommentButton from '../CommentButton/component';
 import Button from '../Button/component';
+import { createComment, editComment } from '../../data/apiCalls';
+import { colours } from '../../constants/styles';
 
 const Container = styled.div`
     text-align: left;
@@ -16,33 +19,79 @@ const StyledWrapper = styled.div`
     grid-gap: 8px;
     margin: 0 auto;
 `;
+const StyledCommentHeader = styled.div`
+    color: ${colours.primary};
+    display: flex;
+    justify-content: space-between;
+`;
 
-const ForumPostNewCommentForm = ({ isReplying, replyingTo }) => {
-    const [commentUser, setCommentUser] = useState('default value');
+const ForumPostNewCommentForm = ({
+    isReplying,
+    replyingTo,
+    postId,
+    setReplying,
+    setReplyingTo,
+    editing,
+    commentEditing,
+    setEditing,
+    setCommentEditing,
+}) => {
     const [question, setQuestion] = useState(null);
+    const userId = sessionStorage.getItem('activeId');
+
+    const submitComment = () => {
+        const comment = {
+            comment: question,
+            parentId: isReplying ? replyingTo.commentId : 0,
+            nestingValue: isReplying ? Number(replyingTo.nest) + 1 : 0,
+            post: parseInt(postId, 10),
+        };
+        !editing
+            ? createComment(comment, userId, comment.post)
+                  .then((response) => {
+                      console.log(response);
+                      if (response.status === 200) window.location.reload();
+                  })
+                  .then((error) => console.log(error))
+            : editComment(commentEditing, comment)
+                  .then((response) => {
+                      console.log(response);
+                      if (response.status === 200) window.location.reload();
+                  })
+                  .catch((error) => console.log(error));
+    };
 
     return (
         <Container>
             <StyledHeading>Join the discussion...</StyledHeading>
             <StyledWrapper>
                 {!isReplying ? (
-                    <TextField
-                        id="outlined-full-width"
-                        label="Label"
-                        margin="normal"
-                        onChange={(event) => setCommentUser(event.target.value)}
-                        disabled
-                        placeholder={'New Comment'}
-                    />
+                    editing ? (
+                        <StyledCommentHeader>
+                            <>Editing...</>
+                            <></>
+                        </StyledCommentHeader>
+                    ) : (
+                        <StyledCommentHeader>
+                            <>New Comment:</>
+                            <></>
+                        </StyledCommentHeader>
+                    )
                 ) : (
-                    <TextField
-                        id="outlined-full-width"
-                        label="Label"
-                        margin="normal"
-                        onChange={(event) => setCommentUser(event.target.value)}
-                        disabled
-                        placeholder={`Replying to: ${replyingTo}`}
-                    />
+                    <StyledCommentHeader>
+                        <>Replying to: {replyingTo.username}</>
+                        <CommentButton
+                            variant="outlined"
+                            text={`x`}
+                            size={`large`}
+                            onClick={() => {
+                                setReplyingTo(null);
+                                setReplying(false);
+                                setEditing(false);
+                                setCommentEditing(null);
+                            }}
+                        />
+                    </StyledCommentHeader>
                 )}
                 <TextField
                     id="filled-multiline-static"
@@ -54,7 +103,7 @@ const ForumPostNewCommentForm = ({ isReplying, replyingTo }) => {
                     placeholder={'Write your comment here...'}
                 />
                 <Button
-                    onClick={() => window.location.pathname === '/'}
+                    onClick={() => submitComment()}
                     text="Submit"
                     size="large"
                     variant="outlined"

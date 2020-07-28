@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { materialStyles } from '../../constants/styles';
 import axios from 'axios';
-import LoginError from '../LoginError/component';
+import Error from '../LoginError/component';
 import { useHistory } from 'react-router-dom';
 
 const RegisterForm = ({ setLocalUsername }) => {
@@ -154,12 +154,12 @@ const RegisterForm = ({ setLocalUsername }) => {
                     />
                 </Grid>
             </Grid>
-            {displayPasswordMismatch && <LoginError message={`Sorry. Your passwords don't match`} />}
-            {usernameTaken && !emailTaken && <LoginError message={`That username is already taken`} />}
-            {!usernameTaken && emailTaken && <LoginError message={`That email is already taken`} />}
-            {usernameTaken && emailTaken && <LoginError message={`Username and Email are both in use.`} />}
+            {displayPasswordMismatch && <Error message={`Sorry. Your passwords don't match`} />}
+            {usernameTaken && !emailTaken && <Error message={`That username is already taken`} />}
+            {!usernameTaken && emailTaken && <Error message={`That email is already taken`} />}
+            {usernameTaken && emailTaken && <Error message={`Username and Email are both in use.`} />}
             {regexError && (
-                <LoginError message={`Password should contain uppercase letter, at least 8 characters and a number`} />
+                <Error message={`Password should contain uppercase letter, at least 8 characters and a number`} />
             )}
         </form>
     );

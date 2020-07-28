@@ -95,7 +95,6 @@ const defaultQuestions = new Array(10).fill({
 
 const NewLessonPage = () => {
     const RightIcon = () => <StyledArrowRight icon={faArrowCircleRight} />;
-    const youtubeURLBase = `https://www.youtube.com/watch?v=`;
     const [codePreview, setCodePreview] = useState('//Sample Code');
     const [codeSolutionPreview, setCodeSolutionPreview] = useState('//Sample Code');
     const [questionPreview, setQuestionPreview] = useState('Sample Question');
@@ -115,7 +114,7 @@ const NewLessonPage = () => {
                     <StyledTheoryContainer>
                         <TheoryForm
                             setTheory={() => setTheory()}
-                            setYTLink={(extension) => setYTLink(youtubeURLBase + `${extension}`)}
+                            setYTLink={() => setYTLink()}
                             setTitle={() => setTitle()}
                             setLanguageId={() => setLanguageId()}
                         />

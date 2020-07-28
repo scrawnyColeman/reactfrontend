@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import { materialStyles } from '../../constants/styles';
 import AuthenticationService from '../AuthenticationService/AuthenticationService.js';
-import LoginError from '../LoginError/component';
+import Error from '../LoginError/component';
 
 const LoginForm = ({ setLocalUsername }) => {
     const useStyles = makeStyles(materialStyles);
@@ -69,7 +69,7 @@ const LoginForm = ({ setLocalUsername }) => {
                     <Button text="Log in" variant="text" onClick={() => login()} />
                 </Grid>
             </Grid>
-            {invalidCredentialsMessage && <LoginError message={`Sorry. Your credentials are invalid.`} />}
+            {invalidCredentialsMessage && <Error message={`Sorry. Your credentials are invalid.`} />}
         </form>
     );
 };

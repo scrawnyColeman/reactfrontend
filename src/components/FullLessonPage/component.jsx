@@ -107,7 +107,10 @@ const FullLessonPage = () => {
                         <Button
                             text="Finish"
                             variant="outlined"
-                            onClick={() => setpageName(pages[3])}
+                            onClick={() => {
+                                //setLessonCompleted()
+                                setpageName(pages[3]);
+                            }}
                             children={<RightIcon />}
                         />
                     </QuizContainer>

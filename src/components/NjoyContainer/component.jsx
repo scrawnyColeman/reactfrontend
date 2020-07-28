@@ -37,7 +37,13 @@ const NjoyApplication = ({ history }) => {
                 <Switch>
                     <Route exact path="/" render={() => <Login setLocalUsername={() => setLocalUsername()} />} />
                     <Route exact path="/login" render={() => <Login setLocalUsername={() => setLocalUsername()} />} />
-                    <Route exact path="/profile/:name" render={() => <ProfilePage username={localUsername} />} />
+                    <Route
+                        exact
+                        path="/profile/:name"
+                        render={() => (
+                            <ProfilePage username={localUsername} setLocalUsername={() => setLocalUsername()} />
+                        )}
+                    />
                     <Route exact path="/learn" component={LearnPage} />
                     <Route exact path="/learn/:id" component={LessonPage} />
                     <Route exact path="/learn/theory/:id" component={TheoryPage} />

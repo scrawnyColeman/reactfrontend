@@ -20,7 +20,7 @@ const QuizForm = () => {
             <StyledHead>Quiz Questions</StyledHead>
             <StyledBody>
                 {quizQuestions.map((value, index) => (
-                    <QuizQuestionForm key={value} questionNumber={index + 1} />
+                    <QuizQuestionForm key={`${value}${index}`} questionNumber={index + 1} />
                 ))}
             </StyledBody>
         </QuizContainer>

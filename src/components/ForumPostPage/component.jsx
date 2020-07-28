@@ -20,6 +20,8 @@ const ForumPostPage = () => {
     const [post, setPost] = useState([]);
     const [isReplying, setReplying] = useState(false);
     const [replyingTo, setReplyingTo] = useState(null);
+    const [editing, setEditing] = useState(false);
+    const [commentEditing, setCommentEditing] = useState(null);
 
     useEffect(() => {
         fetchForumPost(postId)
@@ -31,8 +33,25 @@ const ForumPostPage = () => {
 
     return (
         <StyledItemWrapper>
-            <ForumPost id={postId} data={post} setReplying={setReplying} setReplyingTo={setReplyingTo} />
-            <ForumPostNewCommentForm isReplying={isReplying} replyingTo={replyingTo} />
+            <ForumPost
+                id={postId}
+                data={post}
+                setReplying={setReplying}
+                setReplyingTo={setReplyingTo}
+                setEditing={setEditing}
+                setCommentEditing={setCommentEditing}
+            />
+            <ForumPostNewCommentForm
+                isReplying={isReplying}
+                replyingTo={replyingTo}
+                postId={postId}
+                setReplying={setReplying}
+                setReplyingTo={setReplyingTo}
+                editing={editing}
+                commentEditing={commentEditing}
+                setEditing={setEditing}
+                setCommentEditing={setCommentEditing}
+            />
         </StyledItemWrapper>
     );
 };

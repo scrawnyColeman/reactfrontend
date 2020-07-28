@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import TextField from '../TextField/component';
-import { data } from '../../data/languages';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
+import { fetchAllLanguages } from '../../data/apiCalls';
 
 const StyledHeader = styled.div`
     border-top: 2px solid ${colours.primary};
@@ -14,22 +14,30 @@ const StyledHeader = styled.div`
 const StyledBody = styled.div``;
 
 const TheoryForm = ({ theory, setTheory }) => {
-    const options = [];
-    data.languages.map((language) => options.push({ id: language.id, label: language.name }));
+    const options = [{ value: 0, label: 'Select language...' }];
+    fetchAllLanguages()
+        .then((response) => {
+            response.data.map((lang) => {
+                const { id, language } = lang;
+                return options.push({ value: id, label: language });
+            });
+        })
+        .catch((error) => console.log(error));
 
     const [languageViaDropdown, setLanguage] = useState(options[0]);
-
-    const selectedLanguage = options.find((key) => key.label === languageViaDropdown.label);
-    console.log(selectedLanguage.id); //language id from dropdown for post and put request.
+    // const selectedLanguage = options.find((option) => option.label === languageViaDropdown.label);
+    console.log(languageViaDropdown.label);
 
     return (
-        <>
+        <div>
             <StyledHeader>
                 <TextField row={1} placeholder={`Lesson Title:`} />
                 <Dropdown
                     options={options}
                     value={languageViaDropdown.label}
-                    onChange={(event) => setLanguage(event)}
+                    onChange={(event) => {
+                        setLanguage(event);
+                    }}
                     placeholder="Select an option"
                 />
             </StyledHeader>
@@ -49,7 +57,7 @@ const TheoryForm = ({ theory, setTheory }) => {
                     <TextField row={1} placeholder={`Youtube URL:`} />
                 </div>
             </StyledBody>
-        </>
+        </div>
     );
 };
 

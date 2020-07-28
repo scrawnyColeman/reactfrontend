@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TextField from '../TextField/component';
 import Button from '../Button/component';
+import axios from 'axios';
+import { createForumPost } from '../../data/apiCalls';
 
 const Container = styled.div`
     text-align: left;
@@ -21,6 +23,17 @@ const CreateForumPost = () => {
     const [title, setTitle] = useState(null);
     const [question, setQuestion] = useState(null);
 
+    const handleSubmit = () => {
+        const post = {
+            title: title,
+            question: question,
+        };
+        createForumPost(post)
+            .then(() => {
+                window.location.reload();
+            })
+            .catch((error) => console.log(error));
+    };
     return (
         <Container>
             <StyledHeading>Reach out to the community...</StyledHeading>
@@ -43,11 +56,13 @@ const CreateForumPost = () => {
                     placeholder={'Write your question here...'}
                 />
                 <Button
-                    onClick={() => window.location.pathname === '/'}
+                    onClick={() => handleSubmit()}
                     text="Submit"
                     size="large"
                     variant="outlined"
                     hierarchy="primary"
+                    type="submit"
+                    value="Submit"
                 />
             </StyledWrapper>
         </Container>

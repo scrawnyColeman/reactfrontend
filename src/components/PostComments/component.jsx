@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CommentBlock from '../CommentBlock/component';
 import { colours } from '../../constants/styles';
 import CommentButton from '../CommentButton/component';
-import { fetchForumPostComments } from '../../data/apiCalls';
+import { fetchForumPostComments, deleteComment } from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div`
@@ -40,7 +40,7 @@ const StyledCommentContainer = styled.div`
     justify-content: space-between;
 `;
 
-const PostComments = ({ id, setReplying, setReplyingTo }) => {
+const PostComments = ({ id, setReplying, setReplyingTo, setEditing, setCommentEditing }) => {
     const [comments, setComments] = useState([]);
     useEffect(() => {
         fetchForumPostComments(id)
@@ -54,7 +54,7 @@ const PostComments = ({ id, setReplying, setReplyingTo }) => {
         <Container>
             <StyledLabel>Discussion:</StyledLabel>
             {comments.map((commentDetails) => {
-                const { author, comment, id, parentId } = commentDetails;
+                const { author, comment, id, parentId, nestingValue } = commentDetails;
                 const showCommentButton =
                     author.username &&
                     author.username.toLowerCase() === sessionStorage.getItem('activeUser').toLowerCase();
@@ -72,13 +72,41 @@ const PostComments = ({ id, setReplying, setReplyingTo }) => {
                                             text="Reply"
                                             size="small"
                                             onClick={() => {
-                                                setReplyingTo(author.username);
+                                                setReplyingTo({
+                                                    username: author.username,
+                                                    id: author.id,
+                                                    nest: nestingValue,
+                                                    commentId: id,
+                                                });
                                                 setReplying(true);
-                                                console.log('hello');
                                             }}
                                         />
-                                        {showCommentButton && <CommentButton text="Edit" size="small" />}
-                                        {showCommentButton && <CommentButton text="Delete" size="small" />}
+                                        {showCommentButton && (
+                                            <CommentButton
+                                                text="Edit"
+                                                size="small"
+                                                onClick={() => {
+                                                    setReplying(false);
+                                                    setReplyingTo(null);
+                                                    setEditing(true);
+                                                    setCommentEditing(id);
+                                                    console.log('hi');
+                                                }}
+                                            />
+                                        )}
+                                        {showCommentButton && (
+                                            <CommentButton
+                                                text="Delete"
+                                                size="small"
+                                                onClick={() => {
+                                                    deleteComment(id)
+                                                        .then((response) => {
+                                                            if (response.status === 200) window.location.reload();
+                                                        })
+                                                        .catch((error) => console.log(error));
+                                                }}
+                                            />
+                                        )}
                                     </StyledCommentButtons>
                                 </StyledCommentContainer>
                                 {comments.length > 0 && (
@@ -87,6 +115,8 @@ const PostComments = ({ id, setReplying, setReplyingTo }) => {
                                         allComments={comments}
                                         setReplying={setReplying}
                                         setReplyingTo={setReplyingTo}
+                                        setEditing={setEditing}
+                                        setCommentEditing={setCommentEditing}
                                     />
                                 )}
                             </StyledText>
