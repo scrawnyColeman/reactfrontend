@@ -5,6 +5,8 @@ import { colours } from '../../constants/styles';
 import Button from '../Button/component';
 import LoadingSpinner from '../LoadingSpinner/component';
 import TextField from '../TextField/component';
+import { approveLesson, deleteLesson } from '../../data/apiCalls';
+import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div`
     text-align: left;
@@ -37,7 +39,7 @@ const StyledHorizontalLine = styled.hr`
     border-radius: 3px;
     width: 100%;
 `;
-const CoursesSearch = ({ courses, isLoading }) => {
+const CoursesSearch = ({ courses, isLoading, review }) => {
     const history = useHistory();
     const [title, setTitle] = useState('');
     const sortedCourses = courses.sort((a, b) => a.title.localeCompare(b.title));
@@ -91,13 +93,53 @@ const CoursesSearch = ({ courses, isLoading }) => {
                                                 <span style={{ color: colours.primary }}>{activeUsers}</span> people
                                                 have taken this course!
                                             </p>
-                                            <Button
-                                                onClick={() => history.push({ pathname: `/learn/${id}` })}
-                                                text="Go"
-                                                size="small"
-                                                variant="outlined"
-                                                hierarchy="primary"
-                                            />
+                                            {review ? (
+                                                <>
+                                                    <Button
+                                                        onClick={() => {
+                                                            approveLesson(id)
+                                                                .then((response) => {
+                                                                    if (response.status === 200)
+                                                                        window.location.reload();
+                                                                })
+                                                                .catch(errorLogger);
+                                                        }}
+                                                        text="Approve"
+                                                        size="small"
+                                                        variant="outlined"
+                                                        hierarchy="primary"
+                                                    />
+                                                    <Button
+                                                        onClick={() => {
+                                                            deleteLesson(id)
+                                                                .then((response) => {
+                                                                    if (response.status === 200)
+                                                                        window.location.reload();
+                                                                })
+                                                                .catch(errorLogger);
+                                                        }}
+                                                        text="Decline"
+                                                        size="small"
+                                                        variant="outlined"
+                                                        hierarchy="primary"
+                                                    />
+                                                    <Button
+                                                        onClick={() => history.push({ pathname: `/learn/${id}` })}
+                                                        text="View"
+                                                        size="small"
+                                                        variant="outlined"
+                                                        hierarchy="primary"
+                                                    />
+                                                </>
+                                            ) : (
+                                                <Button
+                                                    onClick={() => history.push({ pathname: `/learn/${id}` })}
+                                                    text="Go"
+                                                    size="small"
+                                                    variant="outlined"
+                                                    hierarchy="primary"
+                                                />
+                                            )}
                                         </span>
                                         <StyledHorizontalLine />
                                     </StyledText>

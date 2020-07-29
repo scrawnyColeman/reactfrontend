@@ -53,7 +53,7 @@ const StyledHeading = styled.span`
     margin: 0 auto;
 `;
 
-const UserCourses = ({ courses, onClick }) => {
+const UserCourses = ({ courses }) => {
     const history = useHistory();
 
     return (
@@ -80,7 +80,6 @@ const UserCourses = ({ courses, onClick }) => {
                                 <Button
                                     onClick={() => {
                                         history.push({ pathname: `/learn/${lesson.id}` });
-                                        onClick(lesson.id);
                                     }}
                                     text="Go"
                                     size="small"

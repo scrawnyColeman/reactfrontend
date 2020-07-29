@@ -9,6 +9,7 @@ const headers = { headers: { authorization: authToken } };
 export const fetchAllLessons = () => axios.get(`${BASE_URL}/lessons`, headers);
 export const fetchLessonById = (id) => axios.get(`${BASE_URL}/lessons/${id}`, headers);
 export const fetchApprovedLessons = () => axios.get(`${BASE_URL}/lessons/approved`, headers);
+export const fetchUnapprovedLessons = () => axios.get(`${BASE_URL}/lessons/unapproved`, headers);
 export const fetchActiveUsers = (id) => axios.get(`${BASE_URL}/activeUsers/${id}`, headers);
 export const fetchUserLessons = (id, lessonId) => {
     return axios.get(`${BASE_URL}/user_lessons/${id}`, headers);
@@ -51,3 +52,7 @@ export const deleteComment = (commentId) => axios.put(`${BASE_URL}/comments/dele
 
 export const editComment = (commentId, comment) =>
     axios.put(`${BASE_URL}/comments/edit/${commentId}`, comment, headers);
+
+export const deleteLesson = (lessonId) => axios.delete(`${BASE_URL}/lessons/delete/${lessonId}`, headers);
+
+export const approveLesson = (lessonId) => axios.put(`${BASE_URL}/lessons/approve/${lessonId}`, headers);

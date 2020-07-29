@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
     color: ${colours.primary}
-    height: 40vh;
+    height: 65vh;
     margin: 20vh auto 0;
     width: 90vw;
     border: 2px solid ${colours.primary};
@@ -81,7 +81,9 @@ const PracticalQuizPage = ({ fullLessonId }) => {
 
     useEffect(() => {
         fetchAllQuestionsByLessonId(lessonId)
-            .then((response) => setQuestions(response.data))
+            .then((response) => {
+                setQuestions(response.data);
+            })
             .catch(errorLogger);
         fetchAllAnswersByLessonId(lessonId)
             .then((response) => setAnswers(response.data))
@@ -89,73 +91,69 @@ const PracticalQuizPage = ({ fullLessonId }) => {
     }, [lessonId]);
 
     return questions && answers ? (
-        <SliderContainer>
-            {questions.map((q) => (
-                <Wrapper key={q.id}>
-                    <Container>
-                        <Slider {...carouselSettings}>
-                            {questions.map((ques, index) => {
-                                const { id: questionId, question, codeSnippet } = ques;
-                                return (
-                                    <StyledWrapper key={index}>
-                                        <StyledHeading>
-                                            <StyledQuestionWrapper>
-                                                <StyledQuestion>{`${questionId}: ${question}`}</StyledQuestion>
-                                                {codeSnippet && (
-                                                    <StyledEditor>
-                                                        <TextEditor value={codeSnippet} />
-                                                    </StyledEditor>
-                                                )}
-                                            </StyledQuestionWrapper>
-                                        </StyledHeading>
-                                        <StyledBody>
-                                            {answers
-                                                .filter((answer) => answer.question.id === questionId)
-                                                .map((answer, index) => {
-                                                    const { answerType, answer: ans, responseMessage } = answer;
-                                                    if (answerType.typeName === 'code') {
-                                                        return (
-                                                            <StyledAnswerWrapper key={index}>
-                                                                <span>
-                                                                    <TextEditor value={ans} />
-                                                                </span>
-                                                                <span>
-                                                                    <StyledAnswer
-                                                                        href="#"
-                                                                        onClick={() => {
-                                                                            setShowResponse(true);
-                                                                            setSelectedAnswer(responseMessage);
-                                                                        }}
-                                                                    ></StyledAnswer>
-                                                                </span>
-                                                            </StyledAnswerWrapper>
-                                                        );
-                                                    } else {
-                                                        return (
-                                                            <StyledAnswerWrapper key={index}>
-                                                                <StyledAnswer
-                                                                    href="#"
-                                                                    onClick={() => {
-                                                                        setShowResponse(true);
-                                                                        setSelectedAnswer(responseMessage);
-                                                                    }}
-                                                                >
-                                                                    {`(${index + 1}) ${ans}`}
-                                                                </StyledAnswer>
-                                                            </StyledAnswerWrapper>
-                                                        );
-                                                    }
-                                                })}
-                                            {showResponse && <StyledResponse>{selectedAnswer}</StyledResponse>}
-                                        </StyledBody>
-                                    </StyledWrapper>
-                                );
-                            })}
-                        </Slider>
-                    </Container>
-                </Wrapper>
-            ))}
-        </SliderContainer>
+        <Wrapper>
+            <Container>
+                <Slider {...carouselSettings}>
+                    {questions.map((ques, index) => {
+                        const { id: questionId, question, codeSnippet } = ques;
+                        return (
+                            <StyledWrapper key={index}>
+                                <StyledHeading>
+                                    <StyledQuestionWrapper>
+                                        <StyledQuestion>{`${questionId}: ${question}`}</StyledQuestion>
+                                        {codeSnippet && (
+                                            <StyledEditor>
+                                                <TextEditor value={codeSnippet} />
+                                            </StyledEditor>
+                                        )}
+                                    </StyledQuestionWrapper>
+                                </StyledHeading>
+                                <StyledBody>
+                                    {answers
+                                        .filter((answer) => answer.question.id === questionId)
+                                        .map((answer, index) => {
+                                            const { answerType, answer: ans, responseMessage } = answer;
+                                            if (answerType.typeName === 'code') {
+                                                return (
+                                                    <StyledAnswerWrapper key={index}>
+                                                        <span>
+                                                            <TextEditor value={ans} />
+                                                        </span>
+                                                        <span>
+                                                            <StyledAnswer
+                                                                href="#"
+                                                                onClick={() => {
+                                                                    setShowResponse(true);
+                                                                    setSelectedAnswer(responseMessage);
+                                                                }}
+                                                            ></StyledAnswer>
+                                                        </span>
+                                                    </StyledAnswerWrapper>
+                                                );
+                                            } else {
+                                                return (
+                                                    <StyledAnswerWrapper key={index}>
+                                                        <StyledAnswer
+                                                            href="#"
+                                                            onClick={() => {
+                                                                setShowResponse(true);
+                                                                setSelectedAnswer(responseMessage);
+                                                            }}
+                                                        >
+                                                            {`(${index + 1}) ${ans}`}
+                                                        </StyledAnswer>
+                                                    </StyledAnswerWrapper>
+                                                );
+                                            }
+                                        })}
+                                    {showResponse && <StyledResponse>{selectedAnswer}</StyledResponse>}
+                                </StyledBody>
+                            </StyledWrapper>
+                        );
+                    })}
+                </Slider>
+            </Container>
+        </Wrapper>
     ) : (
         <></>
     );

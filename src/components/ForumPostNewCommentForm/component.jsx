@@ -44,7 +44,7 @@ const ForumPostNewCommentForm = ({
             comment: question,
             parentId: isReplying ? replyingTo.commentId : 0,
             nestingValue: isReplying ? Number(replyingTo.nest) + 1 : 0,
-            post: parseInt(postId, 10),
+            post: Number.parseInt(postId, 10),
         };
         !editing
             ? createComment(comment, userId, comment.post)

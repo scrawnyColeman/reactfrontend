@@ -28,7 +28,7 @@ const LearnPage = () => {
 
     return (
         <StyledItemWrapper>
-            <CoursesSearch courses={courses} isLoading={loading} />
+            <CoursesSearch courses={courses} isLoading={loading} review={false} />
             <PopularCourses courses={courses} isLoading={loading} />
         </StyledItemWrapper>
     );
