@@ -71,7 +71,6 @@ const CoursesSearch = ({ courses, isLoading, review }) => {
                             .concat(courseTitle.replace(/\s+/g, ''))
                             .toLowerCase();
                         //javarecursion
-
                         if (
                             courseLanguageThenName.includes(userSearchFilter) ||
                             courseNameThenLanguage.includes(userSearchFilter) ||
@@ -90,8 +89,8 @@ const CoursesSearch = ({ courses, isLoading, review }) => {
                                         </p>
                                         <span>
                                             <p>
-                                                <span style={{ color: colours.primary }}>{activeUsers}</span> people
-                                                have taken this course!
+                                                This course has been selected{' '}
+                                                <span style={{ color: colours.primary }}>{activeUsers}</span> time(s).
                                             </p>
                                             {review ? (
                                                 <>

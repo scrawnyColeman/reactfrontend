@@ -17,7 +17,7 @@ const LessonContainer = styled.div`
 `;
 
 const LessonInformation = ({ course }) => {
-    const { id, title, language, description, recommendedLessons } = course;
+    const { id, title, language, description, recommendedLessons, approved } = course;
     return (
         <Container>
             <LessonDisplayPage
@@ -27,9 +27,9 @@ const LessonInformation = ({ course }) => {
                 recommendedLessons={recommendedLessons}
             />
             <LessonContainer>
-                <LessonPath text="Theory" id={id} path="theory" />
-                <LessonPath text="Practice Questions" id={id} path="practical" />
-                <LessonPath text="Full Lesson" id={id} path="lesson" />
+                <LessonPath text="Theory" id={id} path="theory" approved={approved} />
+                <LessonPath text="Practice Questions" id={id} path="practical" approved={approved} />
+                <LessonPath text="Full Lesson" id={id} path="lesson" approved={approved} />
             </LessonContainer>
         </Container>
     );

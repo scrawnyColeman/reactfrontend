@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component component matches snapshot 1`] = `
-<Router
+<NjoyApplication
   history={
     Object {
       "action": "POP",
@@ -22,79 +22,5 @@ exports[`App component component matches snapshot 1`] = `
       "replace": [Function],
     }
   }
->
-  <styled.div
-    className="App"
-  >
-    <Header
-      username={null}
-    />
-    <Switch>
-      <Route
-        exact={true}
-        path="/"
-        render={[Function]}
-      />
-      <Route
-        exact={true}
-        path="/login"
-        render={[Function]}
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/profile/:name"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/learn"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/learn/:id"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/learn/theory/:id"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/learn/practical/:id"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/learn/lesson/:id"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/lessons/new"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/lessons/review"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/forum"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/forum/:id"
-      />
-      <Route
-        component={[Function]}
-      />
-    </Switch>
-    <Footer />
-  </styled.div>
-</Router>
+/>
 `;

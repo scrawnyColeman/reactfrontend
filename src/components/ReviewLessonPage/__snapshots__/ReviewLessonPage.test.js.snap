@@ -2,6 +2,10 @@
 
 exports[`ReviewLessonPage component component matches snapshot 1`] = `
 <styled.div>
-  memous supremous
+  <CoursesSearch
+    courses={Array []}
+    isLoading={false}
+    review={true}
+  />
 </styled.div>
 `;

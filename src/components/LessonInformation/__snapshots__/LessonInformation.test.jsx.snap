@@ -41,16 +41,19 @@ Increment/Decrement: It increments or decrements the variable value. It is an op
   />
   <styled.div>
     <LessonPath
+      approved={true}
       id={1}
       path="theory"
       text="Theory"
     />
     <LessonPath
+      approved={true}
       id={1}
       path="practical"
       text="Practice Questions"
     />
     <LessonPath
+      approved={true}
       id={1}
       path="lesson"
       text="Full Lesson"

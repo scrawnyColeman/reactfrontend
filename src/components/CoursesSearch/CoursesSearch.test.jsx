@@ -13,11 +13,13 @@ describe('CoursesSearch component', () => {
 
     test('component matches snapshot when not loading', () => {
         const wrapper = shallow(<CoursesSearch courses={[course]} isLoading={false} />);
+
         expect(wrapper).toMatchSnapshot();
         expect(wrapper.find(StyledWrapper).length).toBe(1);
     });
     test('component matches snapshot when loading', () => {
         const wrapper = shallow(<CoursesSearch courses={[course]} isLoading={true} />);
+
         expect(wrapper).toMatchSnapshot();
         expect(wrapper.find(LoadingSpinner).length).toBe(1);
     });

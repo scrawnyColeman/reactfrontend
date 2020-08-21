@@ -48,11 +48,13 @@ exports[`LessonDisplayPage component component matches snapshot with recommended
     </div>
     <styled.li
       key="1"
+      onClick={[Function]}
     >
       Java
     </styled.li>
     <styled.li
       key="2"
+      onClick={[Function]}
     >
       Recursion
     </styled.li>

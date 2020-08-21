@@ -17,6 +17,7 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       <WithStyles(ForwardRef(TextField))
         id="outlined-username"
         label="Username"
+        onChange={[Function]}
         type="text"
         variant="filled"
       />
@@ -34,22 +35,8 @@ exports[`RegisterForm component component matches snapshot 1`] = `
         autoComplete="off"
         id="outlined-email"
         label="Email Address"
+        onChange={[Function]}
         type="email"
-        variant="filled"
-      />
-    </WithStyles(ForwardRef(Grid))>
-  </WithStyles(ForwardRef(Grid))>
-  <WithStyles(ForwardRef(Grid))
-    container={true}
-    spacing={3}
-  >
-    <WithStyles(ForwardRef(Grid))
-      item={true}
-      xs={12}
-    >
-      <WithStyles(ForwardRef(TextField))
-        id="outlined-dob"
-        type="date"
         variant="filled"
       />
     </WithStyles(ForwardRef(Grid))>
@@ -65,6 +52,7 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       <WithStyles(ForwardRef(TextField))
         id="outlined-password"
         label="Password"
+        onChange={[Function]}
         type="password"
         variant="filled"
       />
@@ -81,6 +69,7 @@ exports[`RegisterForm component component matches snapshot 1`] = `
       <WithStyles(ForwardRef(TextField))
         id="outlined-retyped-password"
         label="Retype Password"
+        onChange={[Function]}
         type="password"
         variant="filled"
       />

@@ -30,6 +30,10 @@ const NjoyApplication = ({ history }) => {
         username && setLocalUsername(username);
     }, [username]);
 
+    if (!sessionStorage.getItem('activeUser')) {
+        history.push({ pathname: `/login` });
+    }
+
     return (
         <Router history={history}>
             <Page className="App">

@@ -1,39 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QuizQuestionForm component component matches snapshot 1`] = `
-<Fragment>
+<div
+  key="8"
+>
   <styled.div>
     <styled.div>
       8
       /10
     </styled.div>
+    <Button
+      onClick={[Function]}
+      size="large"
+      text="+"
+      variant="outlined"
+    />
   </styled.div>
   <TextField
+    onChange={[Function]}
     placeholder="Question 8"
   />
   <styled.div>
     <TextField
+      onChange={[Function]}
       placeholder="Correct Answer:"
     />
     <TextField
+      onChange={[Function]}
       placeholder="Response Message:"
     />
   </styled.div>
   <styled.div>
     <TextField
+      onChange={[Function]}
       placeholder="Incorrect Answer 1:"
     />
     <TextField
+      onChange={[Function]}
       placeholder="Response Message 1:"
     />
   </styled.div>
   <styled.div>
     <TextField
+      onChange={[Function]}
       placeholder="Incorrect Answer 2:"
     />
     <TextField
+      onChange={[Function]}
       placeholder="Response Message 2:"
     />
   </styled.div>
-</Fragment>
+</div>
 `;

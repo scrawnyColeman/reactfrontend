@@ -6,7 +6,6 @@ import ForumPostPage from '../ForumPostPage/component';
 import { errorLogger } from '../../data/errorLogger.js';
 import { fetchAllForumPosts } from '../../data/apiCalls.js';
 import CreateForumPost from '../CreateForumPost/component';
-import Error from '../LoginError/component';
 
 const StyledItemWrapper = styled.div`
     margin: 20vh 20px 0;

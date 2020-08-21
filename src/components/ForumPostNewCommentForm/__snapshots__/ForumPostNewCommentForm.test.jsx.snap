@@ -6,14 +6,9 @@ exports[`ForumPostNewCommentForm component component matches snapshot 1`] = `
     Join the discussion...
   </styled.div>
   <styled.div>
-    <TextField
-      disabled={true}
-      id="outlined-full-width"
-      label="Label"
-      margin="normal"
-      onChange={[Function]}
-      placeholder="New Comment"
-    />
+    <styled.div>
+      New Comment:
+    </styled.div>
     <TextField
       id="filled-multiline-static"
       margin="normal"

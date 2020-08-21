@@ -5,6 +5,7 @@ exports[`LearnPage component component matches snapshot 1`] = `
   <CoursesSearch
     courses={Array []}
     isLoading={false}
+    review={false}
   />
   <PopularCourses
     courses={Array []}

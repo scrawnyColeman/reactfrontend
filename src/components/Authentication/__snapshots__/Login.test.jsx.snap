@@ -8,7 +8,9 @@ exports[`Login component component matches snapshot 1`] = `
     </styled.div>
   </styled.div>
   <styled.div>
-    <RegisterForm />
+    <RegisterForm
+      setLocalUsername={[Function]}
+    />
     <span>
       Already have an account?
       <Button

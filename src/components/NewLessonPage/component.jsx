@@ -9,7 +9,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextEditor from '../TextEditor/component';
 import TextField from '../TextField/component';
 import TheoryForm from '../TheoryForm/component';
-import { postLesson, postQuestions, postAnswers, postPractical, postSolution } from '../../data/apiCalls';
+import {
+    postLesson,
+    postQuestions,
+    postAnswers,
+    postPractical,
+    postSolution,
+    fetchApprovedLessons,
+} from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 
 const Container = styled.div``;
@@ -34,6 +41,25 @@ const StyledThankyou = styled.div`
     margin: 20vh auto 0 auto;
     font-size: 2rem;
 `;
+const StyledPrereqHeader = styled.div`
+    margin: 20vh auto 0 auto;
+    font-size: 2.25rem;
+    color: ${colours.primary};
+`;
+const StyledScrollBox = styled.div`
+    height: 55vh;
+    width: 60vw;
+    margin: 0 auto;
+    overflow-y: scroll;
+`;
+const StyledLesson = styled.div`
+    height: 120px;
+    color: ${colours.secondary};
+    font-size: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid ${colours.primary};
+`;
 const StyledKeyInfoContainer = styled.div`
     width: 45vw;
     height: 60vh;
@@ -46,6 +72,12 @@ const ButtonContainer = styled.div`
 `;
 const StyledArrowRight = styled(FontAwesomeIcon)`
     margin-left: 12px;
+`;
+const StyledLessonName = styled.span`
+    margin: auto;
+`;
+const StyledButtonWrapper = styled.span`
+    margin: auto 35px auto 0;
 `;
 const QuestionHeader = styled.div`
     font-size: 2rem;
@@ -102,8 +134,10 @@ const NewLessonPage = () => {
     const [editorLanguage, setEditorLanguage] = useState('javascript');
     const [title, setTitle] = useState('');
     const [ytLink, setYTLink] = useState('');
+    const [recommendations, setRecommendations] = useState([]);
     //quizzes
     const [questions, setQuestions] = useState([]);
+    const [allLessons, setAllLessons] = useState([]);
 
     if (page === 1)
         return (
@@ -145,16 +179,36 @@ const NewLessonPage = () => {
                 </ButtonContainer>
             </Container>
         );
-    else if (page === 2)
+    else if (page === 2) {
+        fetchApprovedLessons().then((response) => setAllLessons(response.data));
         return (
             <Container>
-                <QuizContainer>
-                    <QuizForm questions={questions} setQuestions={setQuestions} />
-                </QuizContainer>
+                <StyledPrereqHeader>Select which lessons should be completed prior to this one...</StyledPrereqHeader>
+                <StyledScrollBox>
+                    {allLessons.map((lesson) => {
+                        const { title, id, language } = lesson;
+                        return (
+                            <StyledLesson key={id}>
+                                <StyledLessonName>{`${title} [${language.language.toUpperCase()}]`}</StyledLessonName>
+                                <StyledButtonWrapper>
+                                    <Button
+                                        text={'+'}
+                                        variant="outlined"
+                                        hierarchy="primary"
+                                        onClick={() => {
+                                            recommendations.filter((r) => r === id).length === 0 &&
+                                                setRecommendations([...recommendations, id]);
+                                        }}
+                                    />
+                                </StyledButtonWrapper>
+                            </StyledLesson>
+                        );
+                    })}
+                </StyledScrollBox>
                 <ButtonContainer>
                     <Button text="Go Back" variant="outlined" onClick={() => setPage(1)} />
                     <Button
-                        text="Practicals"
+                        text="Submit"
                         variant="outlined"
                         children={<RightIcon />}
                         onClick={() => {
@@ -164,7 +218,26 @@ const NewLessonPage = () => {
                 </ButtonContainer>
             </Container>
         );
-    else if (page === 3)
+    } else if (page === 3)
+        return (
+            <Container>
+                <QuizContainer>
+                    <QuizForm questions={questions} setQuestions={setQuestions} />
+                </QuizContainer>
+                <ButtonContainer>
+                    <Button text="Go Back" variant="outlined" onClick={() => setPage(2)} />
+                    <Button
+                        text="Practicals"
+                        variant="outlined"
+                        children={<RightIcon />}
+                        onClick={() => {
+                            setPage(4);
+                        }}
+                    />
+                </ButtonContainer>
+            </Container>
+        );
+    else if (page === 4)
         return (
             <Container>
                 <LessonContainer>
@@ -213,12 +286,12 @@ const NewLessonPage = () => {
                     </StyledKeyInfoContainer>
                 </LessonContainer>
                 <ButtonContainer>
-                    <Button text="Go Back" variant="outlined" onClick={() => setPage(2)} />
-                    <Button text="Submit" variant="outlined" children={<RightIcon />} onClick={() => setPage(4)} />
+                    <Button text="Go Back" variant="outlined" onClick={() => setPage(3)} />
+                    <Button text="Submit" variant="outlined" children={<RightIcon />} onClick={() => setPage(5)} />
                 </ButtonContainer>
             </Container>
         );
-    else if (page === 4)
+    else if (page === 5)
         return (
             <Container>
                 <LessonContainer>
@@ -260,55 +333,57 @@ const NewLessonPage = () => {
                     </StyledKeyInfoContainer>
                 </LessonContainer>
                 <ButtonContainer>
-                    <Button text="Go Back" variant="outlined" children={<RightIcon />} onClick={() => setPage(3)} />
+                    <Button text="Go Back" variant="outlined" children={<RightIcon />} onClick={() => setPage(4)} />
                     <Button
                         text="Submit"
                         variant="outlined"
                         children={<RightIcon />}
                         onClick={() => {
-                            postLesson(lesson, lesson.languageId).then((response) => {
-                                const lessonId = response.data.id;
-                                const practical = {
-                                    title: practicalTitle,
-                                    question: questionPreview,
-                                    codeSnippet: codePreview,
-                                    hint: hintPreview,
-                                };
-                                postQuestions(questions, lessonId)
-                                    .then((response) => {
-                                        response.data.map((resp) => {
-                                            const questionTitle = resp.split(':id:')[0];
-                                            const questionId = resp.split(':id:')[1];
-                                            const questionToAdd = questions.filter((q) => q.question === questionTitle);
-                                            console.log(resp);
-                                            console.log(questionToAdd[0]);
-                                            console.log(questionToAdd[0].answers);
-                                            return postAnswers(questionToAdd[0].answers, questionId)
-                                                .then((response) => console.log(response))
+                            console.log({ ...lesson, recommendedLessons: recommendations });
+                            postLesson({ ...lesson, recommendedLessons: recommendations }, lesson.languageId).then(
+                                (response) => {
+                                    const lessonId = response.data.id;
+                                    const practical = {
+                                        title: practicalTitle,
+                                        question: questionPreview,
+                                        codeSnippet: codePreview,
+                                        hint: hintPreview,
+                                    };
+                                    postQuestions(questions, lessonId)
+                                        .then((response) => {
+                                            response.data.map((resp) => {
+                                                const questionTitle = resp.split(':id:')[0];
+                                                const questionId = resp.split(':id:')[1];
+                                                const questionToAdd = questions.filter(
+                                                    (q) => q.question === questionTitle,
+                                                );
+                                                return postAnswers(questionToAdd[0].answers, questionId)
+                                                    .then((response) => console.log(response))
+                                                    .catch(errorLogger);
+                                            });
+                                        })
+                                        .catch(errorLogger);
+                                    postPractical(practical, lessonId)
+                                        .then((response) => {
+                                            const solution = {
+                                                codeSnippet: codeSolutionPreview,
+                                                explanation: explanationPreview,
+                                            };
+                                            postSolution(solution, response.data)
+                                                .then((response) => {
+                                                    if (response.status === 200) setPage(6);
+                                                })
                                                 .catch(errorLogger);
-                                        });
-                                    })
-                                    .catch(errorLogger);
-                                postPractical(practical, lessonId)
-                                    .then((response) => {
-                                        const solution = {
-                                            codeSnippet: codeSolutionPreview,
-                                            explanation: explanationPreview,
-                                        };
-                                        postSolution(solution, response.data)
-                                            .then((response) => {
-                                                if (response.status === 200) setPage(5);
-                                            })
-                                            .catch(errorLogger);
-                                    })
-                                    .catch(errorLogger);
-                            });
+                                        })
+                                        .catch(errorLogger);
+                                },
+                            );
                         }}
                     />
                 </ButtonContainer>
             </Container>
         );
-    else if (page === 5)
+    else if (page === 6)
         return <StyledThankyou> Thank you for your submission. It is now awaiting review by an admin. </StyledThankyou>;
 };
 export default NewLessonPage;

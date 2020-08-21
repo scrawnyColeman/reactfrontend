@@ -37,11 +37,11 @@ exports[`PopularCourses component component matches snapshot when not oading 1`]
         </p>
         <span>
           <p>
+            This course has been selected 
             <styled.span>
               1
             </styled.span>
-             person has
-             taken this course!
+             time(s).
           </p>
           <Button
             hierarchy="primary"

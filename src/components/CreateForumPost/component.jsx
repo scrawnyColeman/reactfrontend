@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import TextField from '../TextField/component';
 import Button from '../Button/component';
-import axios from 'axios';
 import { createForumPost } from '../../data/apiCalls';
 
 const Container = styled.div`

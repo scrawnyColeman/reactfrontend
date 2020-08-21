@@ -58,7 +58,6 @@ const PostComments = ({ id, setReplying, setReplyingTo, setEditing, setCommentEd
                 const showCommentButton =
                     author.username &&
                     author.username.toLowerCase() === sessionStorage.getItem('activeUser').toLowerCase();
-
                 return (
                     parentId === 0 && (
                         <StyledWrapper key={id}>
@@ -90,7 +89,6 @@ const PostComments = ({ id, setReplying, setReplyingTo, setEditing, setCommentEd
                                                     setReplyingTo(null);
                                                     setEditing(true);
                                                     setCommentEditing(id);
-                                                    console.log('hi');
                                                 }}
                                             />
                                         )}

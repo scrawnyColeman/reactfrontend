@@ -7,7 +7,12 @@ import styled from 'styled-components';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PracticalQuizPage from '../PracticalQuizPage/component';
-import { fetchPracticalByLessonId, fetchForumPostByLesson, fetchLessonById } from '../../data/apiCalls';
+import {
+    fetchPracticalByLessonId,
+    fetchForumPostByLesson,
+    fetchLessonById,
+    setLessonComplete,
+} from '../../data/apiCalls';
 import { errorLogger } from '../../data/errorLogger';
 import PracticalComponent from './practicalComponent';
 
@@ -108,8 +113,8 @@ const FullLessonPage = () => {
                             text="Finish"
                             variant="outlined"
                             onClick={() => {
-                                //setLessonCompleted()
-                                setpageName(pages[3]);
+                                const userId = sessionStorage.getItem('activeId');
+                                setLessonComplete(lessonId, userId).then(setpageName(pages[3])).catch(errorLogger);
                             }}
                             children={<RightIcon />}
                         />

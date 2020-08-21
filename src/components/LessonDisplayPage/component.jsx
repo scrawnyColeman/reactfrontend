@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colours } from '../../constants/styles';
+import { useHistory } from 'react-router-dom';
 
 const Container = styled.div`
     display: grid;
@@ -29,32 +30,50 @@ const StyledBody = styled.div`
 export const StyledListItem = styled.li`
     margin: 4px;
     color: ${colours.secondary};
+    &:hover {
+        color: ${colours.primary};
+        cursor: pointer;
+    }
 `;
 
-const LessonDisplayPage = ({ title, language, description, recommendedLessons }) => (
-    <Container>
-        <StyledHead>
-            <StyledTitle>
-                <span>{title}</span>
-                <span>[{language.language}]</span>
-            </StyledTitle>
-            <StyledDesc>{description}</StyledDesc>
-        </StyledHead>
-        <StyledBody>
-            {recommendedLessons.length > 0 ? (
-                <div>Before beginning this course, it is adviced that you have knowledge of the following:</div>
-            ) : (
-                <div>
-                    There are no prerequisities for this lesson! Good luck and don't be afraid to visit the forum for
-                    help.
-                </div>
-            )}
-            {recommendedLessons.length > 0 &&
-                recommendedLessons.map(
-                    (prereq) => prereq && <StyledListItem key={prereq.id}>{prereq.title}</StyledListItem>,
+const LessonDisplayPage = ({ title, language, description, recommendedLessons }) => {
+    const history = useHistory();
+    return (
+        <Container>
+            <StyledHead>
+                <StyledTitle>
+                    <span>{title}</span>
+                    <span>[{language.language}]</span>
+                </StyledTitle>
+                <StyledDesc>{description}</StyledDesc>
+            </StyledHead>
+            <StyledBody>
+                {recommendedLessons.length > 0 ? (
+                    <div>Before beginning this course, it is adviced that you have knowledge of the following:</div>
+                ) : (
+                    <div>
+                        There are no prerequisities for this lesson! Good luck and don't be afraid to visit the forum
+                        for help.
+                    </div>
                 )}
-        </StyledBody>
-    </Container>
-);
+                {recommendedLessons.length > 0 &&
+                    recommendedLessons.map(
+                        (prereq) =>
+                            prereq && (
+                                <StyledListItem
+                                    key={prereq.id}
+                                    onClick={() => {
+                                        history.push({ pathname: `/learn/${prereq.id}` });
+                                        window.location.reload();
+                                    }}
+                                >
+                                    {prereq.title}
+                                </StyledListItem>
+                            ),
+                    )}
+            </StyledBody>
+        </Container>
+    );
+};
 
 export default LessonDisplayPage;

@@ -8,10 +8,15 @@ exports[`ForumPage component component matches snapshot with URL param 1`] = `
 
 exports[`ForumPage component component matches snapshot with no URL param 1`] = `
 <styled.div>
-  <ForumPreview
-    onClick={[Function]}
-    posts={Array []}
-  />
-  <CreateForumPost />
+  <styled.div>
+    <styled.div>
+      <ForumPreview
+        onClick={[Function]}
+        param={null}
+        posts={Array []}
+      />
+      <CreateForumPost />
+    </styled.div>
+  </styled.div>
 </styled.div>
 `;

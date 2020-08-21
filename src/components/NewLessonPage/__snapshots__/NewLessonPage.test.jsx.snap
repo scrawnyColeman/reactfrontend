@@ -4,23 +4,29 @@ exports[`NewLessonPage component component matches snapshot 1`] = `
 <styled.div>
   <styled.div>
     <styled.div>
-      <TheoryForm
+      <LessonKeyInformationForm
+        description=""
+        languageId={null}
+        setDescription={[Function]}
+        setEditorLanguage={[Function]}
         setLanguageId={[Function]}
-        setTheory={[Function]}
         setTitle={[Function]}
         setYTLink={[Function]}
+        title=""
+        ytLink=""
       />
     </styled.div>
     <styled.div>
-      <QuizForm
-        handleQuestion={[Function]}
+      <TheoryForm
+        setTheory={[Function]}
+        theory=""
       />
     </styled.div>
   </styled.div>
   <styled.div>
     <Button
       onClick={[Function]}
-      text="Practicals"
+      text="Quizzes"
       variant="outlined"
     >
       <RightIcon />

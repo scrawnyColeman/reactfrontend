@@ -7,44 +7,8 @@ exports[`QuizForm component component matches snapshot 1`] = `
   </styled.div>
   <styled.div>
     <QuizQuestionForm
-      key=""
       questionNumber={1}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={2}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={3}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={4}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={5}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={6}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={7}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={8}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={9}
-    />
-    <QuizQuestionForm
-      key=""
-      questionNumber={10}
+      setQuestionNumber={[Function]}
     />
   </styled.div>
 </styled.div>

@@ -48,6 +48,7 @@ exports[`CoursesSearch component component matches snapshot when not loading 1`]
         </p>
         <span>
           <p>
+            This course has been selected 
             <span
               style={
                 Object {
@@ -57,7 +58,7 @@ exports[`CoursesSearch component component matches snapshot when not loading 1`]
             >
               1
             </span>
-             people have taken this course!
+             time(s).
           </p>
           <Button
             hierarchy="primary"

@@ -5,6 +5,7 @@ exports[`LoginForm component component matches snapshot 1`] = `
   autoComplete="off"
   className="makeStyles-root-1"
   noValidate={true}
+  onSubmit={[Function]}
 >
   <WithStyles(ForwardRef(Grid))
     container={true}

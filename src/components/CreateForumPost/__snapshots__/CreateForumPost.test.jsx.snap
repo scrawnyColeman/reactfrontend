@@ -28,6 +28,8 @@ exports[`CreateForumPost component component matches snapshot 1`] = `
       onClick={[Function]}
       size="large"
       text="Submit"
+      type="submit"
+      value="Submit"
       variant="outlined"
     />
   </styled.div>

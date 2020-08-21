@@ -16,6 +16,7 @@ const LoginForm = ({ setLocalUsername }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [invalidCredentialsMessage, setInvalidCredentialsMessage] = useState(false);
+
     const login = () => {
         AuthenticationService.executeBasicAuth(username, password)
             .then(() => retrieveUserId(username, password))
@@ -24,6 +25,7 @@ const LoginForm = ({ setLocalUsername }) => {
             .then(() => history.push({ pathname: `/profile/${username}` }))
             .catch(() => setInvalidCredentialsMessage(true));
     };
+
     const retrieveUserId = (username, password) =>
         axios
             .get(`http://localhost:8080/njoy/users/${username}/user`, {
@@ -36,6 +38,7 @@ const LoginForm = ({ setLocalUsername }) => {
                 sessionStorage.setItem('activeId', id);
                 sessionStorage.setItem('activeType', userRole.roleName);
             });
+
     return (
         <form className={classes.root} noValidate autoComplete="off" onSubmit={() => login()}>
             <Grid container spacing={3}>

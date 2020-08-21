@@ -39,33 +39,27 @@ const StyledLogoContainer = styled.div`
 `;
 const Header = ({ username }) => {
     const history = useHistory();
-    return (
+    return username ? (
         <StyledHeader>
             <StyledNavBar>
-                {username ? (
-                    <StyledNavLinks href={`/profile/${username}`} username>
-                        {username}
-                    </StyledNavLinks>
-                ) : (
-                    <StyledNavLinks href="/login">Login</StyledNavLinks>
-                )}
+                <StyledNavLinks href={`/profile/${username}`} username>
+                    {username}
+                </StyledNavLinks>
                 <StyledNavLinks href="/learn">Learn</StyledNavLinks>
                 <StyledNavLinks href="/forum">Forum</StyledNavLinks>
-                {username ? (
-                    <StyledNavLinks
-                        href="/login"
-                        onClick={() => AuthenticationService.logout().then(() => history.push({ pathname: '/login' }))}
-                    >
-                        logout
-                    </StyledNavLinks>
-                ) : (
-                    <div />
-                )}
+                <StyledNavLinks
+                    href="/login"
+                    onClick={() => AuthenticationService.logout().then(() => history.push({ pathname: '/login' }))}
+                >
+                    logout
+                </StyledNavLinks>
             </StyledNavBar>
             <StyledLogoContainer>
                 <Logo />
             </StyledLogoContainer>
         </StyledHeader>
+    ) : (
+        <></>
     );
 };
 

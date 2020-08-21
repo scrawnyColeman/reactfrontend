@@ -77,8 +77,8 @@ const PopularCourses = ({ courses, isLoading }) => {
                                     </p>
                                     <span>
                                         <p>
-                                            <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel>
-                                            {activeUsers > 1 ? ` people have` : ` person has`} taken this course!
+                                            This course has been selected{' '}
+                                            <StyledSpecialLabel>{activeUsers}</StyledSpecialLabel> time(s).
                                         </p>
                                         <Button
                                             onClick={() => history.push({ pathname: `/learn/${id}` })}

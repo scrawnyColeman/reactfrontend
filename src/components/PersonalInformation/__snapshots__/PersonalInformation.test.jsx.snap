@@ -32,5 +32,6 @@ exports[`PersonalInformation component component matches snapshot 1`] = `
       variant="outlined"
     />
   </styled.div>
+  <styled.div />
 </styled.div>
 `;

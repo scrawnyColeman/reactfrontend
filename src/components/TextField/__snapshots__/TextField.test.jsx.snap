@@ -20,6 +20,7 @@ exports[`TextField component large TextField matches snapshot 1`] = `
       "width": "100%",
     }
   }
+  type="text"
 />
 `;
 
@@ -43,6 +44,7 @@ exports[`TextField component multiline TextField matches snapshot 1`] = `
       "width": "100%",
     }
   }
+  type="text"
 />
 `;
 
@@ -66,6 +68,7 @@ exports[`TextField component primary TextField matches snapshot 1`] = `
       "width": "100%",
     }
   }
+  type="text"
 />
 `;
 
@@ -89,5 +92,6 @@ exports[`TextField component secondary TextField matches snapshot 1`] = `
       "width": "100%",
     }
   }
+  type="text"
 />
 `;

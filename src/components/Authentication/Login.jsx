@@ -25,7 +25,6 @@ const StyledName = styled.div`
 
 const Login = ({ setLocalUsername }) => {
     const [hasAccount, setHasAccount] = useState(false);
-    const [displayError, setDisplayError] = useState(false);
     const history = useHistory();
 
     if (sessionStorage.getItem('activeUser')) {
@@ -34,7 +33,6 @@ const Login = ({ setLocalUsername }) => {
 
     return (
         <StyledWrapper>
-            {displayError && <Error message={'Account information is invalid.'} />}
             <StyledLogoContainer>
                 <StyledName>NJOY LEARNING</StyledName>
             </StyledLogoContainer>
