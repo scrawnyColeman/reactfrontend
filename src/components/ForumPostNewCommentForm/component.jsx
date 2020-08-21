@@ -49,13 +49,11 @@ const ForumPostNewCommentForm = ({
         !editing
             ? createComment(comment, userId, comment.post)
                   .then((response) => {
-                      console.log(response);
                       if (response.status === 200) window.location.reload();
                   })
                   .then((error) => console.log(error))
             : editComment(commentEditing, comment)
                   .then((response) => {
-                      console.log(response);
                       if (response.status === 200) window.location.reload();
                   })
                   .catch((error) => console.log(error));

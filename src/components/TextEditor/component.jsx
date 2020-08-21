@@ -11,7 +11,7 @@ const style = {
 const TextEditor = ({
     value,
     readOnly = true,
-    mode = 'javascript',
+    mode = 'java',
     height = '20vh',
     maxLines = 15,
     highlightActiveLine = false,

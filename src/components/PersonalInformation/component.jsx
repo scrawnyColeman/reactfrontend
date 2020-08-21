@@ -211,7 +211,6 @@ const PersonalInformation = ({ user, setLocalUsername }) => {
                                 const userId = sessionStorage.getItem('activeId');
                                 axios
                                     .put(`http://localhost:8080/njoy/users/${userId}/roles/2`)
-                                    .then((response) => console.log(response.data))
                                     .then(() => setUserType('author'))
                                     .then(() => sessionStorage.setItem('activeType', 'author'))
                                     .catch((error) => console.log(error));

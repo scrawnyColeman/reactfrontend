@@ -50,7 +50,6 @@ const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo, 
                                             commentId: id,
                                         });
                                         setReplying(true);
-                                        console.log('hello');
                                     }}
                                 />
                             )}
@@ -63,7 +62,6 @@ const CommentBlock = ({ childComments, allComments, setReplying, setReplyingTo, 
                                         setReplyingTo(null);
                                         setEditing(true);
                                         setCommentEditing(id);
-                                        console.log('hi');
                                     }}
                                 />
                             )}

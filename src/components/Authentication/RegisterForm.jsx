@@ -52,7 +52,6 @@ const RegisterForm = ({ setLocalUsername }) => {
         return true;
     };
     const registerIfUsernameAndEmailAvailable = (username, email, password) => {
-        console.log(username);
         axios.get(`http://localhost:8080/njoy/user/${username}/${email}`).then((response) => {
             response.data[0] && setUsernameTaken(true);
             response.data[1] && setEmailTaken(true);

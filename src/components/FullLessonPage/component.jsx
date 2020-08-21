@@ -17,7 +17,7 @@ import { errorLogger } from '../../data/errorLogger';
 import PracticalComponent from './practicalComponent';
 
 const TheoryContainer = styled.div`
-    margin: 15vh auto 0 auto;
+    margin: 15vh auto 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
 `;
@@ -25,9 +25,10 @@ const QuizContainer = styled.div`
     margin: 0 auto;
 `;
 const CompletionContainer = styled.div`
-    margin: 15vh auto 0 auto;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    font-size: 32px;
 `;
 const ButtonContainer = styled.div`
     margin: 12px 12px 0 0;

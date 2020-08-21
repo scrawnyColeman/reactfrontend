@@ -32,7 +32,7 @@ const ProfilePage = ({ setLocalUsername }) => {
                 setUserLessons(response.data);
             })
             .catch(errorLogger);
-    }, []);
+    }, [user.id]);
 
     return userLessons ? (
         <StyledItemWrapper>

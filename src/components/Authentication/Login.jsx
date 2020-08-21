@@ -4,7 +4,6 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import Button from '../Button/component';
 import { useHistory } from 'react-router-dom';
-import Error from '../LoginError/component';
 
 const StyledWrapper = styled.div`
     display: grid;

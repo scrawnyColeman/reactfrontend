@@ -34,10 +34,7 @@ const LessonPath = ({ text, id, path, approved }) => {
                 <Button
                     text="Begin"
                     onClick={() => {
-                        approved &&
-                            setUserLesson(user, id)
-                                .then((response) => console.log(response))
-                                .catch((error) => console.log(error));
+                        approved && setUserLesson(user, id).catch((error) => console.log(error));
                         history.push({ pathname: `${path}/${id}` });
                     }}
                 />

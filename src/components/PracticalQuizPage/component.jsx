@@ -26,7 +26,6 @@ const StyledWrapper = styled.div`
     min-height: 60vh;
     box-sizing: border-box;
 `;
-const SliderContainer = styled.div``;
 const StyledAnswer = styled.a`
     color: ${colours.secondary}
     text-align: center;

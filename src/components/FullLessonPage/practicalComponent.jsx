@@ -7,13 +7,15 @@ import { errorLogger } from '../../data/errorLogger';
 import { useHistory } from 'react-router-dom';
 
 const PracticalContainer = styled.div`
-    margin: 15vh auto 0 auto;
+    margin: 15vh auto 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
 `;
+
 const PracticalComponent = ({ isCodeSubmitted, setCodeSubmitted, practical, forumPostId }) => {
     const history = useHistory();
     const [solution, setSolution] = useState();
+
     useEffect(() => {
         fetchSolutionByPracticalId(practical.id)
             .then((response) => {
@@ -24,8 +26,7 @@ const PracticalComponent = ({ isCodeSubmitted, setCodeSubmitted, practical, foru
 
     const { title, question, hint, codeSnippet, lesson } = practical;
     const language = lesson.language.language;
-    console.log(solution);
-    console.log(practical);
+
     return (
         <PracticalContainer>
             <PracticalCodeChallenge
@@ -35,13 +36,8 @@ const PracticalComponent = ({ isCodeSubmitted, setCodeSubmitted, practical, foru
             <PracticalCodeSubmission
                 data={{ language }}
                 submitted={isCodeSubmitted}
-                toggleSubmission={() => {
-                    setCodeSubmitted(!isCodeSubmitted);
-                }}
-                getHelp={() => {
-                    console.log({ forumPostId });
-                    history.push({ pathname: `/forum/${forumPostId}` });
-                }}
+                toggleSubmission={() => setCodeSubmitted(!isCodeSubmitted)}
+                getHelp={() => history.push({ pathname: `/forum/${forumPostId}` })}
             />
         </PracticalContainer>
     );
