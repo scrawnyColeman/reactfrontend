@@ -1,20 +1,19 @@
-# About this project
+<h1 align="center">Dissertation Frontend</h1>
 
-This project is the FrontEnd for my dissertation at Queen's University Belfast.
-An online learning platform for undertaking lessons in specific targeted programming concepts.
-Used full stack ReactJS, SpringBoot and MySQL approach.
+This UI was built using React. This was my first encounter with React. In the future, I will do an overhaul of both the client and server side of this application, implementing unit testing and e2e testing. The current testing framework used is Jest & Enzyme. 
 
-## Available Scripts
+<div align="center">
+    <code>
+        <img height="32" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png">
+    </code>
+    <code>
+        <img height="32" src="https://enzymejs.github.io/enzyme/gitbook/images/favicon.ico">
+    </code>
+    <code>
+        <img height="32" src="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png">
+    </code>
+</div>
 
-### `npm start`
+<hr />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Gif of functionality](./njoy-learning.gif)
